@@ -24,8 +24,14 @@ bookSchema
   .virtual('avgRating')
   .get(function(){
     if (!this.review.length) return 'Not Rated Yet'
-    const sum = this.reviews
+    const sum = this.reviews.reduce((acc, review) => {
+      return acc + review.rating
+    }, 0)
+    return (sum / this.reviews.length).toFixed(2)
   })
+bookSchema.set('toJSON', {
+  virtuals: true,
+})
 
 
 export default mongoose.model('Book', bookSchema)
