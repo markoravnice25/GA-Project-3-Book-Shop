@@ -1,6 +1,6 @@
 import express from 'express'
 import { showBooks, showSingleBook } from '../controllers/books.js'
-import { registerUser } from '../controllers/auth.js'
+import { registerUser, loginUser } from '../controllers/auth.js'
 
 const router = express.Router()
 
@@ -14,5 +14,8 @@ router.route('/books/:id')
 
 router.route('/register')
   .post(registerUser)
+
+router.route('/login')
+  .post(loginUser)
 
 export default router
