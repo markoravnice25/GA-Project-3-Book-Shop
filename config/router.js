@@ -1,11 +1,8 @@
 import express from 'express'
 import { showBooks, showSingleBook } from '../controllers/books.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
-<<<<<<< HEAD
 import { addReview, deleteReview } from '../controllers/booksReviews.js'
-=======
 import { secureRoute } from './secureRoute.js'
->>>>>>> development
 
 const router = express.Router()
 
