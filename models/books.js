@@ -18,7 +18,7 @@ const bookSchema = new mongoose.Schema({
   yearPublished: { type: String, required: true },
   price: { type: Number, required: true },
   reviews: [reviewSchema],
-  
+  // owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: false },
 })
 bookSchema
   .virtual('avgRating')

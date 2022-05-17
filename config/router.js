@@ -21,9 +21,9 @@ router.route('/login')
   .post(loginUser)
 
 router.route('/books/:id/reviews')
-  .post(addReview)
+  .post(secureRoute, addReview)
 
 router.route('books/:id/reviews/:reviewId')
-  .delete(deleteReview)
+  .delete(secureRoute, deleteReview)
 
 export default router
