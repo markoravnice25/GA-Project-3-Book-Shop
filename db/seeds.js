@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 import Book from '../models/books.js'
 import { MONGODB_CONNECTION_STRING } from '../config/environment.js'
 import booksData from './data/books.js'
