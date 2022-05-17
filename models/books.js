@@ -23,7 +23,7 @@ const bookSchema = new mongoose.Schema({
 bookSchema
   .virtual('avgRating')
   .get(function(){
-    if (!this.review.length) return 'Not Rated Yet'
+    if (!this.reviews.length) return 'Not Rated Yet'
     const sum = this.reviews.reduce((acc, review) => {
       return acc + review.rating
     }, 0)
