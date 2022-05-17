@@ -1,6 +1,6 @@
 import User from '../models/users.js'
 import jwt from 'jsonwebtoken'
-import { PORT, MONGODB_CONNECTION_STRING } from '../config/environment.js'
+import { SECRET } from '../config/environment.js'
 
 // METHOD: POST
 // Endpoint: /register
@@ -20,10 +20,18 @@ export const loginUser = async (req, res) => {
   const { body } = req
   try {
     console.log('user body ->', body)
-    const { email } = body
+    const { email, password } = body
     const userToLogin = await User.findOne({ email: email })
     console.log('user to loin -> ', userToLogin)
-    return res.status(200).json({ message: `Welcome back ${userToLogin.username}` })
+
+    if (!userToLogin || !userToLogin.validatePassword(password)){
+      throw new Error()
+    }
+
+    const token = jwt.sign({ sub: userToLogin._id }, SECRET, { expiresIn: '6h' })
+    console.log('token -> ', token)
+
+    return res.status(200).json({ message: `Welcome back ${userToLogin.username}`, token: token })
   } catch (error) {
     console.log(error)
     return res.status(422).json({ message: 'unauthorised champ' })
