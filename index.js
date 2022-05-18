@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import express from 'express'
 import router from './config/router.js'
-import { PORT, MONGODB_CONNECTION_STRING } from './config/environment.js'
+import 'dotenv/config'
 
 const logger = (req, res, next) => {
   console.log(`🚨 - Incoming request on ${req.method} - ${req.url}`)
@@ -21,9 +21,9 @@ const startServer = async () => {
   //   return res.end('Welcome to our API.')
   // })
 
-  await mongoose.connect(MONGODB_CONNECTION_STRING)
+  await mongoose.connect(process.env.MONGODB_CONNECTION_STRING)
   console.log('Connected to MongoDB!')
-  app.listen(PORT, () => console.log(`🚀 - Server listening on Port ${PORT}`))
+  app.listen(process.env.PORT, () => console.log(`🚀 - Server listening on Port ${process.env.PORT}`))
 } 
 
 startServer()
