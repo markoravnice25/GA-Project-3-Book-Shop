@@ -10,6 +10,7 @@ const reviewSchema = new mongoose.Schema({
 
 const bookSchema = new mongoose.Schema({
   genre: { type: String, required: true },
+  subGenre: { type: String, required: true },
   title: { type: String, required: true },
   image: { type: String, required: true },
   author: { type: String, required: true },
