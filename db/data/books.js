@@ -1,5 +1,3 @@
-
-
 export default [
   {
     genre: 'Fiction',
@@ -11,22 +9,17 @@ export default [
     authors: 'Louisa May Alcott Remembered as the author of the timeless classic Little Women, American author Louisa May Alcott was one of the nineteenth century’s most pioneering writers and a lifelong advocate of women’s rights, abolitionism and emancipation. She published more than 30 books and collections of short stories and poems during her lifetime, including sequels to Little Women, Good Wives, Little Men and Jo’s Boys.',
     yearPublished: ' Published: 07/06/2018',
     price: 6.99,
-
   },
-
-
   {
-
     genre: 'Fiction',
     subGenre: 'Classics',
     title: 'Rebecca',
     image: 'https://cdn.waterstones.com/bookjackets/large/9781/8440/9781844080380.jpg',
     author: 'Daphne du Maurier',
-    description: 'From the exclusive beaches of Monte Carlo to the verdant grounds of Maxim de Winter’s stately home Manderley, Daphne du Maurier’s gothic classic transports the reader into a social and psychological world of creeping menace and dark desires. Rebecca endures as du Maurier’s masterpiece and Mrs Danvers, the superbly sinister housekeeper, stands as a fictional icon.',
-    authors: 'Daphne du Maurier Amongst the most enduringly popular and acclaimed writers of the twentieth century, British author Daphne du Maurier remains best-known as the creator of one of literature’s best-loved novels, the taut and suspense-thrilled psychological thriller, Rebecca.',
+    description: 'From the exclusive beaches of Monte Carlo to the verdant grounds of Maxim de Winter\’s stately home Manderley, Daphne du Maurier\’s gothic classic transports the reader into a social and psychological world of creeping menace and dark desires. Rebecca endures as du Maurier\’s masterpiece and Mrs Danvers, the superbly sinister housekeeper, stands as a fictional icon.',
+    authors: 'Daphne du Maurier Amongst the most enduringly popular and acclaimed writers of the twentieth century, British author Daphne du Maurier remains best-known as the creator of one of literature\’s best-loved novels, the taut and suspense-thrilled psychological thriller, Rebecca.',
     yearPublished: 'Published: 30/01/2003',
     price: 8.99,
-
   },
   {
     genre: 'Fiction',
@@ -38,7 +31,6 @@ export default [
     authors: 'Jane Austen Romantic, witty, acerbic and endlessly popular, Jane Austen’s novels are amongst the most revered, relevant and consistently readable novels in English Literature. Subtly different in tone, they range from the Gothic satire of Northanger Abbey, the drama of Pride and Prejudice and the razor-sharp observation of Emma to the poignancy and tenderness of Sense and Sensibility, Mansfield Park and Persuasion.',
     yearPublished: 'Published: 30/01/2003',
     price: 5.99,
-
   },
   {
     genre: 'Fiction',
@@ -50,7 +42,6 @@ export default [
     authors: 'Emily Bronte One of the most celebrated and popular English poets and novelists of the nineteenth century, Emily Brontë is best-known as the author of the passionate novel of doomed love, Wuthering Heights.',
     yearPublished: 'Published: 06/11/2008',
     price: 14.99,
-
   },
   {
     genre: 'Fiction',
@@ -62,7 +53,6 @@ export default [
     authors: '',
     yearPublished: 'Published: 03/10/2013',
     price: 14.99,
-
   },
   {
     genre: 'Fiction',
@@ -74,7 +64,6 @@ export default [
     authors: '',
     yearPublished: 'Published: 06/11/2014',
     price: 9.99,
-
   },
   {
     genre: 'Fiction',
@@ -86,7 +75,6 @@ export default [
     authors: '',
     yearPublished: 'Published: 30/03/2000',
     price: 9.99,
-
   },
   {
     genre: 'Fiction',
@@ -117,7 +105,7 @@ export default [
     image: 'https://cdn.waterstones.com/override/v1/large/9781/4088/9781408891384.jpg',
     author: 'Madeline Miller',
     description: 'A riveting tale of love, ambition and immortal fame, this award-winning debut from the author of Circe retells the story of the Trojan War and its greatest hero from the point of view of his closest friend Patroclus.',
-    authors: 'Madeline Mille An expert in classical history, literature and mythology, American author Madeleine Miller leapt to public notice with her Orange Prize-winning global bestseller The Song of Achilles. Her second novel is an electrifying take on Greek Myth’s most misunderstood deity: Circe.',
+    authors: 'Madeline Mille An expert in classical history, literature and mythology, American author Madeleine Miller leapt to public notice with her Orange Prize-winning global bestseller The Song of Achilles. Her second novel is an electrifying take on Greek Myth\’s most misunderstood deity: Circe.',
     yearPublished: 'Published: 21/09/2017',
     price: 9.99,
   },
@@ -788,7 +776,7 @@ export default [
     title: 'Avengers Vs. X-men',
     image: 'https://cdn.waterstones.com/bookjackets/large/9781/8465/9781846535185.jpg',
     author: 'Brian Michael Bendis',
-    description: '',
+    description: 'Avengers vs. X-Men (AvX or AvsX) is a 2012 crossover event that was featured in comic books published by Marvel Comics. The event, consisting of an eponymous limited series and numerous tie-in books, involves the return of the Phoenix Force and the subsequent war between the Avengers and the X-Men. The 12-issue twice-monthly series was first published in April 2012, and features a storyline by Jason Aaron, Brian Michael Bendis, Ed Brubaker, Jonathan Hickman and Matt Fraction, with a rotating team of artists including John Romita Jr., Olivier Coipel and Adam Kubert.',
     authors: '',
     yearPublished: 'Published: 23/11/2012',
     price: 17.99,
@@ -809,7 +797,7 @@ export default [
     subGenre: 'Graphic Novels',
     title: 'Lumberjanes Vol. 2: Friendship To The Max - Lumberjanes 2',
     image: 'https://cdn.waterstones.com/bookjackets/large/9781/6088/9781608867370.jpg',
-    author: '',
+    author: 'ND Stevenson (author), Grace Ellis (author), Shannon Watters (with), Gus A Allen (illustrator)',
     description: 'Friendship to the max! Jo, April, Mal, Molly and Ripley are five best pals determined to have an awesome summer together...and they\'re not gonna let any insane quest or an array of supernatural critters get in their way! But having stumbled onto a mysterious force wreaking havoc in the camp, it\'s a race through the woods as the Lumberjanes work together to save not only their friends, but maybe even the whole world! It\'s Buffy the Vampire Slayer meets Gravity Falls and features five butt-kicking, rad teenage girls wailing on monsters and solving a mystery with the whole world at stake. And with the talent of acclaimed cartoonist Noelle',
     authors: 'ND Stevenson, Grace Ellis',
     yearPublished: 'Published: 13/10/2015',
