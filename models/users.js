@@ -14,6 +14,14 @@ userSchema
     this._passwordConfirmation = value
   })
 
+userSchema.set('toJSON', {
+  virtuals: true,
+  transform(_doc, json){
+    delete json.password
+    return json
+  },
+})
+
 userSchema
   .pre('validate', function(next) {
     if (this.isModified('password') && this.password !== this._passwordConfirmation) {
