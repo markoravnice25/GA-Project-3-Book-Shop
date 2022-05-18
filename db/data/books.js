@@ -284,7 +284,7 @@ export default [
     image: 'https://cdn.waterstones.com/override/v1/large/9781/4088/9781408891384.jpg',
     author: 'Madeline Miller',
     description: 'A riveting tale of love, ambition and immortal fame, this award-winning debut from the author of Circe retells the story of the Trojan War and its greatest hero from the point of view of his closest friend Patroclus.',
-    authors: 'An expert in classical history, literature and mythology, American author Madeleine Miller leapt to public notice with her Orange Prize-winning global bestseller The Song of Achilles. Her second novel is an electrifying take on Greek Myth\’s most misunderstood deity: Circe.',
+    authors: 'An expert in classical history, literature and mythology, American author Madeleine Miller leapt to public notice with her Orange Prize-winning global bestseller The Song of Achilles. Her second novel is an electrifying take on Greek Myth/’s most misunderstood deity: Circe.',
     yearPublished: 'Published: 21/09/2017',
     price: 9.99,
   },
@@ -294,7 +294,7 @@ export default [
     title: 'Death and Croissants - A Follet Valley Mystery',
     image: 'https://cdn.waterstones.com/bookjackets/large/9781/7884/9781788424233.jpg',
     author: 'Ian Moore',
-    description: 'A peace-loving British B&B owner in rural France turns sleuth when one his guests disappears in the first wonderfully witty whodunit in Moore\’s entertaining Follett Valley series, perfect for fans of The Thursday Murder Club.',
+    description: 'A peace-loving British B&B owner in rural France turns sleuth when one his guests disappears in the first wonderfully witty whodunit in Moore/’s entertaining Follett Valley series, perfect for fans of The Thursday Murder Club.',
     authors: '',
     yearPublished: 'Published: 01/04/2022',
     price: 7.49,
@@ -387,7 +387,7 @@ export default [
     yearPublished: 'Published: 27/05/2021',
     price: 7.49,
   },
- 
+
   {
     genre: 'Crime',
     subGenre: 'True Crime',
@@ -427,7 +427,7 @@ export default [
     title: 'We Own This City: A True Story of Crime, Cops and Corruption in an American City',
     image: 'https://cdn.waterstones.com/bookjackets/large/9780/5713/9780571356621.jpg',
     author: 'Justin Fenton',
-    description: 'Fenton\’s meticulous and astounding reportage unravels the full story of Baltimore\’s infamous Gun Trace Task Force and the shocking depths of systemic corruption within which it operated.',
+    description: 'Fenton\'s meticulous and astounding reportage unravels the full story of Baltimore\'s infamous Gun Trace Task Force and the shocking depths of systemic corruption within which it operated.',
     authors: '',
     yearPublished: 'Published: 28/04/2022',
     price: 8.49,
@@ -476,7 +476,7 @@ export default [
     yearPublished: 'Published: 17/05/2018',
     price: 8.99,
   },
- 
+
   {
     genre: 'Crime',
     subGenre: 'Classic Crime',
@@ -576,7 +576,7 @@ export default [
     subGenre: 'Classic Crime',
     title: 'The Village of Eight Graves',
     image: 'https://cdn.waterstones.com/bookjackets/large/9781/7822/9781782277453.jpg',
-    authot: 'Seishi Yokomizo ',
+    author: 'Seishi Yokomizo ',
     description: 'Nestled deep in the mist-shrouded mountains, The Village of Eight Graves takes its name from a bloody legend: in the sixteenth century eight samurai, who had taken refuge there along with a secret treasure, were murdered by the inhabitants, bringing a terrible curse down upon their village. Centuries later a mysterious young man named Tatsuya arrives in town, bringing a spate of deadly poisonings in his wake. The inimitably scruffy and brilliant Kosuke Kindaichi investigates.',
     authors: '',
     yearPublished: 'Published: 02/12/2021',
@@ -637,7 +637,7 @@ export default [
     authors: '',
     yearPublished: 'Published: 26/05/2022',
     price: 16.99,
-   
+
   },
   {
     genre: 'Crime',
@@ -672,7 +672,7 @@ export default [
     yearPublished: 'Published: 12/05/2022',
     price: 14.99,
   },
- 
+
   {
     genre: 'Graphic Novels & Manga',
     subGenre: 'Manga',
@@ -723,7 +723,7 @@ export default [
     title: 'My Hero Academia, Vol. 1 - My Hero Academia 1',
     image: 'https://cdn.waterstones.com/bookjackets/large/9781/4215/9781421582696.jpg',
     author: 'Kohei Horikoshi',
-    description: 'Join the likeable Izuku, a boy born without superpowers in a world where such abilities are commonplace, on his quest to become an all-powerful hero in Horikoshi\’s highly addictive manga.   ',
+    description: 'Join the likeable Izuku, a boy born without superpowers in a world where such abilities are commonplace, on his quest to become an all-powerful hero in Horikoshi/’s highly addictive manga.   ',
     authors: '',
     yearPublished: 'Published: 27/08/2015',
     price: 7.99,
@@ -734,7 +734,7 @@ export default [
     title: 'Haikyu!!, Vol. 1 - Haikyu!! 1',
     image: 'https://cdn.waterstones.com/bookjackets/large/9781/4215/9781421587660.jpg',
     author: 'Haruichi Furudate',
-    description: 'Proving that you don\’t have to be a giant to succeed in volleyball as long as you can jump, Furudate\’s heartwarming story of high school sporting competition has swiftly become a modern classic.',
+    description: 'Proving that you don\'t have to be a giant to succeed in volleyball as long as you can jump, Furudate\'s heartwarming story of high school sporting competition has swiftly become a modern classic.',
     authors: '',
     yearPublished: 'Published: 28/07/2016',
     price: 7.99,
@@ -938,7 +938,7 @@ export default [
 
   },
   
- 
+
   {
     genre: 'Non-Fiction Books',
     subGenre: 'Folklore, Myths & Legends',
@@ -1130,8 +1130,7 @@ export default [
     price: 5.99,
     
   }
- 
- 
+
 
 
 
