@@ -98,7 +98,6 @@ export default [
     authors: '',
     yearPublished: 'Published: 24/02/2000',
     price: 6.99,
-
   },
   {
     genre: 'Fiction',
