@@ -14,7 +14,7 @@ const startServer = async () => {
 
   app.use(logger)
   app.use(express.json())
-  app.use(router)
+  app.use('/api', router)
 
 
   // app.get('/', (req, res, next) => {
