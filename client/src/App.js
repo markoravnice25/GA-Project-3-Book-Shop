@@ -8,6 +8,9 @@ import PageNavBar from './common/PageNavBar.js'
 // import Register from './components/auth/Register.js'
 // import Login from './components/auth/Login.js'
 import BookShow from './components/BookShow.js'
+import Register from './components/auth/Register.js'
+// import Login from './components/auth/Login.js'
+// import BookShow from './components/BookShow.js'
 // import Whishlist from './components/Whishlist.js'
 // import Account from './components/Account.js'
 // import NotFound from './common/NotFound.js'
@@ -26,7 +29,19 @@ const App = () => {
     <BrowserRouter>
       <PageNavBar />
       <Routes>
+<<<<<<< HEAD
         <Route path="/books/:id" element={<BookShow />} />
+=======
+        {/* <Route path="/" element={<Home />} />
+        <Route path="/books/:id" element={<BookShow />} />
+        <Route path="/books/:id/#write-review" element={<BookShow />} /> */}
+        <Route path="/register" element={<Register />} />
+        {/* <Route path="/login" element={<Login />} />    
+        <Route path="/account" element={<Account />} />    
+        <Route path="/account/whishlist" element={<Whishlist />} />  
+
+        <Route path="*" element={<NotFound />} /> */}
+>>>>>>> development
  
       </Routes>
     </BrowserRouter>

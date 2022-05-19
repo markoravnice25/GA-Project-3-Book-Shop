@@ -1,0 +1,35 @@
+.section-register {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .create-account {
+    margin: 20px 0;
+    font-size: small;
+    font-weight: 200;
+    color: black;
+    text-align: center;
+  }
+  .create-account-paragraph {
+    font-size: 11px;
+    // text-align: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    text-align: center;
+    max-width: 540px;
+  }
+
+  .create-account-paragraph-2 {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    font-size: x-small;
+    opacity: 0.3;
+  }
+
+  .register-form {
+    width: 640px;
+  }
+}
