@@ -21,17 +21,17 @@ const PageNavbar = () => {
     <Navbar bg="warning" expand="sm">
       <Container>
 
-        <Navbar.Brand as={Link} to="/">Home</Navbar.Brand>
+        {/* <Navbar.Brand as={Link} to="/">Home</Navbar.Brand> */}
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
 
-         
-          <Nav.Link as={Link} to="/books">Books</Nav.Link>
+          <Nav.Link as={Link} to="/wishlist">♥️Wish List</Nav.Link>
+          {/* <Nav.Link as={Link} to="/books">Books</Nav.Link> */}
           { userIsAuthenticated() ?
             <>
-              <Nav.Link as={Link} to="/books/:id/reviews">AddReview</Nav.Link>
+              <Nav.Link as={Link} to="/account">Account</Nav.Link>
               <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
             </>
             
