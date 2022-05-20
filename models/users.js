@@ -14,6 +14,13 @@ userSchema
     this._passwordConfirmation = value
   })
 
+userSchema.virtual('createdReviews', {
+  ref: 'Book',
+  localField: '_id',
+  foreignField: 'owner',
+})
+
+
 userSchema.set('toJSON', {
   virtuals: true,
   transform(_doc, json){
