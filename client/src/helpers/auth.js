@@ -28,3 +28,9 @@ export const userIsAuthenticated = () => {
 }
 
 // ? This function will check the user id from the payload matches the review user id
+export const userIsOwner = (reviews) => {
+  // get payload and check it has a value
+  const payload = getPayload()
+  if (!payload) return
+  return reviews.addedBy._id === payload.sub
+}

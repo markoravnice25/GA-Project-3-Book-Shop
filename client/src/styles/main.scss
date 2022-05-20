@@ -1,3 +1,9 @@
 @import './base.scss';
 @import './home.scss';
 @import './reviews.scss';
+@import './components/navbar.scss';
+@import './auth.scss';
+
+* {
+  box-sizing: border-box;
+}
