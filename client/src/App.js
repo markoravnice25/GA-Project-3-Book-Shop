@@ -55,6 +55,7 @@ const App = () => {
     <BrowserRouter>
       <PageNavBar />
       <Routes>
+        <Route path="/books" element={<Home />} />
         <Route path="/books/:id" element={<BookShow />} />
         {/* <Route path="/" element={<Home />} />
         <Route path="/books/:id" element={<BookShow />} />
