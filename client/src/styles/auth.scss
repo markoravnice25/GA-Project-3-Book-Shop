@@ -46,7 +46,20 @@
       font-size: 12px;
       font-weight: 300;
       color: black;
-      
+      .checkbox {
+        max-width: 400px;
+      }
+      .checkbox2 {
+        width: 250px;
+      }
+    }
+    .button-register {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      width: inherit;
+      background: #336b75;
+      border: none;
+      font-size: 14px;
+      padding: 5px 0;
     }
     .trigger {
       font-family: 'Source Sans Pro',sans-serif;

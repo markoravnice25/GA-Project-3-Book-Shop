@@ -73,18 +73,15 @@ const Register = () => {
           </Form.Group>
         </Row>
         <Form.Group className="mb-3 form-label" id="formGridCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Form.Group className="mb-3 form-label" id="formGridCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+          <Form.Check className='checkbox' type="checkbox" label="Recieve reading recommendations and be the first to hear about our special editions and author events, straight to your inbox" />
         </Form.Group>
         <Row>
           <Form.Group as={Col} className="mb-3 form-label" id="formGridCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
+            <Form.Check className='checkbox2' type="checkbox" label="I agree to the Waterstones.com Terms and Conditions." />
           </Form.Group>
           <Form.Group as={Col}>
-            <Button variant="success" type="submit">
-              Register
+            <Button className='button-register' type="submit">
+              REGISTER
             </Button>
           </Form.Group>
         </Row>
