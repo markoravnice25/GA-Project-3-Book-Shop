@@ -29,9 +29,7 @@ const App = () => {
     <BrowserRouter>
       <PageNavBar />
       <Routes>
-<<<<<<< HEAD
         <Route path="/books/:id" element={<BookShow />} />
-=======
         {/* <Route path="/" element={<Home />} />
         <Route path="/books/:id" element={<BookShow />} />
         <Route path="/books/:id/#write-review" element={<BookShow />} /> */}
@@ -41,7 +39,6 @@ const App = () => {
         <Route path="/account/whishlist" element={<Whishlist />} />  
 
         <Route path="*" element={<NotFound />} /> */}
->>>>>>> development
  
       </Routes>
     </BrowserRouter>

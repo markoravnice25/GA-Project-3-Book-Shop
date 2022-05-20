@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, Link, useNavigate } from 'react-router-dom'
+import { ReviewDisplay } from './ReviewDisplay'
 
 // Bootstrap components
 import Container from 'react-bootstrap/Container'
@@ -11,14 +12,14 @@ import Spinner from '../utilities/Spinner'
 import { userIsOwner, getTokenFromLocalStorage } from '../helpers/auth'
 const BookShow = () => {
   const navigate = useNavigate()
-  const { id } = useParams()
+  const { id, reviewID } = useParams()
   const [review, setReview] = useState('')
   const [book, setBook] = useState(null)
   const [errors, setErrors] = useState(false)
   // reviewform
   const [formData, setFormData] = useState({
-    reviewTitle: '',
-    reviewText: '',
+    title: '',
+    text: '',
   })
 
   useEffect(() => {
@@ -39,8 +40,8 @@ const BookShow = () => {
   // This useEffect checks to see if the user is the owner
   useEffect(() => {
     if (review) {
-      // On page load we want to check the user is owner
-      !userIsOwner(review) && navigate(`/api/books/${id}/reviews/`)
+      // On page load we want to check the user is owner !userIsOwner(review) && 
+      navigate(`/api/books/${id}/reviews/`)
     }
   }, [review, navigate])
   // ? Update formData
@@ -61,8 +62,11 @@ const BookShow = () => {
         },
       })
       navigate(`/books/${data._id}`)
+      return ('you have submit your review')
     } catch (error) {
       console.log(error)
+      console.log(error.response.data)
+      setErrors(error.response.data)
     }
   }
 
@@ -74,7 +78,7 @@ const BookShow = () => {
           <>
 
             <Col xs="12">
-              <h1>{book.title}</h1>
+              <h3>{book.title}</h3>
               <hr />
             </Col>
             <Col md="6">
@@ -85,8 +89,9 @@ const BookShow = () => {
               <h4>Author</h4>
               <p>{book.author}</p>
               <hr />
+            
               <h4>price</h4>
-              <p>{book.price}</p>
+              <p>£{book.price}</p>
               <hr />
               <h4>YearPublished</h4>
               <p>{book.yearPublished}</p>
@@ -96,21 +101,39 @@ const BookShow = () => {
               <hr />
               <h4>Authors</h4>
               <p>{book.authors}</p>
+              <hr />
+              <h4>Review</h4>
+              <div>{
+                book.reviews.map((review) => {
+                  return <ReviewDisplay key={review.id} review={review} />
+                })
+              }</div>
+              <hr />
+
+              
+            
 
               <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-4' onSubmit={handleSubmit}>
-                <h1>Write your review</h1>
+                <h4 className='text'>Write your review</h4>
                 {/* reviewTitle */}
-                <label htmlFor="reviewTitle">reviewTitle</label>
-                <input type="text" name="reviewTitle" className='input' placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange} />
+                <label htmlFor="reviewTitle">ReviewTitle</label>
+                {/* <input type="text" name="reviewTitle" className='input' placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange} /> */}
+                <textarea type="text" name="reviewTitle" className="input" rows="2" placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange}></textarea>
+
                 {errors.reviewTitle && <p className='text-danger'>{errors.reviewTitle}</p>}
                 {/* reviewText */}
                 <label htmlFor="reviewText">ReviewText</label>
-                <input type="text" name="reviewText" className='input' placeholder='write your review here' value={formData.reviewText} onChange={handleChange} />
+                {/* <input type="text" name="reviewText" className='input' placeholder='write your review here' value={formData.reviewText} onChange={handleChange} /> */}
+                <textarea type="text" name="reviewText" className="input"  rows="5" placeholder='write your review here' value={formData.reviewText} onChange={handleChange}></textarea>
+
+
                 {errors.reviewText && <p className='text-danger'>{errors.reviewText}</p>}
 
                 {/* Submit */}
                 <button type="submit" className="btn btn-warning w-100">POST REVIEW</button>
               </form>
+
+
             </Col>
           </>
           :
@@ -134,3 +157,4 @@ const BookShow = () => {
 
 }
 export default BookShow
+
