@@ -4,32 +4,54 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  .create-account {
-    margin: 20px 0;
-    font-size: small;
-    font-weight: 200;
-    color: black;
-    text-align: center;
-  }
-  .create-account-paragraph {
-    font-size: 11px;
-    // text-align: center;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    text-align: center;
-    max-width: 540px;
-  }
-
-  .create-account-paragraph-2 {
-    display: flex;
-    justify-content: right;
-    text-align: right;
-    font-size: x-small;
-    opacity: 0.3;
-  }
-
   .register-form {
     width: 640px;
+    a {
+      color: black
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    .create-account {
+      margin: 20px 0;
+      font-size: 14px;
+      font-weight: 200;
+      text-align: center;
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+    }
+    .create-account-paragraph {
+      margin: 0 auto;
+      font-size: 12px;
+      font-weight: 200;
+      text-align: center;
+      max-width: 570px;
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      .inline-plus {
+        font-family: 'smooch';
+        font-size: 1.4em;
+        color: #80c078;
+      }
+    }
+    .create-account-paragraph-2 {
+      display: flex;
+      justify-content: right;
+      text-align: right;
+      font-size: xx-small;
+      opacity: 0.3;
+      margin: 15px 0 5px 0;
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+    }
+    .form-label {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: black;
+      
+    }
+    .trigger {
+      font-family: 'Source Sans Pro',sans-serif;
+      font-size: 12px;
+      padding: 10px;
+    }
   }
 }

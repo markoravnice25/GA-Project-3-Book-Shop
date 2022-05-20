@@ -9,65 +9,85 @@ import Col from 'react-bootstrap/esm/Col'
 const Register = () => {
   return (
     <section className='section-register'>
-      <div>
-        <h3 className='create-account'>CREATE AN ACCOUNT</h3>
-      </div>
-      <div className='create-account-paragraph'>
-        <p>Start your Waterstones journey by creating your account. For enhanced rewards, REGISTER for plus and join our hugely popular email programme.</p>
-      </div>
-      <div >
-        <p className='create-account-paragraph-2'>Denotes required field *</p>
-      </div>
       <Form className='register-form'>
-        <Row className="mb-3">
+        <Row>
+          <h3 className='create-account'>CREATE AN ACCOUNT</h3>
+        </Row>
+        <Row>
+          <p className='create-account-paragraph'>Start your Waterstones journey by creating your account. For enhanced rewards,
+            <a href="/register"> REGISTER</a> for
+            <span className='inline-plus'> plus </span>
+            and join our hugely popular email programme.</p>
+        </Row>
+        <Row>
+          <p className='create-account-paragraph-2'>Denotes required field *</p>
+        </Row>
+        <Row className='form-label'>
+          <Col sm={6}>
+            <Form.Group className='mb-3' as={Col} controlId="formGridState">
+              <Form.Label>Title*</Form.Label>
+              <Form.Select className='trigger'>
+                <option>Please select</option>
+                <option>Mr</option>
+                <option>Mrs</option>
+                <option>Ms</option>
+                <option>Miss</option>
+                <option>Dr</option>
+                <option>Prof</option>
+                <option>Rev</option>
+                <option>Mx</option>
+              </Form.Select>
+            </Form.Group>
+          </Col>
+        </Row>
+        <Row className="mb-3 form-label">
           <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Label>First name*</Form.Label>
+            <Form.Control type="text" placeholder="" />
+          </Form.Group>
+          <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Label>Last name*</Form.Label>
+            <Form.Control type="text" placeholder="" />
+          </Form.Group>
+        </Row>
+        <Row className="mb-3 form-label">
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label>Email*</Form.Label>
+            <Form.Control type="email" placeholder="" />
           </Form.Group>
 
           <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Label>Confirm email*</Form.Label>
+            <Form.Control type="email" placeholder="" />
           </Form.Group>
         </Row>
-
-        <Form.Group className="mb-3" controlId="formGridAddress1">
-          <Form.Label>Address</Form.Label>
-          <Form.Control placeholder="1234 Main St" />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formGridAddress2">
-          <Form.Label>Address 2</Form.Label>
-          <Form.Control placeholder="Apartment, studio, or floor" />
-        </Form.Group>
-
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridCity">
-            <Form.Label>City</Form.Label>
-            <Form.Control />
+        <Row className="mb-3 form-label">
+          <Form.Group as={Col} controlId="formGridEmail">
+            <Form.Label>Choose a password*</Form.Label>
+            <Form.Control type="password" placeholder="" />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridState">
-            <Form.Label>State</Form.Label>
-            <Form.Select defaultValue="Choose...">
-              <option>Choose...</option>
-              <option>...</option>
-            </Form.Select>
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridZip">
-            <Form.Label>Zip</Form.Label>
-            <Form.Control />
+          <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Label>Confirm password*</Form.Label>
+            <Form.Control type="password" placeholder="" />
           </Form.Group>
         </Row>
-
-        <Form.Group className="mb-3" id="formGridCheckbox">
+        <Form.Group className="mb-3 form-label" id="formGridCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <Form.Group className="mb-3 form-label" id="formGridCheckbox">
+          <Form.Check type="checkbox" label="Check me out" />
+        </Form.Group>
+        <Row>
+          <Form.Group as={Col} className="mb-3 form-label" id="formGridCheckbox">
+            <Form.Check type="checkbox" label="Check me out" />
+          </Form.Group>
+          <Form.Group as={Col}>
+            <Button variant="success" type="submit">
+              Register
+            </Button>
+          </Form.Group>
+        </Row>
       </Form>
     </section>
   )
