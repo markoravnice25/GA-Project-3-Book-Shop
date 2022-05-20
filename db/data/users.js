@@ -1,5 +1,6 @@
 export default [
   {
+    title: 'Mr',
     firstName: 'marko',
     lastName: 'marko',
     email: 'marko@marko.com',
@@ -8,6 +9,7 @@ export default [
     confirmPassword: 'marko',
   },
   {
+    title: 'Mrs',
     firstName: 'daisy',
     lastName: 'daisy',
     email: 'daisy@daisy.com',
@@ -16,6 +18,7 @@ export default [
     confirmPassword: 'daisy',
   },
   {
+    title: 'Mr',
     firstName: 'riccardo',
     lastName: 'riccardo',
     email: 'riccardo@riccardo.com',
