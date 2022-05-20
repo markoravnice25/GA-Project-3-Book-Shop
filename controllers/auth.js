@@ -7,6 +7,7 @@ import 'dotenv/config'
 // descritption: req.body -> username, email, passwor, password confirmation
 export const registerUser = async (req, res) => {
   const { body } = req
+  console.log(body)
   try {
     const newUser = await User.create(body)
     return res.status(200).json({ message: `Welcome to Miami ${newUser.username}` })

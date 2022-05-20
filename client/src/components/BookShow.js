@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import Spinner from '../utilities/Spinner'
-import { userIsOwner, getTokenFromLocalStorage } from '../helpers/auth'
+import { userIsAuthenticated, userIsOwner, getTokenFromLocalStorage } from '../helpers/auth'
 const BookShow = () => {
   const navigate = useNavigate()
   const { id, reviewID } = useParams()
@@ -113,25 +113,40 @@ const BookShow = () => {
               
             
 
-              <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-4' onSubmit={handleSubmit}>
-                <h4 className='text'>Write your review</h4>
-                {/* reviewTitle */}
-                <label htmlFor="reviewTitle">ReviewTitle</label>
-                {/* <input type="text" name="reviewTitle" className='input' placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange} /> */}
-                <textarea type="text" name="reviewTitle" className="input" rows="2" placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange}></textarea>
+              {userIsAuthenticated() ?
+                <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-4' onSubmit={handleSubmit}>
+                  <h4 className='text'>Write your review</h4>
+                  {/* reviewTitle */}
+                  <label htmlFor="reviewTitle">ReviewTitle</label>
+                  {/* <input type="text" name="reviewTitle" className='input' placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange} /> */}
+                  <textarea type="text" name="reviewTitle" className="input" rows="2" placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange}></textarea>
 
-                {errors.reviewTitle && <p className='text-danger'>{errors.reviewTitle}</p>}
-                {/* reviewText */}
-                <label htmlFor="reviewText">ReviewText</label>
-                {/* <input type="text" name="reviewText" className='input' placeholder='write your review here' value={formData.reviewText} onChange={handleChange} /> */}
-                <textarea type="text" name="reviewText" className="input"  rows="5" placeholder='write your review here' value={formData.reviewText} onChange={handleChange}></textarea>
+                  {errors.reviewTitle && <p className='text-danger'>{errors.reviewTitle}</p>}
+                  {/* reviewText */}
+                  <label htmlFor="reviewText">ReviewText</label>
+                  {/* <input type="text" name="reviewText" className='input' placeholder='write your review here' value={formData.reviewText} onChange={handleChange} /> */}
+                  <textarea type="text" name="reviewText" className="input" rows="5" placeholder='write your review here' value={formData.reviewText} onChange={handleChange}></textarea>
 
 
-                {errors.reviewText && <p className='text-danger'>{errors.reviewText}</p>}
+                  {errors.reviewText && <p className='text-danger'>{errors.reviewText}</p>}
 
-                {/* Submit */}
-                <button type="submit" className="btn btn-warning w-100">POST REVIEW</button>
-              </form>
+                  {/* Submit */}
+                  <button type="submit" className="button small">POST REVIEW</button>
+                </form>
+                :
+                (
+                  <div className="add-review-container">
+                    <div>                       
+                      <p>🖋<Link to="/login">Sign in </Link>to write a review</p>
+                      <p>Not Registered Yet? <Link to="/register">Register</Link> instead</p>
+                    </div>
+                    {errors.text && (
+                      <p>{errors.text}</p>
+                    )}
+
+
+                  </div>
+                )}
 
 
             </Col>

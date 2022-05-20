@@ -21,7 +21,7 @@ const Register = () => {
     email: '',
     confirmEmail: '',
     password: '',
-    confirmPassword: '',
+    // confirmPassword: '',
   })
 
   const [ errors, setErrors ] = useState({})
@@ -84,7 +84,7 @@ const Register = () => {
         <Row className="mb-3 form-label">
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>First name*</Form.Label>
-            <Form.Control type="text" placeholder="" onChange={handleChange} />
+            <Form.Control type="text" name='firstName' placeholder="" value={formData.firstName} onChange={handleChange} />
           </Form.Group>
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Last name*</Form.Label>

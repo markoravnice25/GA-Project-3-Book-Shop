@@ -7,9 +7,9 @@ const userSchema = new mongoose.Schema({
   firstName: { type: String, required: true, unique: true, maxlength: 30 },
   lastName: { type: String, required: true, unique: true, maxlength: 30 },
   email: { type: String, required: true, unique: true },
-  confirmEmail: { type: String, required: true, unique: true },
+  // confirmEmail: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  confirmPassword: { type: String, required: true },
+  // confirmPassword: { type: String, required: true },
 }, { id: false })
 
 userSchema
