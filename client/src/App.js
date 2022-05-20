@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import PageNavBar from './common/PageNavBar.js'
 // import Home from './components/Home.js'
+// import Register from './components/auth/Register.js'
+// import Login from './components/auth/Login.js'
+import BookShow from './components/BookShow.js'
 import Register from './components/auth/Register.js'
 import Login from './components/auth/Login.js'
 // import BookShow from './components/BookShow.js'
@@ -14,18 +17,19 @@ import Login from './components/auth/Login.js'
 
 
 const App = () => {
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios.get('/api/books/') // * <-- replace with your endpoint
-      console.log(data)
-    }
-    getData()
-  })
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const { data } = await axios.get('/api/books/') // * <-- replace with your endpoint
+  //     console.log(data)
+  //   }
+  //   getData()
+  // })
 
   return (
     <BrowserRouter>
       <PageNavBar />
       <Routes>
+        <Route path="/books/:id" element={<BookShow />} />
         {/* <Route path="/" element={<Home />} />
         <Route path="/books/:id" element={<BookShow />} />
         <Route path="/books/:id/#write-review" element={<BookShow />} /> */}
