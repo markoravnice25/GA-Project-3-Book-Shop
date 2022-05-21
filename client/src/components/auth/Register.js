@@ -40,6 +40,7 @@ const Register = () => {
       navigate('/login')
     } catch (error) {
       console.log(error)
+      setErrors(error)
     }
   }
 
@@ -66,7 +67,7 @@ const Register = () => {
           <Col sm={6}>
             <Form.Group className='mb-3' as={Col} controlId="formGridState">
               <Form.Label>Title*</Form.Label>
-              <Form.Select className='trigger'>
+              <Form.Select className='trigger' name='title' value={formData.title} onChange={handleChange} >
                 <option>Please select</option>
                 <option>Mr</option>
                 <option>Mrs</option>
@@ -77,6 +78,7 @@ const Register = () => {
                 <option>Rev</option>
                 <option>Mx</option>
               </Form.Select>
+              {errors.title && <p className='text-danger'>{errors.title}</p>}
             </Form.Group>
           </Col>
         </Row>
@@ -84,33 +86,34 @@ const Register = () => {
         <Row className="mb-3 form-label">
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>First name*</Form.Label>
-            <Form.Control type="text" name='firstName' placeholder="" value={formData.firstName} onChange={handleChange} />
+            <Form.Control type="text" name='firstName' value={formData.firstName} onChange={handleChange} />
           </Form.Group>
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Last name*</Form.Label>
-            <Form.Control type="text" placeholder="" onChange={handleChange} />
+            <Form.Control type="text" name='lastName' value={formData.lastName} onChange={handleChange} />
           </Form.Group>
         </Row>
         {/* Email */}
         <Row className="mb-3 form-label">
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>Email*</Form.Label>
-            <Form.Control type="email" placeholder="" onChange={handleChange} />
+            <Form.Control type="email" name='email' value={formData.email} onChange={handleChange} />
           </Form.Group>
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Confirm email*</Form.Label>
-            <Form.Control type="email" placeholder="" onChange={handleChange} />
+            <Form.Control type="email" name='confirmEmail' value={formData.confirmEmail} onChange={handleChange} />
           </Form.Group>
         </Row>
         {/* Password */}
         <Row className="mb-3 form-label">
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>Choose a password*</Form.Label>
-            <Form.Control type="password" placeholder="" onChange={handleChange} />
+            <Form.Control type="password" name='password' value={formData.password} onChange={handleChange} />
           </Form.Group>
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Confirm password*</Form.Label>
-            <Form.Control type="password" placeholder="" onChange={handleChange} />
+            <Form.Control type="password" name='confirmPassword' value={formData.confirmPassword} onChange={handleChange} />
+            {errors.password && <p className='text-danger'>{errors.password}</p>}
           </Form.Group>
         </Row>
         {/* Checkboxes and register button */}

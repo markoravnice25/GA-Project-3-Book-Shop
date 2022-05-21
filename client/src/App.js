@@ -56,8 +56,8 @@ const App = () => {
       <PageNavBar />
       <Routes>
         <Route path="/books/:id" element={<BookShow />} />
-        {/* <Route path="/" element={<Home />} />
-        <Route path="/books/:id" element={<BookShow />} />
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/books/:id" element={<BookShow />} />
         <Route path="/books/:id/#write-review" element={<BookShow />} /> */}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />    
