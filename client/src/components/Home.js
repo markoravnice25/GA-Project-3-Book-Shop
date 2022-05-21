@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css'
 
 const Home = () => {
 
-  const [ books, setBooks ] = useState([])
+  const [books, setBooks] = useState([])
 
 
   useEffect(() => {
@@ -78,25 +78,28 @@ const Home = () => {
         <h2>Crime</h2>
         <Slider {...settings} className='carousel-wrapper'>
           {books.map((item, index) => {
-            const { title, author, image, price } = item
+            const { title, author, image, price, _id } = item
             if (item.genre === 'Crime') {
               return (
-                <Link to={'/books'}>
-                  <div key={index}>
-                    <div className="image-wrapper">
-                      <img src={image} />
-                    </div>
-                    <div className='card-body'>
-                      <div className='card-title'>
-                        <h4>{title}</h4>
+                <div key={_id}>
+
+                  <Link to={`/books/${_id}`}>
+                    <div key={index}>
+                      <div className="image-wrapper">
+                        <img src={image} />
                       </div>
-                      <div className='author'>
-                        <h5>{author}</h5>
+                      <div className='card-body'>
+                        <div className='card-title'>
+                          <h4>{title}</h4>
+                        </div>
+                        <div className='author'>
+                          <h5>{author}</h5>
+                        </div>
+                        <h4 className="price">£ {price}</h4>
                       </div>
-                      <h4 className="price">£ {price}</h4>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               )
             }
           })}
@@ -108,25 +111,27 @@ const Home = () => {
         <h2>Science Fiction</h2>
         <Slider {...settings} className='carousel-wrapper'>
           {books.map((item, index) => {
-            const { title, author, image, price } = item
+            const { title, author, image, price, _id } = item
             if (item.genre === 'Science Fiction') {
               return (
-                <Link to={'/books'}>
-                  <div key={index}>
-                    <div className="image-wrapper">
-                      <img src={image} />
-                    </div>
-                    <div className='card-body'>
-                      <div className='card-title'>
-                        <h4>{title}</h4>
+                <div key={_id}>
+                  <Link to={`/books/${_id}`}>
+                    <div key={index}>
+                      <div className="image-wrapper">
+                        <img src={image} />
                       </div>
-                      <div className='author'>
-                        <h5>{author}</h5>
+                      <div className='card-body'>
+                        <div className='card-title'>
+                          <h4>{title}</h4>
+                        </div>
+                        <div className='author'>
+                          <h5>{author}</h5>
+                        </div>
+                        <h4 className="price">£ {price}</h4>
                       </div>
-                      <h4 className="price">£ {price}</h4>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               )
             }
           })}
@@ -138,25 +143,27 @@ const Home = () => {
         <h2>Children and Teenage</h2>
         <Slider {...settings} className='carousel-wrapper'>
           {books.map((item, index) => {
-            const { title, author, image, price } = item
+            const { title, author, image, price, _id } = item
             if (item.genre === 'Children\'s & Teenage') {
               return (
-                <Link to={'/books'}>
-                  <div key={index}>
-                    <div className="image-wrapper">
-                      <img src={image} />
-                    </div>
-                    <div className='card-body'>
-                      <div className='card-title'>
-                        <h4>{title}</h4>
+                <div key={_id}>
+                  <Link to={`/books/${_id}`}>
+                    <div key={index}>
+                      <div className="image-wrapper">
+                        <img src={image} />
                       </div>
-                      <div className='author'>
-                        <h5>{author}</h5>
+                      <div className='card-body'>
+                        <div className='card-title'>
+                          <h4>{title}</h4>
+                        </div>
+                        <div className='author'>
+                          <h5>{author}</h5>
+                        </div>
+                        <h4 className="price">£ {price}</h4>
                       </div>
-                      <h4 className="price">£ {price}</h4>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               )
             }
           })}
@@ -168,25 +175,27 @@ const Home = () => {
         <h2>Non-Fiction Books</h2>
         <Slider {...settings} className='carousel-wrapper'>
           {books.map((item, index) => {
-            const { title, author, image, price } = item
+            const { title, author, image, price, _id } = item
             if (item.genre === 'Non-Fiction Books') {
               return (
-                <Link to={'/books'}>
-                  <div key={index}>
-                    <div className="image-wrapper">
-                      <img src={image} />
-                    </div>
-                    <div className='card-body'>
-                      <div className='card-title'>
-                        <h4>{title}</h4>
+                <div key={_id}>
+                  <Link to={`/books/${_id}`}>
+                    <div key={index}>
+                      <div className="image-wrapper">
+                        <img src={image} />
                       </div>
-                      <div className='author'>
-                        <h5>{author}</h5>
+                      <div className='card-body'>
+                        <div className='card-title'>
+                          <h4>{title}</h4>
+                        </div>
+                        <div className='author'>
+                          <h5>{author}</h5>
+                        </div>
+                        <h4 className="price">£ {price}</h4>
                       </div>
-                      <h4 className="price">£ {price}</h4>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               )
             }
           })}
@@ -198,25 +207,27 @@ const Home = () => {
         <h2>Graphic Novels and Manga</h2>
         <Slider {...settings} className='carousel-wrapper'>
           {books.map((item, index) => {
-            const { title, author, image, price } = item
+            const { title, author, image, price, _id } = item
             if (item.genre === 'Graphic Novels & Manga') {
               return (
-                <Link to={'/books'}>
-                  <div key={index}>
-                    <div className="image-wrapper">
-                      <img src={image} />
-                    </div>
-                    <div className='card-body'>
-                      <div className='card-title'>
-                        <h4>{title}</h4>
+                <div key={_id}>
+                  <Link to={`/books/${_id}`}>
+                    <div key={index}>
+                      <div className="image-wrapper">
+                        <img src={image} />
                       </div>
-                      <div className='author'>
-                        <h5>{author}</h5>
+                      <div className='card-body'>
+                        <div className='card-title'>
+                          <h4>{title}</h4>
+                        </div>
+                        <div className='author'>
+                          <h5>{author}</h5>
+                        </div>
+                        <h4 className="price">£ {price}</h4>
                       </div>
-                      <h4 className="price">£ {price}</h4>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               )
             }
           })}

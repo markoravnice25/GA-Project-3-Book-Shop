@@ -18,7 +18,7 @@ const PageNavbar = () => {
   }
 
   return (
-    <Navbar bg="warning" expand="sm">
+    <Navbar bg="success" expand="sm">
       <Container>
 
         {/* <Navbar.Brand as={Link} to="/">Home</Navbar.Brand> */}
