@@ -32,7 +32,7 @@ const PageNavbar = () => {
 
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
 
-          <Nav.Link as={Link} to="/wishlist">♥️Wish List</Nav.Link>
+          <Nav.Link as={Link} to="/account/wishlist">♥️Wish List</Nav.Link>
           {/* <Nav.Link as={Link} to="/books">Books</Nav.Link> */}
           {userIsAuthenticated() ?
             <>
