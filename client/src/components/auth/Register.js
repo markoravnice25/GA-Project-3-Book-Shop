@@ -87,10 +87,12 @@ const Register = () => {
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>First name*</Form.Label>
             <Form.Control type="text" name='firstName' value={formData.firstName} onChange={handleChange} />
+            {errors.firstName && <p className='text-danger'>{errors.firstName}</p>}
           </Form.Group>
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Last name*</Form.Label>
             <Form.Control type="text" name='lastName' value={formData.lastName} onChange={handleChange} />
+            {errors.lastName && <p className='text-danger'>{errors.lastName}</p>}
           </Form.Group>
         </Row>
         {/* Email */}
@@ -98,10 +100,12 @@ const Register = () => {
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>Email*</Form.Label>
             <Form.Control type="email" name='email' value={formData.email} onChange={handleChange} />
+            {errors.email && <p className='text-danger'>{errors.email}</p>}
           </Form.Group>
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Confirm email*</Form.Label>
             <Form.Control type="email" name='confirmEmail' value={formData.confirmEmail} onChange={handleChange} />
+            {errors.confirmEmail && <p className='text-danger'>{errors.confirmEmail}</p>}
           </Form.Group>
         </Row>
         {/* Password */}
@@ -109,6 +113,7 @@ const Register = () => {
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>Choose a password*</Form.Label>
             <Form.Control type="password" name='password' value={formData.password} onChange={handleChange} />
+            {errors.password && <p className='text-danger'>{errors.password}</p>}
           </Form.Group>
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Confirm password*</Form.Label>
@@ -134,5 +139,4 @@ const Register = () => {
     </section>
   )
 }
-
 export default Register
