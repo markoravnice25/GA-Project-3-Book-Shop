@@ -24,11 +24,16 @@ const Login = () => {
     setErrors(false)
   }
 
+  const setTokenToLocalStorage = (token) => {
+    window.localStorage.setItem('project-3-waterstones', token)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
       console.log('testing console')
-      await axios.post('/api/login', formData)
+      const response = await axios.post('/api/login', formData)
+      setTokenToLocalStorage(response.data.token)
       navigate('/account')
     } catch (error) {
       console.log(error)
