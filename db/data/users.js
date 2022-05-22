@@ -6,7 +6,7 @@ export default [
     email: 'marko@marko.com',
     confirmEmail: 'marko@marko.com',
     password: 'marko',
-    confirmPassword: 'marko',
+    passwordConfirmation: 'marko',
   },
   {
     title: 'Mrs',
@@ -15,7 +15,7 @@ export default [
     email: 'daisy@daisy.com',
     confirmEmail: 'daisy@daisy.com',
     password: 'daisy',
-    confirmPassword: 'daisy',
+    passwordConfirmation: 'daisy',
   },
   {
     title: 'Mr',
@@ -24,6 +24,6 @@ export default [
     email: 'riccardo@riccardo.com',
     confirmEmail: 'riccardo@riccardo.com',
     password: 'riccardo',
-    confirmPassword: 'riccardo',
+    passwordConfirmation: 'riccardo',
   }
 ]
