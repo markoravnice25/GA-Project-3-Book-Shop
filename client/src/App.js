@@ -12,7 +12,7 @@ import Home from './components/Home.js'
 import BookShow from './components/BookShow.js'
 import Register from './components/auth/Register.js'
 import Login from './components/auth/Login.js'
-import Whishlist from './components/Whishlist.js'
+import Weeishlist from './components/Wishlist.js'
 import Account from './components/Account.js'
 import NotFound from './common/NotFound.js'
 import Reviews from './components/Reviews.js'
@@ -34,8 +34,7 @@ const App = () => {
 
         <Route path="/login" element={<Login />} />     
         <Route path="/account" element={<Account />} />
-        <Route path="/account/whishlist" element={<Whishlist />} />
-
+        <Route path="/account/wishlist" element={<Weeishlist />} />
         <Route path="*" element={<NotFound />} /> 
 
       </Routes>
