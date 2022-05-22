@@ -21,7 +21,7 @@ const Register = () => {
     email: '',
     confirmEmail: '',
     password: '',
-    // confirmPassword: '',
+    confirmPassword: '',
   })
 
   const [ errors, setErrors ] = useState({})

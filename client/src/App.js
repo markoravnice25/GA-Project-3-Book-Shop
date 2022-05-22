@@ -16,6 +16,9 @@ import Whishlist from './components/Whishlist.js'
 // import Account from './components/Account.js'
 import NotFound from './common/NotFound.js'
 import Reviews from './components/Reviews.js'
+// import SubNav from './common/SubNavBar.js'
+import SearchResult from './components/SearchResults.js'
+
 
 
 
@@ -25,11 +28,13 @@ const App = () => {
   return (
     <BrowserRouter>
       <PageNavBar />
+      {/* <SubNavBar /> */}
+
       <Routes>
         <Route path="/books/:id" element={<BookShow />} />
         <Route path="/" element={<Home />} />
-        {/* <Route path="/books/:id" element={<BookShow />} />
-        <Route path="/books/:id/#write-review" element={<BookShow />} /> */}
+        <Route path="/books/search/:term" element={<SearchResult />} />
+       
         <Route path="/register" element={<Register />} />
 
         <Route path="/login" element={<Login />} />     
