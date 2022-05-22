@@ -17,25 +17,24 @@ const Login = () => {
     password: '',
   })
 
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState(false)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
-    setErrors({ ...errors, [e.target.name]: '' })
+    setErrors(false)
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      console.log('testing console')
       await axios.post('/api/login', formData)
       navigate('/account')
     } catch (error) {
-      console.log(error.response.data.errors)
-      setErrors(error.response.data.errors)
-      console.log('checking setErrors')
+      console.log(error)
+      setErrors(error.response.data.message)
     }
   }
-
 
   return (
     <section className='section-register'>
@@ -44,12 +43,11 @@ const Login = () => {
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>Email*</Form.Label>
             <Form.Control type="email" name='email' value={formData.email} onChange={handleChange} />
-            {errors.email && <p className='text-danger'>{errors.email.message}</p>}
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Password*</Form.Label>
             <Form.Control type="password" name='password' value={formData.password} onChange={handleChange} />
-            {errors.password && <p className='text-danger'>{errors.password.message}</p>}
+            {errors && <p className='text-danger'>{errors}</p>}
           </Form.Group>
           <Form.Group>
             <Button className='button-register' type="submit">
