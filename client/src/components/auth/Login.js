@@ -40,17 +40,20 @@ const Login = () => {
     <section className='section-login'>
       <Form className='auth-login' onSubmit={handleSubmit}>
         <Row className="mb-3 form-label">
-          <Row className='login-heading'>
-            <h3>Login</h3>
+          <Row>
+            <h3 className='login-heading'>LOGIN</h3>
           </Row>
           <Row>
-            <p className='login-paragraph'>Haven&apos;t signed up yet? <a href="/register">Register</a></p>
+            <p className='login-paragraph'>Haven&apos;t signed up for an account yet? Simply <a href="/register">Register</a> and we can get you up and started!</p>
           </Row>
-          <Form.Group>
+          <Row>
+            <p className='login-paragraph-2'>Denotes required field *</p>
+          </Row>
+          <Form.Group as={Col}>
             <Form.Label>Email*</Form.Label>
             <Form.Control type="email" name='email' value={formData.email} onChange={handleChange} />
           </Form.Group>
-          <Form.Group>
+          <Form.Group as={Col}>
             <Form.Label>Password*</Form.Label>
             <Form.Control type="password" name='password' value={formData.password} onChange={handleChange} />
             {errors && <p className='text-danger'>{errors}</p>}
