@@ -47,7 +47,7 @@ const Register = () => {
   return (
     <section className='section-register'>
       {/* Heading */}
-      <Form className='register-form' onSubmit={handleSubmit}>
+      <Form className='auth-register' onSubmit={handleSubmit}>
         <Row>
           <h3 className='create-account'>CREATE AN ACCOUNT</h3>
         </Row>

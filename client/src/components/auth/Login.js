@@ -3,7 +3,7 @@ import React from 'react'
 import Row from 'react-bootstrap/Row'
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/esm/Col'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 
@@ -37,20 +37,26 @@ const Login = () => {
   }
 
   return (
-    <section className='section-register'>
-      <Form className='register-form' onSubmit={handleSubmit}>
+    <section className='section-login'>
+      <Form className='auth-login' onSubmit={handleSubmit}>
         <Row className="mb-3 form-label">
-          <Form.Group as={Col} controlId="formGridEmail">
+          <Row className='login-heading'>
+            <h3>Login</h3>
+          </Row>
+          <Row>
+            <p className='login-paragraph'>Haven&apos;t signed up yet? <a href="/register">Register</a></p>
+          </Row>
+          <Form.Group>
             <Form.Label>Email*</Form.Label>
             <Form.Control type="email" name='email' value={formData.email} onChange={handleChange} />
           </Form.Group>
-          <Form.Group as={Col}>
+          <Form.Group>
             <Form.Label>Password*</Form.Label>
             <Form.Control type="password" name='password' value={formData.password} onChange={handleChange} />
             {errors && <p className='text-danger'>{errors}</p>}
           </Form.Group>
           <Form.Group>
-            <Button className='button-register' type="submit">
+            <Button className='button-login' type="submit">
               Login
             </Button>
           </Form.Group>
