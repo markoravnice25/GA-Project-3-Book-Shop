@@ -12,7 +12,7 @@ import Home from './components/Home.js'
 import BookShow from './components/BookShow.js'
 import Register from './components/auth/Register.js'
 import Login from './components/auth/Login.js'
-import Wishlist from './components/Wishlist.js'
+import WishList from './components/Wishlist.js'
 import Account from './components/Account.js'
 import NotFound from './common/NotFound.js'
 import Reviews from './components/Reviews.js'
@@ -38,7 +38,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />     
         <Route path="/account" element={<Account />} />
-        <Route path="/account/wishlist" element={<Wishlist />} />
+        <Route path="/account/wishlist" element={<WishList />} />
         <Route path="*" element={<NotFound />} /> 
 
       </Routes>
