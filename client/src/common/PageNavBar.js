@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
@@ -8,8 +9,11 @@ import logo from './../images/book.png'
 
 const PageNavbar = () => {
 
+  const [ term, setTerm ] = useState('')
+  const [errors, setErrors] = useState(false)
+  
   const navigate = useNavigate()
-
+  console.log(userIsAuthenticated())
 
   const handleLogout = () => {
 
@@ -17,6 +21,22 @@ const PageNavbar = () => {
 
     navigate('/login')
   }
+
+  const handleChange = (e) => {
+    setTerm(e.target.value)
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      navigate(`/books/search/${term}`)
+    } catch (error) {
+      console.log(error)
+      console.log(error.response.data)
+      setErrors(error.response.data)
+    }
+  }
+
 
   return (
     <Navbar  expand="sm">
@@ -30,6 +50,8 @@ const PageNavbar = () => {
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <input type="text" name="searchTerm" placeholder='🔍Search...' onChange={handleChange} />
+        <button type="submit" className="btn btn-warning w-100" onClick={handleSubmit}>Submit</button>
 
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
 

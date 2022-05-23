@@ -39,7 +39,7 @@ export const deleteReview = async (req, res) => {
     return res.sendStatus(204)
   } catch (error) {
     console.log(error)
-    return res.status(401).json({ message: 'Unauthorised'})
+    return res.status(401).json({ message: 'Unauthorised' })
   }
 
 }

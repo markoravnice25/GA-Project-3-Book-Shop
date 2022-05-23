@@ -92,7 +92,6 @@ const BookShow = () => {
         },
       })
       navigate(`/books/${data._id}`)
-      return ('you have submit your review')
     } catch (error) {
       console.log(error)
       console.log(error.response.data)
@@ -149,13 +148,13 @@ const BookShow = () => {
                   {/* reviewTitle */}
                   <label htmlFor="reviewTitle">ReviewTitle</label>
                   {/* <input type="text" name="reviewTitle" className='input' placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange} /> */}
-                  <textarea type="text" name="reviewTitle" className="input" rows="2" placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange}></textarea>
+                  <textarea type="text" name="title" className="input" rows="2" placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange}></textarea>
 
                   {errors.reviewTitle && <p className='text-danger'>{errors.reviewTitle}</p>}
                   {/* reviewText */}
                   <label htmlFor="reviewText">ReviewText</label>
                   {/* <input type="text" name="reviewText" className='input' placeholder='write your review here' value={formData.reviewText} onChange={handleChange} /> */}
-                  <textarea type="text" name="reviewText" className="input" rows="5" placeholder='write your review here' value={formData.reviewText} onChange={handleChange}></textarea>
+                  <textarea type="text" name="text" className="input" rows="5" placeholder='write your review here' value={formData.reviewText} onChange={handleChange}></textarea>
 
 
                   {errors.reviewText && <p className='text-danger'>{errors.reviewText}</p>}
