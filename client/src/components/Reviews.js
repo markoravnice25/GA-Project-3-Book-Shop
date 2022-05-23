@@ -8,15 +8,15 @@ const Reviews = () => {
   useEffect(() => {
     const getReviews = async () => {
       try {
-        const { data } = await axios.get('api/account/reviews')
-        console.log(data)
+        const { data } = await axios.get('/api/account/reviews')
+        console.log('reviews --->', data)
         setReviews(data)
       } catch (error) {
         console.log(error)
       }
     }
     getReviews()
-  })
+  }, [])
 
   return (
     <>

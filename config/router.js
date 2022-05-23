@@ -28,13 +28,10 @@ router.route('/books/:id/reviews/:reviewId')
   .delete(secureRoute, deleteReview)
   .put(secureRoute, updateReview)
 
-router.route('/profile')
+router.route('/account')
   .get(secureRoute, getProfile)
 
 router.route('/account/reviews')
   .get(secureRoute, getReviews)
 
-router.route('/account/reviews')
-  .get(secureRoute, getReviews)
-  
 export default router
