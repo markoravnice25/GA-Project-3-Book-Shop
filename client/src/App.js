@@ -35,13 +35,11 @@ const App = () => {
         <Route path="/books/:id" element={<BookShow />} />
         <Route path="/" element={<Home />} />
         <Route path="/books/search/:term" element={<SearchResult />} />
-       
         <Route path="/register" element={<Register />} />
         <Route path="/account/reviews" element={<Reviews />} />
         {/* <Route path="/login" element={<Login />} />     
-         <Route path="/account" element={<Account />} />    
+        <Route path="/account" element={<Account />} />    
         <Route path="/account/whishlist" element={<Whishlist />} />   */}
-
         <Route path="/login" element={<Login />} />     
         <Route path="/account" element={<Account />} />
         <Route path="/account/wishlist" element={<WishList />} />

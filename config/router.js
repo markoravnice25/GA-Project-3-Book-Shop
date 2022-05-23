@@ -4,7 +4,7 @@ import { registerUser, loginUser } from '../controllers/auth.js'
 import { addReview, deleteReview, updateReview } from '../controllers/booksReviews.js'
 import { secureRoute } from './secureRoute.js'
 import { getProfile } from '../controllers/users.js'
-
+import { getReviews } from '../controllers/reviews.js'
 const router = express.Router()
 
 // get all book
@@ -31,4 +31,10 @@ router.route('/books/:id/reviews/:reviewId')
 router.route('/profile')
   .get(secureRoute, getProfile)
 
+router.route('/account/reviews')
+  .get(secureRoute, getReviews)
+
+router.route('/account/reviews')
+  .get(secureRoute, getReviews)
+  
 export default router
