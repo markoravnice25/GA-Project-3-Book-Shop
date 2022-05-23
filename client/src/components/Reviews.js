@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
+import { getTokenFromLocalStorage } from '../helpers/auth'
+
 const Reviews = () => {
 
   const [ reviews, setReviews ] = useState([])
@@ -8,7 +10,11 @@ const Reviews = () => {
   useEffect(() => {
     const getReviews = async () => {
       try {
-        const { data } = await axios.get('/api/account/reviews')
+        const { data } = await axios.get('/api/account/reviews', {
+          headers: {
+            Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+          },
+        })
         console.log('reviews --->', data)
         setReviews(data)
       } catch (error) {
@@ -17,6 +23,23 @@ const Reviews = () => {
     }
     getReviews()
   }, [])
+
+  const handleDeleteBtn = async (e) => {
+    console.log(e.target.value)
+
+    const id = e.target.value
+    console.log('id --->', id)
+    try {
+      const { data } = await axios.delete(`/api/account/reviews/${id}`, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+      })
+      console.log('reviews --->', data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <>
@@ -28,6 +51,7 @@ const Reviews = () => {
             <div key={_id} className='review-box'>
               <h3>{title}</h3>
               <p>{text}</p>
+              <button value={_id} onClick={handleDeleteBtn}>Delete</button>
             </div>
           )
         })}
