@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/esm/Col'
 const WishList = () => {
 
   const [books, setBooks] = useState([])
-
+  console.log('wishlist check')
 
   useEffect(() => {
     const getData = async () => {
@@ -20,9 +20,10 @@ const WishList = () => {
     getData()
   }, [])
   console.log(books)
+  console.log('wishlist check 2')
 
   return (
-    <>
+    <section>
       <h1>My Wishlist!</h1>
       <p>A wishlist by -------</p>
       <Container className='wishlist-all'>
@@ -37,14 +38,12 @@ const WishList = () => {
             <h4>￡{books[0].price}</h4>
             <h5>{books[0].genre}</h5>
             <p>{books[0].description}</p>
-
           </Col>
         </Row>
         <hr />
-
       </Container>
+    </section>
 
-    </>
   )
 }
 
