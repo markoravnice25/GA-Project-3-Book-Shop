@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import mongooseUniqueValidator from 'mongoose-unique-validator'
 
 const reviewSchema = new mongoose.Schema({
   title: { type: String, required: true, maxlength: 30 },
@@ -8,4 +9,6 @@ const reviewSchema = new mongoose.Schema({
 }, {
   timestamps: true ,
 })
+
+reviewSchema.plugin(mongooseUniqueValidator)
 export default reviewSchema
