@@ -1,7 +1,7 @@
 import express from 'express'
 import { showBooks, showSingleBook } from '../controllers/books.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
-import { addReview, deleteReview } from '../controllers/booksReviews.js'
+import { addReview, deleteReview, updateReview } from '../controllers/booksReviews.js'
 import { secureRoute } from './secureRoute.js'
 import { getProfile } from '../controllers/users.js'
 
@@ -26,6 +26,7 @@ router.route('/books/:id/reviews')
 
 router.route('/books/:id/reviews/:reviewId')
   .delete(secureRoute, deleteReview)
+  .put(secureRoute, updateReview)
 
 router.route('/profile')
   .get(secureRoute, getProfile)

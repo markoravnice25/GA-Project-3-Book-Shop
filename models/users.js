@@ -10,24 +10,18 @@ const userSchema = new mongoose.Schema({
   // confirmEmail: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   // confirmPassword: { type: String, required: true },
-}, { id: false })
+}) // Here there was id setted to false
 
 userSchema
   .virtual('passwordConfirmation')
-  .set(function(value) {
+  .set(function(value) { 
     this._passwordConfirmation = value
   })
-
-userSchema.virtual('createdReviews', {
-  ref: 'Book',
-  localField: '_id',
-  foreignField: 'owner',
-})
-
-
+  
 userSchema.set('toJSON', {
   virtuals: true,
   transform(_doc, json){
+    console.log('json --->', json)
     delete json.password
     return json
   },
