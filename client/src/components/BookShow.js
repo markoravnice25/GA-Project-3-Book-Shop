@@ -32,20 +32,42 @@ const BookShow = () => {
   })
 
 
-  // * Added by Marko for Wishlist functionality
+  // TODO ================================= Start of Wishlist functionality =================================
+
+  // * state
   const [ wishlistItem, setWishlistItem] = useState('❤️')
 
+  //* useEffect for status (has item been added to wishList or not?)
   useEffect(() => {
     const getWishListStatus = () => {
       if (JSON.parse(window.localStorage.getItem('wishlist'))) {
-        const wishlistString = JSON.parse(window.localStorage.getItem('fav-recipes')).map(value => JSON.stringify(value))
+        const wishlistString = JSON.parse(window.localStorage.getItem('wishlist')).map(value => JSON.stringify(value))
         wishlistString.indexOf(JSON.stringify(book)) !== -1 ? setWishlistItem('Remove from Wishlist 💔') : setWishlistItem('Add to Wishlist ❤️')
       }
     }
     getWishListStatus()
   }, [book])
 
+  // * function to add wishList item to local storage
+  const addToWishlist = () => {
+    let wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
+    if (wishlistArray === null) {
+      wishlistArray = [{ ...book }]
+      window.localStorage.setItem('wishlist', JSON.stringify(wishlistArray))
+    } else {
+      const wishlistArrayString = wishlistArray.map(value => JSON.stringify(value))
+      if (wishlistArrayString.indexOf(JSON.stringify(book)) === -1) {
+        wishlistArrayString.push(JSON.stringify(book))
+      } else {
+        wishlistArrayString.splice(wishlistArrayString.indexOf(JSON.stringify(book)), 1)
+      }
+      wishlistArray = wishlistArrayString.map(value => JSON.parse(value))
+      window.localStorage.setItem('wishlist', JSON.stringify(wishlistArray))
+    }
+    navigate('/account/wishlist')
+  }
 
+  // TODO ================================= end of Wishlist functionality =================================
   
   const settings = {
     dots: false,
@@ -128,7 +150,7 @@ const BookShow = () => {
             </Col>
             <Col md="6">
               <img src={book.image} alt={book.name} />
-
+              <button className="btn btn-dark" onClick={addToWishlist}>{wishlistItem}</button>
             </Col>
 
             <Col md="6">
