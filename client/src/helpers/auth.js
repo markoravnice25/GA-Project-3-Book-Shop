@@ -4,7 +4,7 @@ export const getTokenFromLocalStorage = () => {
 }
 
 export const getPayload = () => {
-  const token = window.localStorage.getItem('books')
+  const token = getTokenFromLocalStorage()
   
   if (!token) return
 

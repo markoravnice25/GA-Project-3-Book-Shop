@@ -26,6 +26,7 @@ const PageNavbar = () => {
         <Navbar.Brand as={Link} to='/'>
           Home
           <img src={logo}/>
+         
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
