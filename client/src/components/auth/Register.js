@@ -49,7 +49,7 @@ const Register = () => {
       {/* Heading */}
       <Form className='auth-register' onSubmit={handleSubmit}>
         <Row>
-          <h3 className='create-account'>CREATE AN ACCOUNT</h3>
+          <h3 className='create-account'>Testing! CREATE AN ACCOUNT</h3>
         </Row>
         {/* Description */}
         <Row>

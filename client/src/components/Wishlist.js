@@ -10,16 +10,16 @@ const WishList = () => {
 
   if (wishlistArray) {
     return (
-      <section className="cat-container">
+      <section>
         <h1>Wishlist!</h1>
-        <div className='cat-detail-grid'>
+        <div>
           {wishlistArray.map(book => {
             console.log(book)
             const { id, title, img } = book
             return (
               <Link to={`/books/${id}`} key={id}>
-                <div className='cat-detail-card'>
-                  <div className = 'cat-title'>{title}</div>
+                <div>
+                  <div>{title}</div>
                   <img src={img} alt ={title}/>
                 </div>
               </Link>
