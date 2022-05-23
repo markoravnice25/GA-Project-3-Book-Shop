@@ -31,6 +31,22 @@ const BookShow = () => {
     text: '',
   })
 
+
+  // * Added by Marko for Wishlist functionality
+  const [ wishlistItem, setWishlistItem] = useState('❤️')
+
+  useEffect(() => {
+    const getWishListStatus = () => {
+      if (JSON.parse(window.localStorage.getItem('wishlist'))) {
+        const wishlistString = JSON.parse(window.localStorage.getItem('fav-recipes')).map(value => JSON.stringify(value))
+        wishlistString.indexOf(JSON.stringify(book)) !== -1 ? setWishlistItem('Remove from Wishlist 💔') : setWishlistItem('Add to Wishlist ❤️')
+      }
+    }
+    getWishListStatus()
+  }, [book])
+
+
+  
   const settings = {
     dots: false,
     infinite: true,
@@ -112,7 +128,9 @@ const BookShow = () => {
             </Col>
             <Col md="6">
               <img src={book.image} alt={book.name} />
+
             </Col>
+
             <Col md="6">
 
               <h4>Author</h4>
