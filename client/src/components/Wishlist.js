@@ -6,27 +6,45 @@ import Col from 'react-bootstrap/esm/Col'
 import { Link } from 'react-router-dom'
 
 const WishList = () => {
-  const wishlistArray = JSON.parse(window.localStorage.getItem('wishlist')) 
+  const wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
 
   if (wishlistArray) {
     return (
-      <section>
+      <Container>
         <h1>Wishlist!</h1>
+        <hr />
         <div>
           {wishlistArray.map(book => {
             console.log(book)
-            const { id, title, img } = book
+            const { id, title, image, author, description, genre, price, subGenre, yearPublished } = book
             return (
-              <Link to={`/books/${id}`} key={id}>
-                <div>
-                  <div>{title}</div>
-                  <img src={img} alt ={title}/>
-                </div>
-              </Link>
+              <>
+                <Row>
+                  <Col>
+                    <Link to={`/books/${id}`} key={id}>
+                      <img src={image} alt={title} />
+                    </Link>
+                  </Col>
+                  <Col>
+                    <Link to={`/books/${id}`} key={id}>
+                      <div>{title}</div>
+                    </Link>
+                    <p>{author}</p>
+                    <p>{`￡${price}`}</p>
+                    <p>{genre}</p>
+                    <p>{subGenre}</p>
+                    <p>{yearPublished}</p>
+                  </Col>
+                  <hr />
+                </Row>
+
+              </>
+
+
             )
           })}
         </div>
-      </section>
+      </Container>
     )
   } else {
     return (
