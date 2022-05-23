@@ -17,7 +17,7 @@ const PageNavbar = () => {
 
   const handleLogout = () => {
 
-    window.localStorage.removeItem('books')
+    window.localStorage.removeItem('project-3-waterstones')
 
     navigate('/login')
   }
