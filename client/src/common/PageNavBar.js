@@ -17,7 +17,7 @@ const PageNavbar = () => {
 
   const handleLogout = () => {
 
-    window.localStorage.removeItem('books')
+    window.localStorage.removeItem('project-3-waterstones')
 
     navigate('/login')
   }
@@ -51,7 +51,7 @@ const PageNavbar = () => {
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <input type="text" name="searchTerm" placeholder='🔍Search...' onChange={handleChange} />
-        <button type="submit" className="btn btn-warning w-100" onClick={handleSubmit}>Submit</button>
+        <button type="submit" className="btn btn-dark btn-sm" onClick={handleSubmit}>Submit</button>
 
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
 
