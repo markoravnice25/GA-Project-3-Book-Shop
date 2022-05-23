@@ -36,6 +36,11 @@ const Reviews = () => {
         },
       })
       console.log('reviews --->', data)
+      // let toDelete = null
+      setReviews(reviews.filter(item => {
+        if (item.id === id) console.log('to delete', item)
+      }))
+
     } catch (error) {
       console.log(error)
     }
