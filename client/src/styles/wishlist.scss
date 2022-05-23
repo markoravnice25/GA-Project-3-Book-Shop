@@ -1,0 +1,70 @@
+
+  .container-styling {
+    .heading-div {
+      margin: 20px -100px 30px -100px;
+    }
+    .hr-line-first {
+      margin: 0 -100px 20px;
+    }
+    .heading {
+      font-family: 'Baskerville', sans-serif;
+      font-size: 30px;
+      margin-bottom: 2px;
+    }
+    .heading-paragraph {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-weight: 300;
+      color: #000;
+    }
+    .row-styling {
+      margin: 0 -100px;
+      .column-one {
+        margin: 0 0 17px 0;
+        .book-image {
+          width: 130px;
+        }
+      }
+      .column-two {
+        margin: 0 0 17px 0;
+        .title {
+          color: black;
+          text-decoration: none;
+          font-family: 'Baskerville', 'sans-serif';
+          font-size: 18px;
+        }
+        .col-two-items {
+          margin-bottom: -11px;
+        }
+        .author {
+          color:  #9e866b;
+          font-size: 15px;
+        }
+        .price {
+          font-family: 'Source Sans Pro', Arial, sans-serif;
+          color: black;
+          font-size: 17px;
+          font-weight: 100;
+          .price-number {
+            font-weight: bold;
+          }
+        }
+        .sub-genre {
+          font-family: 'Source Sans Pro',Arial,sans-serif;
+          font-size: 16px;
+          font-weight: bold;
+          color: #5c5c5c;
+        }
+        .description {
+          font-family: 'Source Sans Pro',Arial,sans-serif;
+          font-size: 15px;
+          font-weight: 300;
+          color: #000;
+        }
+      }
+    }
+  }
+
+
+
+
+

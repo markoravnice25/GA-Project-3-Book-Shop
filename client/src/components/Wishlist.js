@@ -10,30 +10,42 @@ const WishList = () => {
 
   if (wishlistArray) {
     return (
-      <Container>
-        <h1>Wishlist!</h1>
-        <hr />
+      <Container className='container-styling'>
+        <Row className='heading-div'>
+          <h2 className='heading'>My wish list</h2>
+          <p className='heading-paragraph'>A wishlist by ________</p>
+        </Row>
+        <hr className='hr-line-first'/>
         <div>
           {wishlistArray.map(book => {
             console.log(book)
             const { id, title, image, author, description, genre, price, subGenre, yearPublished } = book
             return (
               <>
-                <Row>
-                  <Col>
+                <Row className='row-styling'>
+                  <Col sm='3' md='3' lg='2' className='column-one'>
                     <Link to={`/books/${id}`} key={id}>
-                      <img src={image} alt={title} />
+                      <img className='book-image' src={image} alt={title} />
                     </Link>
                   </Col>
-                  <Col>
-                    <Link to={`/books/${id}`} key={id}>
-                      <div>{title}</div>
+                  <Col sm='9' md='9' lg='10' className='column-two'>
+                    <Link className='text-decoration-none' to={`/books/${id}`} key={id}>
+                      <div>
+                        <p className='title'>{title}</p>
+                      </div>
                     </Link>
-                    <p>{author}</p>
-                    <p>{`￡${price}`}</p>
-                    <p>{genre}</p>
-                    <p>{subGenre}</p>
-                    <p>{yearPublished}</p>
+                    <div className='col-two-items author'>
+                      <p>{author}</p>
+                    </div>
+                    <div className='col-two-items'>
+                      <p className='price'>￡<span className='price-number'>{price}</span></p>
+                    </div>
+                    <div className='col-two-items sub-genre'>
+                      <p>{subGenre}</p>
+                    </div>
+                    <div className='col-two-items description'>
+                      <p>{description}</p>
+                    </div>
                   </Col>
                   <hr />
                 </Row>
