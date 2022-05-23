@@ -9,6 +9,7 @@ export const registerUser = async (req, res) => {
   const { body } = req
   console.log(body)
   try {
+    console.log('received')
     const newUser = await User.create(body)
     return res.status(200).json({ message: `Welcome to Miami ${newUser.username}` })
   } catch (error) {

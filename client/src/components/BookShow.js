@@ -2,8 +2,14 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ReviewDisplay } from './ReviewDisplay'
+import { SimilarBookDisplay } from './SimilarBookDisplay'
+// slider
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
-// Bootstrap components
+
+// Bootstrap components76t
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -16,12 +22,23 @@ const BookShow = () => {
   const [review, setReview] = useState('')
   const [book, setBook] = useState(null)
   const [errors, setErrors] = useState(false)
+  //for section display same subgenre books
+  const [similarBooks, setSimilarBooks] = useState([])
+
   // reviewform
   const [formData, setFormData] = useState({
     title: '',
     text: '',
   })
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 400,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  }
+  // to get single book
   useEffect(() => {
     const getBook = async () => {
       try {
@@ -35,6 +52,19 @@ const BookShow = () => {
       }
     }
     getBook()
+  }, [id])
+  // to get all the books
+  useEffect(() => {
+    const getSimilarBooks = async () => {
+      try {
+        const { data } = await axios.get('/api/books')
+        setSimilarBooks(data)
+      } catch (error) {
+        setErrors(true)
+
+      }
+    }
+    getSimilarBooks()
   }, [id])
 
   // This useEffect checks to see if the user is the owner
@@ -62,7 +92,6 @@ const BookShow = () => {
         },
       })
       navigate(`/books/${data._id}`)
-      return ('you have submit your review')
     } catch (error) {
       console.log(error)
       console.log(error.response.data)
@@ -89,7 +118,7 @@ const BookShow = () => {
               <h4>Author</h4>
               <p>{book.author}</p>
               <hr />
-            
+
               <h4>price</h4>
               <p>£{book.price}</p>
               <hr />
@@ -110,8 +139,8 @@ const BookShow = () => {
               }</div>
               <hr />
 
-              
-            
+
+
 
               {userIsAuthenticated() ?
                 <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-4' onSubmit={handleSubmit}>
@@ -119,13 +148,13 @@ const BookShow = () => {
                   {/* reviewTitle */}
                   <label htmlFor="reviewTitle">ReviewTitle</label>
                   {/* <input type="text" name="reviewTitle" className='input' placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange} /> */}
-                  <textarea type="text" name="reviewTitle" className="input" rows="2" placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange}></textarea>
+                  <textarea type="text" name="title" className="input" rows="2" placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange}></textarea>
 
                   {errors.reviewTitle && <p className='text-danger'>{errors.reviewTitle}</p>}
                   {/* reviewText */}
                   <label htmlFor="reviewText">ReviewText</label>
                   {/* <input type="text" name="reviewText" className='input' placeholder='write your review here' value={formData.reviewText} onChange={handleChange} /> */}
-                  <textarea type="text" name="reviewText" className="input" rows="5" placeholder='write your review here' value={formData.reviewText} onChange={handleChange}></textarea>
+                  <textarea type="text" name="text" className="input" rows="5" placeholder='write your review here' value={formData.reviewText} onChange={handleChange}></textarea>
 
 
                   {errors.reviewText && <p className='text-danger'>{errors.reviewText}</p>}
@@ -136,7 +165,7 @@ const BookShow = () => {
                 :
                 (
                   <div className="add-review-container">
-                    <div>                       
+                    <div>
                       <p>🖋<Link to="/login">Sign in </Link>to write a review</p>
                       <p>Not Registered Yet? <Link to="/register">Register</Link> instead</p>
                     </div>
@@ -147,9 +176,19 @@ const BookShow = () => {
 
                   </div>
                 )}
-
-
             </Col>
+
+            <h4>You may also be interested in...</h4>
+            <div>
+              <Slider {...settings} className='carousel-wrapper'>{
+                similarBooks.filter((item) => item.subGenre === book.subGenre && item.id !== book.id).map((item) => {
+                  return <SimilarBookDisplay key={item.id} item={item} />
+                })
+              }
+              </Slider>
+            </div>
+
+
           </>
           :
           <h2 className='text-center'>
@@ -162,6 +201,8 @@ const BookShow = () => {
       </Row>
 
     </Container>
+
+
 
   )
 
