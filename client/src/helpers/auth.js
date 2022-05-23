@@ -1,6 +1,6 @@
 
 export const getTokenFromLocalStorage = () => {
-  return window.localStorage.getItem('books')
+  return window.localStorage.getItem('project-3-waterstones')
 }
 
 export const getPayload = () => {
