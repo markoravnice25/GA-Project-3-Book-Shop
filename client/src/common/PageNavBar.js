@@ -50,7 +50,7 @@ const PageNavbar = () => {
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <input type="text" name="searchTerm" placeholder='🔍Search...' onChange={handleChange} />
+        <input type="text" name="searchTerm" placeholder='🔍Search Book here...' onChange={handleChange} />
         <button type="submit" className="btn btn-dark btn-sm" onClick={handleSubmit}>Submit</button>
 
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>

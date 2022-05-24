@@ -135,7 +135,7 @@ export default [
     genre: 'Fiction',
     subGenre: 'Historical Fiction',
     title: 'Songbirds',
-    image: 'image.png',
+    image: 'https://cdn.waterstones.com/bookjackets/large/9781/7865/9781786580856.jpg',
     author: 'Christy Lefteri ',
     description: 'The disappearance of a Sri Lankan nanny from her new life in Nicosia is the catalyst for an unexpected, moving journey through hidden lives and layered secrets. A mesmerising novel that puts real faces to the immigrant experience, from the author of The Beekeeper of Aleppo.',
     authors: '',
