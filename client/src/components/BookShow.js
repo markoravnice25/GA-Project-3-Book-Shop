@@ -130,6 +130,7 @@ const BookShow = () => {
         },
       })
       navigate(`/books/${data._id}`)
+      console.log(data._id)
     } catch (error) {
       console.log(error)
       console.log(error.response.data)

@@ -8,3 +8,4 @@ const Spinner = () => (
     <img src={spinner} alt="Spinner" className="spinner" />
   </div>
 )
+export default Spinner

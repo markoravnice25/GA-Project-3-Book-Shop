@@ -3,7 +3,7 @@ import { showBooks, showSingleBook } from '../controllers/books.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { addReview } from '../controllers/booksReviews.js'
 import { secureRoute } from './secureRoute.js'
-import { getProfile } from '../controllers/users.js'
+// import { getProfile, updateProfile, showUsers, deleteUser } from '../controllers/users.js'
 import { getReviews, deleteReview } from '../controllers/reviews.js'
 
 const router = express.Router()
@@ -31,10 +31,19 @@ router.route('/books/:id/reviews')
 router.route('/account')
   .get(secureRoute, getProfile)
 
+router.route('/account/profile')
+  .put(secureRoute, updateProfile)
+
 router.route('/account/reviews')
   .get(secureRoute, getReviews)
 
 router.route('/account/reviews/:reviewId')
   .delete(secureRoute, deleteReview)
+
+// router.route('/users')
+//   .get(showUsers)
+
+router.route('/users/:id')
+  .delete(deleteUser)
 
 export default router

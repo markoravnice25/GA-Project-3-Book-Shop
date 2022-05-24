@@ -13,7 +13,7 @@ const PageNavbar = () => {
   const [errors, setErrors] = useState(false)
   
   const navigate = useNavigate()
-  console.log(userIsAuthenticated())
+  // console.log(userIsAuthenticated())
 
   const handleLogout = () => {
 

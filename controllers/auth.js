@@ -11,7 +11,7 @@ export const registerUser = async (req, res) => {
   try {
     console.log('received')
     const newUser = await User.create(body)
-    return res.status(200).json({ message: `Welcome to Miami ${newUser.username}` })
+    return res.status(200).json({ message: `Welcome to Miami ${newUser.firstName}` })
   } catch (error) {
     console.log(error)
     return res.status(422).json(error)
@@ -33,7 +33,7 @@ export const loginUser = async (req, res) => {
     const token = jwt.sign({ sub: userToLogin._id }, process.env.SECRET, { expiresIn: '6h' })
     console.log('token -> ', token)
 
-    return res.status(200).json({ message: `Welcome back ${userToLogin.username}`, token: token })
+    return res.status(200).json({ message: `Welcome back ${userToLogin.firstName}`, token: token })
   } catch (error) {
     console.log(error)
     return res.status(422).json({ message: 'unauthorised champ' })

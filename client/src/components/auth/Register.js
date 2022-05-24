@@ -37,8 +37,8 @@ const Register = () => {
       await axios.post('/api/register', formData)
       navigate('/login')
     } catch (error) {
-      console.log(error.response.data.errors)
-      setErrors(error.response.data.errors)
+      console.log(error)
+      setErrors(error)
       console.log('checking setErrors')
     }
   }
@@ -65,8 +65,10 @@ const Register = () => {
         <Row className='form-label'>
           <Col sm={6}>
             <Form.Group className='mb-3' as={Col} controlId="formGridState">
-              <Form.Label>Title*</Form.Label>
+              <Form.Label>Title*</Form.Label> 
               <Form.Select className='trigger' name='title' value={formData.title} onChange={handleChange} >
+                
+                
                 <option>Please select</option>
                 <option>Mr</option>
                 <option>Mrs</option>
@@ -76,6 +78,7 @@ const Register = () => {
                 <option>Prof</option>
                 <option>Rev</option>
                 <option>Mx</option>
+               
               </Form.Select>
               {errors.title && <p className='text-danger'>{errors.title.message}</p>}
             </Form.Group>
@@ -86,12 +89,12 @@ const Register = () => {
           <Form.Group as={Col}>
             <Form.Label>First name*</Form.Label>
             <Form.Control type="text" name='firstName' value={formData.firstName} onChange={handleChange} />
-            {errors.firstName && <p className='text-danger'>{errors.firstName.message}</p>}
+            {errors.firstName && <p className='text-danger'>{errors.firstName}</p>}
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Last name*</Form.Label>
             <Form.Control type="text" name='lastName' value={formData.lastName} onChange={handleChange} />
-            {errors.lastName && <p className='text-danger'>{errors.lastName.message}</p>}
+            {errors.lastName && <p className='text-danger'>{errors.lastName}</p>}
           </Form.Group>
         </Row>
         {/* Email */}
@@ -99,12 +102,12 @@ const Register = () => {
           <Form.Group as={Col} controlId="formGridEmail">
             <Form.Label>Email*</Form.Label>
             <Form.Control type="email" name='email' value={formData.email} onChange={handleChange} />
-            {errors.email && <p className='text-danger'>{errors.email.message}</p>}
+            {errors.email && <p className='text-danger'>{errors.email}</p>}
           </Form.Group>
           <Form.Group as={Col}>
             <Form.Label>Confirm email*</Form.Label>
             <Form.Control type="email" name='confirmEmail' value={formData.confirmEmail} onChange={handleChange} />
-            {errors.confirmEmail && <p className='text-danger'>{errors.confirmEmail.message}</p>}
+            {errors.confirmEmail && <p className='text-danger'>{errors.confirmEmail}</p>}
           </Form.Group>
         </Row>
         {/* Password */}
@@ -112,12 +115,12 @@ const Register = () => {
           <Form.Group as={Col}>
             <Form.Label>Choose a password*</Form.Label>
             <Form.Control type="password" name='password' value={formData.password} onChange={handleChange} />
-            {errors.password && <p className='text-danger'>{errors.password.message}</p>}
+            {errors.password && <p className='text-danger'>{errors.password}</p>}
           </Form.Group>
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Confirm password*</Form.Label>
             <Form.Control type="password" name='passwordConfirmation' value={formData.passwordConfirmation} onChange={handleChange} />
-            {errors.passwordConfirmation && <p className='text-danger'>{errors.passwordConfirmation.message}</p>}
+            {errors.passwordConfirmation && <p className='text-danger'>{errors.passwordConfirmation}</p>}
           </Form.Group>
         </Row>
         {/* Checkboxes and register button */}
