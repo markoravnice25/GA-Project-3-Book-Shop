@@ -88,14 +88,15 @@ export const addItemToWishlist = async (req, res) => {
     console.log('Single wishListItem ->', wishListItem)
 
     if (userAccount.wishlist.some(item => item.id === bookId)) {
+      userAccount.wishlist.remove(bookId)
+      userAccount.save()
+      console.log('userAccount.wishlist AFTER remove ->', userAccount.wishlist)
       return res.status(200).json(userAccount.wishlist)
     }
 
+    // both push and remove methods modelled from stackoverflow solution - link:
     // https://stackoverflow.com/questions/33049707/push-items-into-mongo-array-via-mongoose
-    // User.update(
-    //   { _id: req.verifiedUser._id },
-    //   { $push: { wishlist: wishListItem } }
-    // )
+
     userAccount.wishlist.push(wishListItem)
     userAccount.save()
     console.log('Account after push of new wishListItem ->', userAccount)
@@ -108,29 +109,29 @@ export const addItemToWishlist = async (req, res) => {
 }
 
 // TODO Delete item from wishlist
-export const removeItemFromWishlist = async (req, res) => {
-  const { bookId } = req.params
-  console.log('bookId ->', bookId)
-  try {
-    const userAccount = await User.findById(req.verifiedUser._id)
-    console.log('userAccount ->', userAccount)
-    if (!userAccount) throw new Error('unauthorised user - please log in to continue')
+// ? delete method not needed as it has been used in post method for items which have already been added to userAccount.wishlist
+// ? on the front end - the wishlist button will toggle between add/remove to wishlist dependant if the item has/hasn't been added to the wishlist
+// export const removeItemFromWishlist = async (req, res) => {
+//   const { bookId } = req.params
+//   console.log('bookId ->', bookId)
+//   try {
+//     const userAccount = await User.findById(req.verifiedUser._id)
+//     console.log('userAccount ->', userAccount)
+//     if (!userAccount) throw new Error('unauthorised user - please log in to continue')
 
-    const bookToRemove = await Book.findById(bookId)
-    console.log('bookToRemove ->', bookToRemove)
-    if (!bookToRemove) throw new Error('incorrect ID - check URL')
+//     const bookToRemove = await Book.findById(bookId)
+//     console.log('bookToRemove ->', bookToRemove)
+//     if (!bookToRemove) throw new Error('incorrect ID - check URL')
 
-    console.log('userAccount.wishlist PRE remove ->', userAccount.wishlist)
-    userAccount.wishlist.remove(bookId)
-    userAccount.save()
-    console.log('userAccount.wishlist AFTER remove ->', userAccount.wishlist)
+//     console.log('userAccount.wishlist PRE remove ->', userAccount.wishlist)
+//     userAccount.wishlist.remove(bookId)
+//     userAccount.save()
+//     console.log('userAccount.wishlist AFTER remove ->', userAccount.wishlist)
 
-    return res.status(200).json(userAccount.wishlist)
-  } catch (error) {
-    console.log(error)
-    return res.status(404).json(error)
-  }
-
-
+//     return res.status(200).json(userAccount.wishlist)
+//   } catch (error) {
+//     console.log(error)
+//     return res.status(404).json(error)
+//   }
 
 }
