@@ -6,7 +6,8 @@ import { secureRoute } from './secureRoute.js'
 import { getProfile, updateProfile, deleteUser } from '../controllers/users.js'
 import { addItemToWishlist } from '../controllers/users.js'
 import { getReviews, deleteReview } from '../controllers/reviews.js'
-import { removeItemFromWishlist } from '../controllers/users.js'
+// import { removeItemFromWishlist } from '../controllers/users.js'
+import { getWishlist } from '../controllers/users.js'
 
 const router = express.Router()
 
@@ -51,6 +52,10 @@ router.route('/users/:id')
 // add item to wishlist
 router.route('/account/wishlist/:bookId')
   .post(secureRoute, addItemToWishlist)
+
+// get wishlist
+router.route('/account/wishlist')
+  .get(secureRoute, getWishlist)
 
 //TODO .delete request used in .post request - see notes in /controllers/users.js
 // router.route('/account/wishlist/:bookId')

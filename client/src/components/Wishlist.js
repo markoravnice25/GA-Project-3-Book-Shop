@@ -4,12 +4,24 @@ import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import Col from 'react-bootstrap/esm/Col'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
+const [ wishlist, setWishlist ] = useState([])
 
 const WishList = () => {
-  const wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
-  // get from API
+  // const wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
 
-  if (wishlistArray) {
+  // get from API
+  useEffect(() => {
+    const getWishlist = async () => {
+      const { data } = await axios.get('api/account/wishlist')
+      setWishlist(data)
+    }
+    getWishlist()
+    console.log(getWishlist)
+  }, [])
+
+  if (wishlist) {
     return (
       <Container className='container-styling'>
         <Row className='heading-div'>
@@ -18,7 +30,7 @@ const WishList = () => {
         </Row>
         <hr className='hr-line-first'/>
         <div>
-          {wishlistArray.map(book => {
+          {wishlist.map(book => {
             console.log(book)
             const { id, title, image, author, description, genre, price, subGenre, yearPublished } = book
             return (
@@ -52,8 +64,6 @@ const WishList = () => {
                 </Row>
 
               </>
-
-
             )
           })}
         </div>

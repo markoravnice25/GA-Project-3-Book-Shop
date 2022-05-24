@@ -108,6 +108,17 @@ export const addItemToWishlist = async (req, res) => {
   }
 }
 
+//TODO get method for wishlist
+export const getWishlist = async (req, res) => {
+  try {
+    const userAccount = await User.findById(req.verifiedUser._id)
+    console.log(userAccount.wishlist)
+    return res.status(200).json(userAccount.wishlist)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 // TODO Delete item from wishlist
 // ? delete method not needed as it has been used in post method for items which have already been added to userAccount.wishlist
 // ? on the front end - the wishlist button will toggle between add/remove to wishlist dependant if the item has/hasn't been added to the wishlist
@@ -133,5 +144,4 @@ export const addItemToWishlist = async (req, res) => {
 //     console.log(error)
 //     return res.status(404).json(error)
 //   }
-
-}
+// }
