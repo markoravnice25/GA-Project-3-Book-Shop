@@ -1,10 +1,5 @@
 import mongoose from 'mongoose'
-<<<<<<< HEAD
-
-import reviewSchema from './schemas/review.js'
-=======
 import bookSchema from './schemas/book.js'
->>>>>>> development
 
 
 //TODO =================== reviewSchema moved to /schemas/review.js ==========================
