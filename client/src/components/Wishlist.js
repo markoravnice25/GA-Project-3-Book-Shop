@@ -1,34 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import Col from 'react-bootstrap/esm/Col'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { getTokenFromLocalStorage } from '../helpers/auth'
 
-const [ wishlist, setWishlist ] = useState([])
 
 const WishList = () => {
   // const wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
 
+  const [ wishlist, setWishlist ] = useState([])
+
+
   // get from API
   useEffect(() => {
     const getWishlist = async () => {
-      const { data } = await axios.get('api/account/wishlist')
+      const { data } = await axios.get('/api/account/wishlist/', {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+      })
       setWishlist(data)
     }
     getWishlist()
-    console.log(getWishlist)
   }, [])
 
-  if (wishlist) {
+  console.log(wishlist)
+
+  if (wishlist && wishlist[0]) {
     return (
       <Container className='container-styling'>
         <Row className='heading-div'>
           <h2 className='heading'>My wish list</h2>
           <p className='heading-paragraph'>A wishlist by ________</p>
         </Row>
-        <hr className='hr-line-first'/>
+        <hr className='hr-line-first' />
         <div>
           {wishlist.map(book => {
             console.log(book)
@@ -72,8 +79,8 @@ const WishList = () => {
   } else {
     return (
       <section className="cat-container">
-        <h1>Favorites</h1>
-        <h3>No favorites added! :(</h3>
+        <h2 className='heading'>My wish list</h2>
+        <p className='heading-paragraph'>No items added to wishlist yet</p>
       </section>
     )
   }
