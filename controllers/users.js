@@ -23,27 +23,27 @@ export const getProfile = async (req, res) => {
 export const addItemToWishlist = async (req, res) => {
   console.log('testing wishlist request')
   const { id } = req.body
-  console.log(id)
+  console.log('destructured id ->', id)
   try {
     if (!req.verifiedUser || !req.verifiedUser._id) throw new Error('You\'re not logged in')
 
-    const account = await User.findById(req.verifiedUser._id) 
-    console.log(account)
+    const userAccount = await User.findById(req.verifiedUser._id) 
+    console.log('Account pre push of new wishListItem ->', userAccount)
 
     const wishListItem = await Book.findById(id)
     if (!wishListItem) throw new Error('book not found')
-    console.log(wishListItem)
+    console.log('Single wishListItem ->', wishListItem)
    
     // https://stackoverflow.com/questions/33049707/push-items-into-mongo-array-via-mongoose
     // User.update(
     //   { _id: req.verifiedUser._id },
     //   { $push: { wishlist: wishListItem } }
     // )
-    account.wishlist.push(wishListItem)
-    account.save()
-    const wishlistArray = account.wishlist
-    console.log('wishlistArray ->', wishlistArray)
-    return res.status(200).json(wishlistArray)
+    userAccount.wishlist.push(wishListItem)
+    userAccount.save()
+    console.log('Account after push of new wishListItem ->', userAccount)
+    console.log('userAccount.wishlist ->', userAccount.wishlist)
+    return res.status(200).json(userAccount.wishlist)
   } catch (error) {
     console.log(error)
     return res.status(422).json(error)

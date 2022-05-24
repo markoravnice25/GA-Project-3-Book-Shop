@@ -35,7 +35,7 @@ const BookShow = () => {
   // TODO ================================= Start of Wishlist functionality =================================
 
   // * state
-  const [ wishlistItem, setWishlistItem] = useState('❤️')
+  const [ wishlistItem, setWishlistItem] = useState('🎁')
 
   //* useEffect for status (has item been added to wishList or not?)
   useEffect(() => {
