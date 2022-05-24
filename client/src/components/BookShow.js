@@ -18,7 +18,7 @@ import Spinner from '../utilities/Spinner'
 import { userIsAuthenticated, userIsOwner, getTokenFromLocalStorage } from '../helpers/auth'
 const BookShow = () => {
   const navigate = useNavigate()
-  const { id, reviewID } = useParams()
+  const { id, reviewID, bookId } = useParams()
   const [review, setReview] = useState('')
   const [book, setBook] = useState(null)
   const [errors, setErrors] = useState(false)
@@ -49,22 +49,26 @@ const BookShow = () => {
   }, [book])
 
   // * function to add wishList item to local storage
-  const addToWishlist = () => {
-    let wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
-    if (wishlistArray === null) {
-      wishlistArray = [{ ...book }]
-      window.localStorage.setItem('wishlist', JSON.stringify(wishlistArray))
-    } else {
-      const wishlistArrayString = wishlistArray.map(value => JSON.stringify(value))
-      if (wishlistArrayString.indexOf(JSON.stringify(book)) === -1) {
-        wishlistArrayString.push(JSON.stringify(book))
-      } else {
-        wishlistArrayString.splice(wishlistArrayString.indexOf(JSON.stringify(book)), 1)
-      }
-      wishlistArray = wishlistArrayString.map(value => JSON.parse(value))
-      window.localStorage.setItem('wishlist', JSON.stringify(wishlistArray))
-    }
-    navigate('/account/wishlist')
+  // const addToWishlist = () => {
+  //   let wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
+  //   if (wishlistArray === null) {
+  //     wishlistArray = [{ ...book }]
+  //     window.localStorage.setItem('wishlist', JSON.stringify(wishlistArray))
+  //   } else {
+  //     const wishlistArrayString = wishlistArray.map(value => JSON.stringify(value))
+  //     if (wishlistArrayString.indexOf(JSON.stringify(book)) === -1) {
+  //       wishlistArrayString.push(JSON.stringify(book))
+  //     } else {
+  //       wishlistArrayString.splice(wishlistArrayString.indexOf(JSON.stringify(book)), 1)
+  //     }
+  //     wishlistArray = wishlistArrayString.map(value => JSON.parse(value))
+  //     window.localStorage.setItem('wishlist', JSON.stringify(wishlistArray))
+  //   }
+  //   navigate('/account/wishlist')
+  // }
+
+  const addOrRemove = async () => {
+    const { data } = await axios.post(`api/account/wishlist/${bookId}`)
   }
 
   // TODO ================================= end of Wishlist functionality =================================
@@ -151,7 +155,7 @@ const BookShow = () => {
             </Col>
             <Col md="6">
               <img src={book.image} alt={book.name} />
-              <button className="wishlist-button" onClick={addToWishlist}>{wishlistItem}</button>
+              <button className="wishlist-button" onClick={addOrRemove}>{wishlistItem}</button>
             </Col>
 
             <Col md="6">
