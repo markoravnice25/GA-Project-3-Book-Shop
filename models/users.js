@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 import mongooseUniqueValidator from 'mongoose-unique-validator'
+import bookSchema from './schemas/book.js'
 
 const userSchema = new mongoose.Schema({
   title: { type: String, enum: ['Mr', 'Mrs', 'Ms', 'Miss', 'Dr', 'Prof', 'Rev', 'Mx'], required: true },
@@ -8,7 +9,8 @@ const userSchema = new mongoose.Schema({
   lastName: { type: String, required: true, maxlength: 30 },
   email: { type: String, required: true, unique: true },
   confirmEmail: { type: String, required: true, unique: true },
-  password: { type: String },
+  password: { type: String, required: true },
+  wishlist: [bookSchema],
 }, { id: false })
 
 userSchema
