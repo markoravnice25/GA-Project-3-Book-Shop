@@ -43,31 +43,8 @@ export const updateProfile = async (req, res) => {
 }
 
 
-// export const showUsers = async (req, res) => {
-//   const users = await User.find()
-//   console.log('get users')
-//   return res.status(200).json(users)
-// }
-
-// export const deleteUser = async (req, res) => {
-
-//   const { id } = req.params
-//   console.log(req.params)
-
-//   try {
-//     const user = await User.findById(id)
-
-//     if (!user) throw new Error('Book not found')
 
 
-//     await user.remove()
-
-//     return res.sendStatus(204)
-//   } catch (error) {
-//     console.log(error)
-//     return res.status(401).json({ message: 'Unauthorised' })
-//   }
-// }
 // METHOD: POST
 // Endpoint: /account/wishlist
 // descritption: req.body ->  genre, subGenre, image, author, description, yearPublished, price, reviews
