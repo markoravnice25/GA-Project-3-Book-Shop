@@ -1,0 +1,33 @@
+.reviews-wrapper{
+  width: 90%;
+  margin: auto;
+
+  .reviews-page-box{
+    display: flex;
+
+    .reviews-page-img-wrapper{
+
+      .reviews-page-img{
+        width: 150px;
+        text-align: center;
+      }
+    }
+
+    .reviews-page-body{
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+
+      .reviews-page-text{
+        h4{
+          font-size: 20px;
+          font-style: italic;
+        }
+      }
+      button{
+        width: 150px;
+      }
+    }
+  }
+
+}

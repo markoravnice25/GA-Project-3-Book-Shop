@@ -5,11 +5,10 @@ import Book from '../models/books.js'
 export const getReviews = async (req, res) => {
 
   try {
-  
-    const ownedReviews = await Review.find( { owner: req.verifiedUser._id } )
-    console.log('request new --->', req)
+
+    const ownedReviews = await Review.find( { owner: req.verifiedUser._id } ).populate('book')
     if (!ownedReviews) throw new Error('User not found')
-    
+
     return res.status(200).json(ownedReviews)
   } catch (error) {
     console.log(error)
@@ -25,7 +24,8 @@ export const deleteReview = async (req, res) => {
     const reviewToDelete = await Review.findById(reviewId)
     const book = await Book.findOne(id)
     const reviewToDeleteFromBook = book.reviews.id(reviewId)
-    console.log('book --->,', book)
+    console.log('review to delete from book again --->,', reviewToDeleteFromBook)
+    console.log('review Id --->', reviewId)
     if (!reviewToDelete) throw new Error('Review not found')
     
     await reviewToDelete.remove()

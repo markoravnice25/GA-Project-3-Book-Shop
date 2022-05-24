@@ -10,5 +10,19 @@ const reviewSchema = new mongoose.Schema({
   timestamps: true ,
 })
 
+reviewSchema.virtual('book', {
+  ref: 'Book',
+  localField: '_id',
+  foreignField: 'reviews._id',
+})
+
+reviewSchema.set('toJSON', {
+  virtuals: true,
+  transform(_doc, json){
+    console.log('json --->', json)
+    return json
+  },
+})
+
 reviewSchema.plugin(mongooseUniqueValidator)
 export default reviewSchema

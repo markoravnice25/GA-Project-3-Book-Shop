@@ -5,18 +5,16 @@ export const addReview = async (req, res) => {
   const { id } = req.params
 
   try {
-    const bookToUpdate = await Book.findById(id)
-    if (!bookToUpdate) throw new Error('Book not found')
+    const book = await Book.findById(id)
+    if (!book) throw new Error('Book not found')
 
     const reviewWithOwner = { ...req.body, owner: req.verifiedUser._id }
     const newReview = await Review.create(reviewWithOwner)
-    console.log('reviewWithOwner --->', reviewWithOwner)
 
-    //bookToUpdate.reviews.push(reviewWithOwner)
-    bookToUpdate.reviews.push(newReview)
-    await bookToUpdate.save()
-    console.log(bookToUpdate)
-    return res.status(200).json(reviewWithOwner)
+    //book.reviews.push(reviewWithOwner)
+    book.reviews.push(newReview)
+    await book.save()
+    return res.status(200).json(newReview)
   } catch (error) {
     console.log(error)
     return res.status(422).json(error)
@@ -26,7 +24,6 @@ export const addReview = async (req, res) => {
 export const deleteReview = async (req, res) => {
 
   const { id, reviewId } = req.params
-  console.log(req.params)
 
   try {
     const book = await Book.findById(id)
@@ -39,7 +36,7 @@ export const deleteReview = async (req, res) => {
     await reviewToDelete.remove()
 
     await book.save()
-    return res.sendStatus(204)
+    return res.sendStatus(204).json('Deleted')
   } catch (error) {
     console.log(error)
     return res.status(401).json({ message: 'Unauthorised' })
