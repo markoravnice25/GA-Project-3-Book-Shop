@@ -27,7 +27,8 @@ const SearchResult = () => {
       const regexSearch = new RegExp(term, 'i')
 
       const filtered = books.filter(book => {
-        return regexSearch.test(book.title)
+        return regexSearch.test(book.title) 
+        
 
       })
       setFilteredBooks(filtered)

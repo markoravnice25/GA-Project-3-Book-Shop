@@ -22,8 +22,8 @@ const ProfileEdit = () => {
     // newemail: '',
     confirmEmail: '',
     password: '',
-    // newpassword: '',
-    passwordConfirmation: '',
+    newpassword: '',
+    _passwordConfirmation: '',
   })
 
   const [errors, setErrors] = useState({})
@@ -56,12 +56,80 @@ const ProfileEdit = () => {
     setErrors({ ...errors, [e.target.name]: '' })
   }
 
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
 
-      const { data } = await axios.put('/api/account', formData, {
+      const { data } = await axios.put('/api/account/profile', formData, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+
+      })
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  }
+
+
+  const handleSubmitDetails = async (e) => {
+    e.preventDefault()
+    try {
+      const formDataDetails = {
+        title: formData.title,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+      }
+      console.log('form', formDataDetails)
+      const { data } = await axios.put('/api/account/profile', formDataDetails, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+
+      })
+      console.log('data', data)
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  }
+
+  const handleSubmitEmail = async (e) => {
+    e.preventDefault()
+    try {
+
+      const formDataEmail = {
+        email: formData.email,
+        confirmEmail: formData.confirmEmail,
+
+      }
+
+      const { data } = await axios.put('/api/account/profile', formDataEmail, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+
+      })
+
+    } catch (error) {
+      console.log(error)
+
+    }
+  }
+
+  const handleSubmitPassword = async (e) => {
+    e.preventDefault()
+    try {
+      const formDataPassword = {
+        password: formData.password,
+        _passwordConfirmation: formData._passwordConfirmation,
+
+      }
+
+      const { data } = await axios.put('/api/account/profile', formDataPassword, {
         headers: {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         },
@@ -78,12 +146,10 @@ const ProfileEdit = () => {
   return (
 
     <section className='section-profile'>
-      <h2 className='text-center'>Your Profile</h2>
-      <p>Become part of Britain&rsquo;s home of reading by introducing who you are. The more you share, the more rewarding your experience will be and you can amend your details at any time.</p>
+      <h2 className='text-center mt-5'>Your Profile</h2>
+      <p className='text-center'>Become part of Britain&rsquo;s home of reading by introducing who you are. The more you share, the more rewarding your experience will be and you can amend your details at any time.</p>
       {/* Heading */}
-      <Form className='edit-profile' onSubmit={handleSubmit}>
-
-
+      <Form className='edit-profile' onSubmit={handleSubmitDetails}>
         <Row>
           <p className='create-account-paragraph-2'>Denotes required field *</p>
         </Row>
@@ -123,24 +189,29 @@ const ProfileEdit = () => {
         </Row>
 
         <Form.Group as={Col}>
-          <Button className='button-register mb-5' type="submit" onSubmit={handleSubmit}>
+          <Button className='button-register mb-5' type="submit">
             UPDATE DETAILS
           </Button>
         </Form.Group>
+      </Form>
+
+
+      <Form className='edit-profile' onSubmit={handleSubmitEmail}>
+
         {/* Email */}
         <h2>Email Address</h2>
         <p>To change your registered email address, please enter your new address below.</p>
         <Row className="mb-3 form-label">
           <Form.Group as={Col} controlId="formGridEmail">
 
-            <Form.Label>Current Email*</Form.Label>
+            <Form.Label>Email*</Form.Label>
             <Form.Control type="email" name='email' value={formData.email} onChange={handleChange} />
             {errors.email && <p className='text-danger'>{errors.email.message}</p>}
           </Form.Group>
 
           {/* newform update */}
 
-         
+
 
 
           <Form.Group as={Col} controlId="formGridEmail">
@@ -150,34 +221,38 @@ const ProfileEdit = () => {
           </Form.Group>
         </Row>
         <Form.Group as={Col}>
-          <Button className='button-register mb-5' type="submit" onSubmit={handleSubmit} >
+          <Button className='button-register mb-5' type="submit" >
             UPDATE EMAIL
           </Button>
         </Form.Group>
 
+      </Form>
+      <Form className='edit-profile' onSubmit={handleSubmitPassword }>
+
         {/* Password */}
         <h2>Your Password</h2>
-        <p>To change your password, please enter your existing password and follow the prompts.
+        <p>
 
           Passwords must be at least 10 characters in length. We recommend that you use a mixture of lower and upper case letters, numbers and special characters.
 
           Resetting your password will sign you out of all devices you are currently logged in to.</p>
         <Row className="mb-3 form-label">
           <Form.Group as={Col}>
-            <Form.Label>Current password*</Form.Label>
+            <Form.Label>Password*</Form.Label>
             <Form.Control type="password" name='password' value={formData.password} onChange={handleChange} />
             {errors.password && <p className='text-danger'>{errors.password.message}</p>}
           </Form.Group>
-         
+
+
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Confirm password*</Form.Label>
-            <Form.Control type="password" name='passwordConfirmation' value={formData.passwordConfirmation} onChange={handleChange} />
-            {errors.passwordConfirmation && <p className='text-danger'>{errors.passwordConfirmation.message}</p>}
+            <Form.Control type="password" name='_passwordConfirmation' value={formData._passwordConfirmation} onChange={handleChange} />
+            {errors._passwordConfirmation && <p className='text-danger'>{errors._passwordConfirmation.message}</p>}
           </Form.Group>
         </Row>
 
         <Form.Group as={Col}>
-          <Button className='button-register' type="submit" onSubmit={handleSubmit}>
+          <Button className='button-register' type="submit" >
             UPDATE PASSWORD
           </Button>
         </Form.Group>

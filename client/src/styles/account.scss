@@ -1,0 +1,21 @@
+.box{
+  max-width: 800px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  // background-color: #e7e6e6;
+ 
+  .card-body{
+    // margin-left:calc(100% /4 );
+    background-color: rgb(12, 12, 116);
+    .btn-primary{
+      margin-left: 60px;
+
+    }
+   
+    
+  }
+
+
+
+}
