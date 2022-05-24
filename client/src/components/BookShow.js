@@ -35,14 +35,14 @@ const BookShow = () => {
   // TODO ================================= Start of Wishlist functionality =================================
 
   // * state
-  const [ wishlistItem, setWishlistItem] = useState('❤️')
+  const [ wishlistItem, setWishlistItem] = useState('🎁')
 
   //* useEffect for status (has item been added to wishList or not?)
   useEffect(() => {
     const getWishListStatus = () => {
       if (JSON.parse(window.localStorage.getItem('wishlist'))) {
         const wishlistString = JSON.parse(window.localStorage.getItem('wishlist')).map(value => JSON.stringify(value))
-        wishlistString.indexOf(JSON.stringify(book)) !== -1 ? setWishlistItem('Remove from Wishlist 💔') : setWishlistItem('Add to Wishlist ❤️')
+        wishlistString.indexOf(JSON.stringify(book)) !== -1 ? setWishlistItem('🧨 Remove from Wishlist 🧨') : setWishlistItem('🎁 Add to Wishlist 🎁')
       }
     }
     getWishListStatus()
@@ -150,7 +150,7 @@ const BookShow = () => {
             </Col>
             <Col md="6">
               <img src={book.image} alt={book.name} />
-              <button className="btn btn-dark" onClick={addToWishlist}>{wishlistItem}</button>
+              <button className="wishlist-button" onClick={addToWishlist}>{wishlistItem}</button>
             </Col>
 
             <Col md="6">

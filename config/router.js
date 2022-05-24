@@ -4,6 +4,7 @@ import { registerUser, loginUser } from '../controllers/auth.js'
 import { addReview } from '../controllers/booksReviews.js'
 import { secureRoute } from './secureRoute.js'
 import { getProfile } from '../controllers/users.js'
+import { addItemToWishlist } from '../controllers/users.js'
 import { getReviews, deleteReview } from '../controllers/reviews.js'
 
 const router = express.Router()
@@ -36,5 +37,9 @@ router.route('/account/reviews')
 
 router.route('/account/reviews/:reviewId')
   .delete(secureRoute, deleteReview)
+
+// add item to wishlist
+router.route('/account/wishlist')
+  .post(secureRoute, addItemToWishlist)
 
 export default router

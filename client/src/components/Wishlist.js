@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 
 const WishList = () => {
   const wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
+  // get from API
 
   if (wishlistArray) {
     return (
