@@ -6,6 +6,7 @@ import { secureRoute } from './secureRoute.js'
 import { getProfile, updateProfile, deleteUser } from '../controllers/users.js'
 import { addItemToWishlist } from '../controllers/users.js'
 import { getReviews, deleteReview } from '../controllers/reviews.js'
+import { removeItemFromWishlist } from '../controllers/users.js'
 
 const router = express.Router()
 
@@ -46,8 +47,13 @@ router.route('/account/reviews/:reviewId')
 
 router.route('/users/:id')
   .delete(deleteUser)
+
 // add item to wishlist
-router.route('/account/wishlist')
+router.route('/account/wishlist/:bookId')
   .post(secureRoute, addItemToWishlist)
+
+// remove item from wishlist
+router.route('/account/wishlist/:bookId')
+  .delete(secureRoute, removeItemFromWishlist)
 
 export default router

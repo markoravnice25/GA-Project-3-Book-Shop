@@ -68,23 +68,29 @@ export const deleteUser = async (req, res) => {
     return res.status(401).json({ message: 'Unauthorised' })
   }
 }
+
+// TODO add Item to wishlist
 // METHOD: POST
 // Endpoint: /account/wishlist
 // descritption: req.body ->  genre, subGenre, image, author, description, yearPublished, price, reviews
 export const addItemToWishlist = async (req, res) => {
   console.log('testing wishlist request')
-  const { id } = req.body
-  console.log('destructured id ->', id)
+  const { bookId } = req.params
+  console.log('destructured bookId ->', bookId)
   try {
     if (!req.verifiedUser || !req.verifiedUser._id) throw new Error('You\'re not logged in')
 
     const userAccount = await User.findById(req.verifiedUser._id) 
     console.log('Account pre push of new wishListItem ->', userAccount)
 
-    const wishListItem = await Book.findById(id)
+    const wishListItem = await Book.findById(bookId)
     if (!wishListItem) throw new Error('book not found')
     console.log('Single wishListItem ->', wishListItem)
-   
+
+    if (userAccount.wishlist.some(item => item.id === bookId)) {
+      return res.status(200).json(userAccount.wishlist)
+    }
+
     // https://stackoverflow.com/questions/33049707/push-items-into-mongo-array-via-mongoose
     // User.update(
     //   { _id: req.verifiedUser._id },
@@ -99,4 +105,32 @@ export const addItemToWishlist = async (req, res) => {
     console.log(error)
     return res.status(422).json(error)
   }
+}
+
+// TODO Delete item from wishlist
+export const removeItemFromWishlist = async (req, res) => {
+  const { bookId } = req.params
+  console.log('bookId ->', bookId)
+  try {
+    const userAccount = await User.findById(req.verifiedUser._id)
+    console.log('userAccount ->', userAccount)
+    if (!userAccount) throw new Error('unauthorised user - please log in to continue')
+
+    const bookToRemove = await Book.findById(bookId)
+    console.log('bookToRemove ->', bookToRemove)
+    if (!bookToRemove) throw new Error('incorrect ID - check URL')
+
+    console.log('userAccount.wishlist PRE remove ->', userAccount.wishlist)
+    userAccount.wishlist.remove(bookId)
+    userAccount.save()
+    console.log('userAccount.wishlist AFTER remove ->', userAccount.wishlist)
+
+    return res.status(200).json(userAccount.wishlist)
+  } catch (error) {
+    console.log(error)
+    return res.status(404).json(error)
+  }
+
+
+
 }
