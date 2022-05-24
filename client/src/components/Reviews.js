@@ -25,8 +25,8 @@ const Reviews = () => {
   }, [])
 
   const handleDeleteBtn = async (e) => {
-    console.log(e.target.value)
 
+    console.log('value --->', e.target.value)
     const id = e.target.value
     console.log('id --->', id)
     try {
@@ -35,24 +35,36 @@ const Reviews = () => {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         },
       })
-      console.log('reviews --->', data)
+
     } catch (error) {
       console.log(error)
     }
+    setReviews(reviews.filter(item => item._id !== e.target.value))
   }
 
   return (
     <>
-      <h1>Reviews</h1>
       <div className='reviews-wrapper'>
+        <h1>Reviews</h1>
         {reviews.map(item => {
-          const { title, text, _id } = item
+          const { title, text, _id, book } = item
           return (
-            <div key={_id} className='review-box'>
-              <h3>{title}</h3>
-              <p>{text}</p>
-              <button value={_id} onClick={handleDeleteBtn}>Delete</button>
-            </div>
+            <>
+              <div key={_id} className='reviews-page-box'>
+                <div className='reviews-page-img-wrapper'>
+                  <h5>{book[0].title}</h5>
+                  <img className='reviews-page-img' src={book[0].image} />
+                </div>
+                <div className='reviews-page-body'>
+                  <div className='reviews-page-text'>
+                    <h4>&quot;{title}&quot;</h4>
+                    <p>{text}</p>
+                  </div>
+                  <button value={_id} onClick={handleDeleteBtn}>Delete review</button>
+                </div>
+              </div>
+              <hr />
+            </>
           )
         })}
       </div>
