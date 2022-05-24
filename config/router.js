@@ -3,8 +3,12 @@ import { showBooks, showSingleBook } from '../controllers/books.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { addReview } from '../controllers/booksReviews.js'
 import { secureRoute } from './secureRoute.js'
+<<<<<<< HEAD
 import { getProfile, updateProfile } from '../controllers/users.js'
 
+=======
+import { getProfile, updateProfile, deleteUser } from '../controllers/users.js'
+>>>>>>> development
 import { addItemToWishlist } from '../controllers/users.js'
 import { getReviews, deleteReview } from '../controllers/reviews.js'
 
