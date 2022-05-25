@@ -145,17 +145,6 @@ export default [
   {
     genre: 'Fiction',
     subGenre: 'Historical Fiction',
-    title: 'Songbirds',
-    image: 'https://cdn.waterstones.com/bookjackets/large/9781/7865/9781786580856.jpg',
-    author: 'Christy Lefteri ',
-    description: 'The disappearance of a Sri Lankan nanny from her new life in Nicosia is the catalyst for an unexpected, moving journey through hidden lives and layered secrets. A mesmerising novel that puts real faces to the immigrant experience, from the author of The Beekeeper of Aleppo.',
-    authors: '',
-    yearPublished: 'Published: 03/03/2022',
-    price: 7.49,
-  },
-  {
-    genre: 'Fiction',
-    subGenre: 'Historical Fiction',
     title: 'Circe',
     image: 'https://cdn.waterstones.com/bookjackets/large/9781/4088/9781408890042.jpg',
     author: 'Madeline Miller',

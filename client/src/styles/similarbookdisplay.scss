@@ -1,8 +1,10 @@
 .subgenre-row {
   text-align: center;
   width: 150px;
-
-    .image-wrapper {
+  a{
+    text-decoration: none;
+  }
+    .image-wrapper-similar {
 
       img {
         width: 150px;
@@ -10,10 +12,10 @@
       }
     }
 
-    .card-body {
+    .card-body-similar {
       height: 120px;
 
-      .card-title {
+      .card-title-similar {
         margin-top: 10px;
         overflow: hidden;
         height: 32%;
@@ -27,7 +29,7 @@
         }
       }
       
-      .author {
+      .authors-you-may {
         height: 30%;
         overflow: hidden;
 
@@ -35,11 +37,12 @@
           font-size: 0.8em;
           color: #0a0a09;
           font-weight: 400;
+          margin-left: 0px;
         }
       }
 
       .price {
-        margin-top: 0px;
+        margin-top: 10px;
         font-size: 1em;
         font-weight: 600;
         color: #0a0a09;

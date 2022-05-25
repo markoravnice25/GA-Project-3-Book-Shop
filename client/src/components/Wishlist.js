@@ -52,10 +52,10 @@ const WishList = () => {
                   <Col sm='9' md='9' lg='10' className='column-two'>
                     <Link className='text-decoration-none' to={`/books/${id}`} key={id}>
                       <div>
-                        <p className='title'>{title}</p>
+                        <p className='title-whish'>{title}</p>
                       </div>
                     </Link>
-                    <div className='col-two-items author'>
+                    <div className='col-two-items author-whishlist'>
                       <p>{author}</p>
                     </div>
                     <div className='col-two-items'>
