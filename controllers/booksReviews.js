@@ -1,20 +1,20 @@
 import Book from '../models/books.js'
-import Review from '../models/reviews.js'
-
+// import Review from '../models/reviews.js'
+//method post
 export const addReview = async (req, res) => {
   const { id } = req.params
 
   try {
-    const book = await Book.findById(id)
-    if (!book) throw new Error('Book not found')
+    const bookToUpdate = await Book.findById(id)
+    if (!bookToUpdate) throw new Error('Book not found')
 
     const reviewWithOwner = { ...req.body, owner: req.verifiedUser._id }
-    const newReview = await Review.create(reviewWithOwner)
+    // const newReview = await Review.create(reviewWithOwner)
 
     //book.reviews.push(reviewWithOwner)
-    book.reviews.push(newReview)
-    await book.save()
-    return res.status(200).json(newReview)
+    bookToUpdate.reviews.push(reviewWithOwner )
+    await bookToUpdate.save()
+    return res.status(200).json(reviewWithOwner)
   } catch (error) {
     console.log(error)
     return res.status(422).json(error)

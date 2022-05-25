@@ -49,14 +49,14 @@ const Account = () => {
               <div className="card-body">
 
 
-                <a href="/account/profile/" className="btn btn-primary ">Your Profile</a>
+                <a href="/account/profile/" className="btn">👤Your Profile</a>
               </div>
             </div>
           </div>
           <div className="col-sm-4">
             <div className="card">
               <div className="card-body">
-                <a href="/account/wishlist/" className="btn btn-primary">Wish Lists</a>
+                <a href="/account/wishlist/" className="btn">❤️Wish Lists</a>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@ const Account = () => {
             <div className="card">
               <div className="card-body">
 
-                <a href="/account/reviews/" className="btn btn-primary">Reviews</a>
+                <a href="/account/reviews/" className="btn">⭐Reviews</a>
               </div>
             </div>
           </div>

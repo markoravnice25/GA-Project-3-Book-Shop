@@ -19,10 +19,8 @@ const ProfileEdit = () => {
     firstName: '',
     lastName: '',
     email: '',
-    // newemail: '',
     confirmEmail: '',
     password: '',
-    newpassword: '',
     _passwordConfirmation: '',
   })
 
@@ -55,24 +53,6 @@ const ProfileEdit = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
     setErrors({ ...errors, [e.target.name]: '' })
   }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-
-      const { data } = await axios.put('/api/account/profile', formData, {
-        headers: {
-          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
-        },
-
-      })
-
-    } catch (error) {
-      console.log(error)
-
-    }
-  }
-
 
   const handleSubmitDetails = async (e) => {
     e.preventDefault()
@@ -189,7 +169,7 @@ const ProfileEdit = () => {
         </Row>
 
         <Form.Group as={Col}>
-          <Button className='button-register mb-5' type="submit">
+          <Button className='button' type="submit">
             UPDATE DETAILS
           </Button>
         </Form.Group>
@@ -221,7 +201,7 @@ const ProfileEdit = () => {
           </Form.Group>
         </Row>
         <Form.Group as={Col}>
-          <Button className='button-register mb-5' type="submit" >
+          <Button className='button' type="submit" >
             UPDATE EMAIL
           </Button>
         </Form.Group>
@@ -252,7 +232,7 @@ const ProfileEdit = () => {
         </Row>
 
         <Form.Group as={Col}>
-          <Button className='button-register' type="submit" >
+          <Button className='button' type="submit" >
             UPDATE PASSWORD
           </Button>
         </Form.Group>

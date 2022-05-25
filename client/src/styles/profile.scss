@@ -1,8 +1,16 @@
 
 .section-profile{
+  h2{
+    font-family: 'New Baskerville',Baskerville,serif;
+  }
   max-width: 800px;
+
   margin: 20px auto;
   align-items: center;
   background-color: #e7e6e6;
   font-family: 'Source Sans Pro', Arial, sans-serif;
+  button{
+    background: #336b75;
+   
+  }
 }

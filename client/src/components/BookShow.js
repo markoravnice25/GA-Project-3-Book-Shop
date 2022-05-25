@@ -140,7 +140,7 @@ const BookShow = () => {
 
 
   return (
-    <Container className="mt-4">
+    <Container className="bookshow">
       <Row>
         {book ?
           <>
@@ -160,10 +160,10 @@ const BookShow = () => {
               <p>{book.author}</p>
               <hr />
 
-              <h4>price</h4>
+              <h4>Price</h4>
               <p>£{book.price}</p>
               <hr />
-              <h4>YearPublished</h4>
+              <h4>Year Published</h4>
               <p>{book.yearPublished}</p>
               <hr />
               <h4>Description</h4>
@@ -172,7 +172,7 @@ const BookShow = () => {
               <h4>Authors</h4>
               <p>{book.authors}</p>
               <hr />
-              <h4>Review</h4>
+              <h4>Reviews</h4>
               <div>{
                 book.reviews.map((review) => {
                   return <ReviewDisplay key={review.id} review={review} />
@@ -188,13 +188,13 @@ const BookShow = () => {
                   <h4 className='text'>Write your review</h4>
                   {/* reviewTitle */}
                   <label htmlFor="reviewTitle">ReviewTitle</label>
-                  {/* <input type="text" name="reviewTitle" className='input' placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange} /> */}
+                 
                   <textarea type="text" name="title" className="input" rows="2" placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange}></textarea>
 
                   {errors.reviewTitle && <p className='text-danger'>{errors.reviewTitle}</p>}
                   {/* reviewText */}
                   <label htmlFor="reviewText">ReviewText</label>
-                  {/* <input type="text" name="reviewText" className='input' placeholder='write your review here' value={formData.reviewText} onChange={handleChange} /> */}
+                  
                   <textarea type="text" name="text" className="input" rows="5" placeholder='write your review here' value={formData.reviewText} onChange={handleChange}></textarea>
 
 

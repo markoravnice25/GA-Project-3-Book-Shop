@@ -39,7 +39,7 @@ const PageNavbar = () => {
 
 
   return (
-    <Navbar  expand="sm">
+    <Navbar  expand="lg navbar-dark">
 
       <Container>
 
@@ -50,17 +50,23 @@ const PageNavbar = () => {
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <input type="text" name="searchTerm" placeholder='🔍Search Book here...' onChange={handleChange} />
-        <button type="submit" className="btn btn-dark btn-sm" onClick={handleSubmit}>Submit</button>
+        
+        <form className='form-inline'>
+          <input type="text" name="searchTerm" placeholder='🔍Search Book here...' onChange={handleChange} />
+          <button type="submit" className="btn btn-outline-dark btn-sm" onClick={handleSubmit}>Search</button>
+ 
+        </form>
 
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
 
-          <Nav.Link as={Link} to="/account/wishlist">♥️Wish List</Nav.Link>
+          
           {/* <Nav.Link as={Link} to="/books">Books</Nav.Link> */}
           {userIsAuthenticated() ?
             <>
               <Nav.Link as={Link} to="/account">Account</Nav.Link>
               <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+              <Nav.Link as={Link} to="/account/wishlist">♥️Wish List</Nav.Link>
+              
             </>
 
             :
