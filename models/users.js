@@ -14,6 +14,25 @@ const userSchema = new mongoose.Schema({
 }, { id: false })
 
 userSchema
+  .virtual('myReviews', {
+    ref: 'Book',
+    localField: '_id',
+    foreignField: 'reviews.owner',
+    get: function (books) {
+      if (books)
+        return books.map(book => {
+
+          return {
+            bookTitle: book.title,
+            bookImage: book.image,
+            reviews: book.reviews.filter(review => review.owner.equals(this._id)),
+          }
+        })
+    },
+  })
+
+
+userSchema
   .virtual('passwordConfirmation')
   .set(function(value) { 
     this._passwordConfirmation = value

@@ -20,6 +20,7 @@ const BookShow = () => {
   const navigate = useNavigate()
   const { id, reviewID, bookId } = useParams()
   const [review, setReview] = useState('')
+  const [reviews, setReviews] = useState([])
   const [book, setBook] = useState(null)
   const [errors, setErrors] = useState(false)
   //for section display same subgenre books
@@ -27,7 +28,7 @@ const BookShow = () => {
 
   // reviewform
   const [formData, setFormData] = useState({
-    title: '',
+    reviewTitle: '',
     text: '',
   })
 
@@ -66,14 +67,7 @@ const BookShow = () => {
   }
 
   // TODO ================================= end of Wishlist functionality =================================
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 400,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-  }
+  
   // to get single book
   useEffect(() => {
     const getBook = async () => {
@@ -81,13 +75,14 @@ const BookShow = () => {
         const { data } = await axios.get(`/api/books/${id}`)
         setBook(data)
         setFormData(data)
-
+        setReviews(data.reviews)
       } catch (error) {
         setErrors(true)
 
       }
     }
     getBook()
+    console.log('reviews --->', reviews)
   }, [id])
   // to get all the books
   useEffect(() => {
@@ -95,6 +90,7 @@ const BookShow = () => {
       try {
         const { data } = await axios.get('/api/books')
         setSimilarBooks(data)
+        
       } catch (error) {
         setErrors(true)
 
@@ -110,7 +106,7 @@ const BookShow = () => {
       navigate(`/api/books/${id}/reviews/`)
     }
   }, [review, navigate])
-  // ? Update formData
+  // // ? Update formData
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
     setErrors({ ...errors, [e.target.name]: '' })
@@ -128,7 +124,12 @@ const BookShow = () => {
         },
       })
       navigate(`/books/${data._id}`)
-      console.log(data._id)
+      console.log('data --->', data)
+      setReviews([ ...reviews, formData ])
+      setFormData({
+        reviewTitle: '',
+        text: '',
+      })
     } catch (error) {
       console.log(error)
       console.log(error.response.data)
@@ -170,30 +171,30 @@ const BookShow = () => {
               <h4>Authors</h4>
               <p>{book.authors}</p>
               <hr />
-              <h4>Review</h4>
-              <div>{
-                book.reviews.map((review) => {
-                  return <ReviewDisplay key={review.id} review={review} />
-                })
-              }</div>
-              <hr />
+            </Col>
+            <h4 className='you-may-also'>You may also be interested in...</h4>
+            <div className='similar-books-wrapper'>
+              {similarBooks.filter(item => item.subGenre === book.subGenre && item.id !== book.id).map((item, index) => {
+                if (index < 4) {
+                  return <SimilarBookDisplay key={item.id} item={item} />
+                }
+              })}
+            </div>
 
-
-
-
+            <Col>
               {userIsAuthenticated() ?
-                <form className='col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-4' onSubmit={handleSubmit}>
+                <form className='review-form' onSubmit={handleSubmit}>
                   <h4 className='text'>Write your review</h4>
                   {/* reviewTitle */}
-                  <label htmlFor="reviewTitle">ReviewTitle</label>
+                  <label htmlFor="reviewTitle">Title</label>
                   {/* <input type="text" name="reviewTitle" className='input' placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange} /> */}
                   <textarea type="text" name="title" className="input" rows="2" placeholder='Add a title for your review here' value={formData.reviewTitle} onChange={handleChange}></textarea>
 
                   {errors.reviewTitle && <p className='text-danger'>{errors.reviewTitle}</p>}
                   {/* reviewText */}
-                  <label htmlFor="reviewText">ReviewText</label>
+                  <label htmlFor="reviewText">Text</label>
                   {/* <input type="text" name="reviewText" className='input' placeholder='write your review here' value={formData.reviewText} onChange={handleChange} /> */}
-                  <textarea type="text" name="text" className="input" rows="5" placeholder='write your review here' value={formData.reviewText} onChange={handleChange}></textarea>
+                  <textarea type="text" name="text" className="input" rows="4" placeholder='write your review here' value={formData.text} onChange={handleChange}></textarea>
 
 
                   {errors.reviewText && <p className='text-danger'>{errors.reviewText}</p>}
@@ -203,7 +204,7 @@ const BookShow = () => {
                 </form>
                 :
                 (
-                  <div className="add-review-container">
+                  <div className="not-registered-container">
                     <div>
                       <p>🖋<Link to="/login">Sign in </Link>to write a review</p>
                       <p>Not Registered Yet? <Link to="/register">Register</Link> instead</p>
@@ -211,22 +212,22 @@ const BookShow = () => {
                     {errors.text && (
                       <p>{errors.text}</p>
                     )}
-
-
                   </div>
                 )}
             </Col>
-
-            <h4>You may also be interested in...</h4>
-            <div>
-              <Slider {...settings} className='carousel-wrapper'>{
-                similarBooks.filter((item) => item.subGenre === book.subGenre && item.id !== book.id).map((item) => {
-                  return <SimilarBookDisplay key={item.id} item={item} />
+            {!reviews.length < 1
+              ?
+              <h4 className='reviews-header'>Reviews:</h4>
+              :
+              <h4 className='reviews-header'>No reviews yet!</h4>
+            }
+            <div className='reviews-display-box'>
+              {
+                reviews.map((review) => {
+                  return <ReviewDisplay key={review.id} review={review} />
                 })
               }
-              </Slider>
             </div>
-
 
           </>
           :
@@ -235,14 +236,9 @@ const BookShow = () => {
           </h2>
         }
 
-
-
       </Row>
 
     </Container>
-
-
-
   )
 
 

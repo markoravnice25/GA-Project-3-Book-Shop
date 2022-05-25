@@ -40,37 +40,39 @@ const Account = () => {
     <section>
 
 
-      <h1 className='text-center'>Account Dashboard</h1>
-      <p>Hi {account.firstName}, welcome to your account dashboard</p>
-      <div className="row">
-        <div className="col-sm-4">
-          <div className="card">
-            <div className="card-body">
-              
-            
-              <a href="/account/profile/" className="btn btn-primary">Your Profile</a>
+      <h1 className='text-center mt-5'>Account Dashboard</h1>
+      <h5>Hi {account.firstName}, welcome to your account dashboard</h5>
+      <div className='box'>
+        <div className="row">
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+
+
+                <a href="/account/profile/" className="btn btn-primary ">Your Profile</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card">
-            <div className="card-body">
-              <a href="/account/wishlist/" className="btn btn-primary">Wish Lists</a>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+                <a href="/account/wishlist/" className="btn btn-primary">Wish Lists</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-sm-4">
-          <div className="card">
-            <div className="card-body">
-              
-              <a href="/account/reviews/" className="btn btn-primary">Reviews</a>
+          <div className="col-sm-4">
+            <div className="card">
+              <div className="card-body">
+
+                <a href="/account/reviews/" className="btn btn-primary">Reviews</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
 
-    
+
+
 
     </section>
 

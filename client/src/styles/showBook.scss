@@ -1,0 +1,66 @@
+.you-may-also{
+  margin-bottom: 30px;
+}
+.similar-books-wrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .similar-book-display{
+
+    img{
+      width: 200px;
+    }
+  }
+}
+
+.review-form{
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0 50px 0;
+
+  label{
+    margin-top: 30px;
+  }
+  textarea{
+    padding: 7px;
+  }
+
+  button{
+    padding: 7px 25px 7px 25px;
+    margin-top: 30px;
+    display: flex;
+    align-self: flex-start;
+    border-radius: 3px;
+    background: transparent;
+    }
+
+    button:hover{
+      background: black;
+      color: white;
+  }
+}
+
+.reviews-header{
+    margin-bottom: 40px;
+}
+
+.reviews-display-box{
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column-reverse;
+
+  .review-card{
+    h6{
+      font-size: 20px;
+      font-style: italic;
+    }
+    .posted-by{
+      font-size: 13px;
+      font-weight: 100;
+    }
+  }
+}
+.not-registered-container{
+  margin: 50px 0 50px 0;
+}

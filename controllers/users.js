@@ -6,7 +6,7 @@ export const getProfile = async (req, res) => {
   console.log('getProfile')
 
   try {
-    const account = await User.findById(req.verifiedUser._id)  
+    const account = await User.findById(req.verifiedUser._id).populate('myReviews')  
 
     if (!account) throw new Error('User not found')
     
@@ -18,17 +18,19 @@ export const getProfile = async (req, res) => {
 }
 
 export const updateProfile = async (req, res) => {
-  console.log(req)
   const { body: editProfile, verifiedUser } = req
+
   try {
     
-    const updatedProfile = User.findById(verifiedUser._id)  
-
+    const updatedProfile = await User.findById(verifiedUser._id)  
+    console.log('updatedProfile', updatedProfile)
     // Update the document
     Object.assign(updatedProfile, editProfile)
 
     // Save the document
     await updatedProfile.save()
+
+    console.log('updatedProfileAGAIN', updatedProfile)
 
     if (!updatedProfile){
       return res.status(404).json({
@@ -43,11 +45,11 @@ export const updateProfile = async (req, res) => {
 }
 
 
-// export const showUsers = async (req, res) => {
-//   const users = await User.find()
-//   console.log('get users')
-//   return res.status(200).json(users)
-// }
+export const showUsers = async (req, res) => {
+  const users = await User.find()
+  console.log('get users')
+  return res.status(200).json(users)
+}
 
 export const deleteUser = async (req, res) => {
 
