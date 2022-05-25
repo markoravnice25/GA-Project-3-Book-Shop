@@ -6,7 +6,7 @@ export const getProfile = async (req, res) => {
   console.log('getProfile')
 
   try {
-    const account = await User.findById(req.verifiedUser._id)  
+    const account = await User.findById(req.verifiedUser._id).populate('myReviews')  
 
     if (!account) throw new Error('User not found')
     

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
-import reviewSchema from './schemas/review.js'
+// import mongoose from 'mongoose'
+// import reviewSchema from './schemas/review.js'
 
-export default mongoose.model('Review', reviewSchema)
+// export default mongoose.model('Review', reviewSchema)
