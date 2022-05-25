@@ -57,8 +57,5 @@ router.route('/account/wishlist/:bookId')
 router.route('/account/wishlist')
   .get(secureRoute, getWishlist)
 
-//TODO .delete request used in .post request - see notes in /controllers/users.js
-// router.route('/account/wishlist/:bookId')
-//   .delete(secureRoute, removeItemFromWishlist)
 
 export default router

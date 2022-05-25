@@ -1,19 +1,22 @@
+// packages
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+
+// bootstrap
 import Container from 'react-bootstrap/esm/Container'
 import Row from 'react-bootstrap/esm/Row'
 import Col from 'react-bootstrap/esm/Col'
 import { Link } from 'react-router-dom'
+
+// Authorization
 import { getTokenFromLocalStorage } from '../helpers/auth'
 
 
 const WishList = () => {
-  // const wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
 
-  const [ wishlist, setWishlist ] = useState([])
+  const [wishlist, setWishlist] = useState([])
 
-
-  // get from API
+  // get request from API
   useEffect(() => {
     const getWishlist = async () => {
       const { data } = await axios.get('/api/account/wishlist/', {
@@ -26,19 +29,17 @@ const WishList = () => {
     getWishlist()
   }, [])
 
-  console.log(wishlist)
-
+  // control flow to display wishlist or be prompted to login
   if (wishlist && wishlist[0]) {
     return (
       <Container className='container-styling'>
         <Row className='heading-div'>
           <h2 className='heading'>My wish list</h2>
-          <p className='heading-paragraph'>A wishlist by ________</p>
+          <p className='heading-paragraph'>A wishlist by {}</p>
         </Row>
         <hr className='hr-line-first' />
         <div>
           {wishlist.map(book => {
-            console.log(book)
             const { id, title, image, author, description, genre, price, subGenre, yearPublished } = book
             return (
               <>
@@ -69,7 +70,6 @@ const WishList = () => {
                   </Col>
                   <hr />
                 </Row>
-
               </>
             )
           })}
@@ -78,10 +78,12 @@ const WishList = () => {
     )
   } else {
     return (
-      <section className="cat-container">
-        <h2 className='heading'>My wish list</h2>
-        <p className='heading-paragraph'>No items added to wishlist yet</p>
-      </section>
+      <Container className='container-styling'>
+        <Row className='heading-div'>
+          <h2 className='heading'>My wish list</h2>
+          <p className='heading-paragraph'>A wishlist by ________</p>
+        </Row>
+      </Container>
     )
   }
 }

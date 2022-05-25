@@ -69,41 +69,35 @@ export const deleteUser = async (req, res) => {
   }
 }
 
-// TODO add Item to wishlist
+// TODO add/delete Item to wishlist
 // METHOD: POST
-// Endpoint: /account/wishlist
-// descritption: req.body ->  genre, subGenre, image, author, description, yearPublished, price, reviews
+// Endpoint: /account/wishlist/
+// description: this method contains logic to either add or delete an object from the wishlist
+// dependant upon the item already being or not being in the wishlist.
 export const addItemToWishlist = async (req, res) => {
-  console.log('testing wishlist request')
+
   const { bookId } = req.params
-  console.log('destructured bookId ->', bookId)
+  
   try {
     if (!req.verifiedUser || !req.verifiedUser._id) throw new Error('You\'re not logged in')
-
     const userAccount = await User.findById(req.verifiedUser._id) 
-    console.log('Account pre push of new wishListItem ->', userAccount)
 
     const wishListItem = await Book.findById(bookId)
     if (!wishListItem) throw new Error('book not found')
-    console.log('Single wishListItem ->', wishListItem)
-
-    if (userAccount.wishlist.some(item => item.id === bookId)) {
-      userAccount.wishlist.remove(bookId)
-      userAccount.save()
-      console.log('userAccount.wishlist AFTER remove ->', userAccount.wishlist)
-      return res.status(200).json(userAccount.wishlist)
-    }
 
     // both push and remove methods modelled from stackoverflow solution - link:
     // https://stackoverflow.com/questions/33049707/push-items-into-mongo-array-via-mongoose
+    if (userAccount.wishlist.some(item => item.id === bookId)) {
+      userAccount.wishlist.remove(bookId)
+      userAccount.save()
+      return res.status(200).json(userAccount.wishlist)
+    }
 
     userAccount.wishlist.push(wishListItem)
     userAccount.save()
-    console.log('Account after push of new wishListItem ->', userAccount)
-    console.log('userAccount.wishlist ->', userAccount.wishlist)
     return res.status(200).json(userAccount.wishlist)
+
   } catch (error) {
-    console.log(error)
     return res.status(422).json(error)
   }
 }
@@ -111,11 +105,11 @@ export const addItemToWishlist = async (req, res) => {
 //TODO get method for wishlist
 export const getWishlist = async (req, res) => {
   try {
+    if (!req.verifiedUser || !req.verifiedUser._id) throw new Error('You\'re not logged in')
     const userAccount = await User.findById(req.verifiedUser._id)
-    console.log(userAccount.wishlist)
     return res.status(200).json(userAccount.wishlist)
   } catch (error) {
-    console.log(error)
+    return res.status(404).json({ message: 'Wishlist not available' })
   }
 }
 

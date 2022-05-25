@@ -34,46 +34,28 @@ const BookShow = () => {
 
   // TODO ================================= Start of Wishlist functionality =================================
 
-  // * state
-  const [ wishlistItem, setWishlistItem] = useState('🎁')
+  // * 1) state
+  const [ wishlistItem, setWishlistItem ] = useState('🎁')
 
-  //* useEffect for status (has item been added to wishList or not?)
+  // * 2) useEffect for status (has item been added to wishList or not?)
   useEffect(() => {
     const getWishListStatus = async () => {
-      const wishlistArray = await axios.get('/account/wishlist')
-      console.log(wishlistArray)
-      wishlistArray.some(item => item.id === id) ? setWishlistItem('🧨 Remove from Wishlist 🧨') : setWishlistItem('🎁 Add to Wishlist 🎁')
-      // if (JSON.parse(window.localStorage.getItem('wishlist'))) {
-      //   const wishlistString = JSON.parse(window.localStorage.getItem('wishlist')).map(value => JSON.stringify(value))
-      //   wishlistString.indexOf(JSON.stringify(book)) !== -1 ? setWishlistItem('🧨 Remove from Wishlist 🧨') : setWishlistItem('🎁 Add to Wishlist 🎁')
+      const wishlistArray = await axios.get('/api/account/wishlist/', {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+      })
+      wishlistArray.data.some(item => item.id === id) ? setWishlistItem('🧨 Remove from Wishlist 🧨') : setWishlistItem('🎁 Add to Wishlist 🎁')
     }
     getWishListStatus()
   }, [book])
 
-  // * function to add wishList item to local storage
-  // const addToWishlist = () => {
-  //   let wishlistArray = JSON.parse(window.localStorage.getItem('wishlist'))
-  //   if (wishlistArray === null) {
-  //     wishlistArray = [{ ...book }]
-  //     window.localStorage.setItem('wishlist', JSON.stringify(wishlistArray))
-  //   } else {
-  //     const wishlistArrayString = wishlistArray.map(value => JSON.stringify(value))
-  //     if (wishlistArrayString.indexOf(JSON.stringify(book)) === -1) {
-  //       wishlistArrayString.push(JSON.stringify(book))
-  //     } else {
-  //       wishlistArrayString.splice(wishlistArrayString.indexOf(JSON.stringify(book)), 1)
-  //     }
-  //     wishlistArray = wishlistArrayString.map(value => JSON.parse(value))
-  //     window.localStorage.setItem('wishlist', JSON.stringify(wishlistArray))
-  //   }
-  //   navigate('/account/wishlist')
-  // }
-
+  // * 3) execution of button functionality - logic in back end request.
   const addOrRemove = async (e) => {
     e.preventDefault()
     try {
-      await axios.post(`api/books/account/wishlist/${id}`, {
-        Headers: {
+      const response = await axios.post(`/api/account/wishlist/${id}`, null, {
+        headers: {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         },
       })
@@ -84,7 +66,7 @@ const BookShow = () => {
   }
 
   // TODO ================================= end of Wishlist functionality =================================
-  
+
   const settings = {
     dots: false,
     infinite: true,
