@@ -6,7 +6,7 @@ export const getProfile = async (req, res) => {
   console.log('getProfile')
 
   try {
-    const account = await User.findById(req.verifiedUser._id)  
+    const account = await User.findById(req.verifiedUser._id).populate('myReviews')  
 
     if (!account) throw new Error('User not found')
     
@@ -70,35 +70,74 @@ export const deleteUser = async (req, res) => {
     return res.status(401).json({ message: 'Unauthorised' })
   }
 }
+
+// TODO add/delete Item to wishlist
 // METHOD: POST
-// Endpoint: /account/wishlist
-// descritption: req.body ->  genre, subGenre, image, author, description, yearPublished, price, reviews
+// Endpoint: /account/wishlist/
+// description: this method contains logic to either add or delete an object from the wishlist
+// dependant upon the item already being or not being in the wishlist.
 export const addItemToWishlist = async (req, res) => {
-  console.log('testing wishlist request')
-  const { id } = req.body
-  console.log('destructured id ->', id)
+
+  const { bookId } = req.params
+  
   try {
     if (!req.verifiedUser || !req.verifiedUser._id) throw new Error('You\'re not logged in')
-
     const userAccount = await User.findById(req.verifiedUser._id) 
-    console.log('Account pre push of new wishListItem ->', userAccount)
 
-    const wishListItem = await Book.findById(id)
+    const wishListItem = await Book.findById(bookId)
     if (!wishListItem) throw new Error('book not found')
-    console.log('Single wishListItem ->', wishListItem)
-   
+
+    // both push and remove methods modelled from stackoverflow solution - link:
     // https://stackoverflow.com/questions/33049707/push-items-into-mongo-array-via-mongoose
-    // User.update(
-    //   { _id: req.verifiedUser._id },
-    //   { $push: { wishlist: wishListItem } }
-    // )
+    if (userAccount.wishlist.some(item => item.id === bookId)) {
+      userAccount.wishlist.remove(bookId)
+      userAccount.save()
+      return res.status(200).json(userAccount.wishlist)
+    }
+
     userAccount.wishlist.push(wishListItem)
     userAccount.save()
-    console.log('Account after push of new wishListItem ->', userAccount)
-    console.log('userAccount.wishlist ->', userAccount.wishlist)
     return res.status(200).json(userAccount.wishlist)
+
   } catch (error) {
-    console.log(error)
     return res.status(422).json(error)
   }
 }
+
+//TODO get method for wishlist
+export const getWishlist = async (req, res) => {
+  try {
+    if (!req.verifiedUser || !req.verifiedUser._id) throw new Error('You\'re not logged in')
+    const userAccount = await User.findById(req.verifiedUser._id)
+    return res.status(200).json(userAccount.wishlist)
+  } catch (error) {
+    return res.status(404).json({ message: 'Wishlist not available' })
+  }
+}
+
+// TODO Delete item from wishlist
+// ? delete method not needed as it has been used in post method for items which have already been added to userAccount.wishlist
+// ? on the front end - the wishlist button will toggle between add/remove to wishlist dependant if the item has/hasn't been added to the wishlist
+// export const removeItemFromWishlist = async (req, res) => {
+//   const { bookId } = req.params
+//   console.log('bookId ->', bookId)
+//   try {
+//     const userAccount = await User.findById(req.verifiedUser._id)
+//     console.log('userAccount ->', userAccount)
+//     if (!userAccount) throw new Error('unauthorised user - please log in to continue')
+
+//     const bookToRemove = await Book.findById(bookId)
+//     console.log('bookToRemove ->', bookToRemove)
+//     if (!bookToRemove) throw new Error('incorrect ID - check URL')
+
+//     console.log('userAccount.wishlist PRE remove ->', userAccount.wishlist)
+//     userAccount.wishlist.remove(bookId)
+//     userAccount.save()
+//     console.log('userAccount.wishlist AFTER remove ->', userAccount.wishlist)
+
+//     return res.status(200).json(userAccount.wishlist)
+//   } catch (error) {
+//     console.log(error)
+//     return res.status(404).json(error)
+//   }
+// }

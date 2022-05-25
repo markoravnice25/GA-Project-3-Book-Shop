@@ -58,7 +58,7 @@ const Home = () => {
                     <div className="image-wrapper">
                       <img src={image} />
                     </div>
-                    <div className='card-body'>
+                    <div className='card-body-home'>
                       <div className='card-title'>
                         <h4>{title}</h4>
                       </div>
@@ -90,7 +90,7 @@ const Home = () => {
                       <div className="image-wrapper">
                         <img src={image} />
                       </div>
-                      <div className='card-body'>
+                      <div className='card-body-home'>
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>
@@ -122,7 +122,7 @@ const Home = () => {
                       <div className="image-wrapper">
                         <img src={image} />
                       </div>
-                      <div className='card-body'>
+                      <div className='card-body-home'>
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>
@@ -154,7 +154,7 @@ const Home = () => {
                       <div className="image-wrapper">
                         <img src={image} />
                       </div>
-                      <div className='card-body'>
+                      <div className='card-body-home'>
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>
@@ -186,7 +186,7 @@ const Home = () => {
                       <div className="image-wrapper">
                         <img src={image} />
                       </div>
-                      <div className='card-body'>
+                      <div className='card-body-home'>
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>
@@ -218,7 +218,7 @@ const Home = () => {
                       <div className="image-wrapper">
                         <img src={image} />
                       </div>
-                      <div className='card-body'>
+                      <div className='card-body-home'>
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>

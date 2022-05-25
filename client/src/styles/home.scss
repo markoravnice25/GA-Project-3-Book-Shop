@@ -81,7 +81,7 @@ main{
           }
         }
     
-        .card-body{
+        .card-body-home{
           height: 120px;
 
           .card-title{
@@ -98,7 +98,8 @@ main{
           }
 
           .author{
-            height: 30%;
+            margin-top: 5px;
+            height: 27%;
             overflow: hidden;
 
             h5{
@@ -110,7 +111,7 @@ main{
       
           .price{
             font-size: 1.1em;
-            margin-top: 20px;
+            margin-top: 15px;
             font-weight: 400;
           }
         }
