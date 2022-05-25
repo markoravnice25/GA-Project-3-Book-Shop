@@ -44,7 +44,7 @@ const Account = () => {
       <h5>Hi {account.firstName}, welcome to your account dashboard</h5>
       <div className='box'>
         <div className="row">
-          <div className="col-sm-4">
+          <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
 
@@ -53,21 +53,14 @@ const Account = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-4">
+          <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
                 <a href="/account/wishlist/" className="btn">❤️Wish Lists</a>
               </div>
             </div>
           </div>
-          <div className="col-sm-4">
-            <div className="card">
-              <div className="card-body">
-
-                <a href="/account/reviews/" className="btn">⭐Reviews</a>
-              </div>
-            </div>
-          </div>
+        
         </div>
       </div>
 

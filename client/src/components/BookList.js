@@ -14,16 +14,18 @@ const BookList = ({ filteredBooks }) => {
               <div className="image-wrapper">
                 <img src={image} />
               </div>
-              <div className='card-body'>
-                <div className='card-title'>
-                  <h4>{title}</h4>
-                </div>
-                <div className='author'>
-                  <h5>{author}</h5>
-                </div>
-                <h4 className="price">£ {price}</h4>
-              </div>
             </Link>
+            <div className='card-body'>
+              <div className='card-title'>
+                <h4>{title}</h4>
+              </div>
+              <div className='author'>
+                <h5>{author}</h5>
+              </div>
+              <h4 className="price">£ {price}</h4>
+              
+            </div>
+
           </div>
 
 

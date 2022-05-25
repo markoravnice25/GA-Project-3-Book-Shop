@@ -1,4 +1,6 @@
 .subgenre-row {
+  display: flex;
+
   text-align: center;
   width: 150px;
 
@@ -9,29 +11,24 @@
         height: 230px;
       }
     }
-
-    .card-body {
-      height: 120px;
-
-      .card-title {
-        margin-top: 10px;
-        overflow: hidden;
-        height: 32%;
-        width: 100%;
+  
 
         h4 {
-          margin-top: 0px;
+          margin-right: 60px;
+          margin-top: 20px;
           font-size: 0.80em;
           font-weight: 600;
           color: #0a0a09;
         }
-      }
-      
+
       .author {
-        height: 30%;
+        margin-top: 20px;
+        height: 33%;
         overflow: hidden;
+        margin-right: 40px;
 
         h5 {
+          margin-right: 40px;
           font-size: 0.8em;
           color: #0a0a09;
           font-weight: 400;
@@ -39,10 +36,14 @@
       }
 
       .price {
-        margin-top: 0px;
+        margin-left: 30px;
+        margin-right: 10px;
+        margin-bottom: 10px;
         font-size: 1em;
         font-weight: 600;
         color: #0a0a09;
       }
-    }
-}
+
+      }
+      
+    

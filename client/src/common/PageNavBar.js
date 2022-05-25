@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import { userIsAuthenticated } from '../helpers/auth'
-import logo from './../images/book.png'
+import logo from './../images/home.png'
 
 const PageNavbar = () => {
 
@@ -44,15 +44,15 @@ const PageNavbar = () => {
       <Container>
 
         <Navbar.Brand as={Link} to='/'>
-          Home
+          
           <img src={logo}/>
          
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         
-        <form className='form-inline'>
-          <input type="text" name="searchTerm" placeholder='🔍Search Book here...' onChange={handleChange} />
+        <form className='form-inline '>
+          <input type="text" name="searchTerm" placeholder='🔍Search Book or Author here...' onChange={handleChange} />
           <button type="submit" className="btn btn-outline-dark btn-sm" onClick={handleSubmit}>Search</button>
  
         </form>

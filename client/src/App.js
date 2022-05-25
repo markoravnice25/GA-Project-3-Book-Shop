@@ -13,6 +13,7 @@ import Account from './components/Account.js'
 import NotFound from './common/NotFound.js'
 import Reviews from './components/Reviews.js'
 import Profile from './components/Profile.js'
+import Footer from './components/Footer.js'
 // import SubNav from './common/SubNavBar.js'
 import SearchResult from './components/SearchResults.js'
 
@@ -25,6 +26,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <PageNavBar />
+      
       {/* <SubNavBar /> */}
 
       <Routes>
@@ -44,6 +46,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} /> 
 
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }

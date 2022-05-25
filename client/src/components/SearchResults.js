@@ -25,12 +25,12 @@ const SearchResult = () => {
     if (books.length) {
 
       const regexSearch = new RegExp(term, 'i')
-     
+
 
       const filtered = books.filter(book => {
-        
+
         return regexSearch.test(book.title) || regexSearch.test(book.author)
-        
+
 
 
       })
@@ -39,15 +39,19 @@ const SearchResult = () => {
   }, [term, books])
 
   return (
+    <>
+      
 
-    <section className='serchDisplay'>
-      <h4>Here is your search result</h4>
-      <Container className='mt-5'>
+      <section className='serchDisplay'>
+        <h4>Here is your search result</h4>
+
+        <Container className='mt-5'>
 
 
-        <BookList filteredBooks={filteredBooks} />
-      </Container>
-    </section>
+          <BookList filteredBooks={filteredBooks} />
+        </Container>
+      </section>
+    </>
 
   )
 

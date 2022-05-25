@@ -175,7 +175,7 @@ const BookShow = () => {
             <h4 className='you-may-also'>You may also be interested in...</h4>
             <div className='similar-books-wrapper'>
               {similarBooks.filter(item => item.subGenre === book.subGenre && item.id !== book.id).map((item, index) => {
-                if (index < 4) {
+                if (index < 6) {
                   return <SimilarBookDisplay key={item.id} item={item} />
                 }
               })}
