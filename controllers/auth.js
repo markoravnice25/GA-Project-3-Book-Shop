@@ -4,7 +4,7 @@ import 'dotenv/config'
 
 // METHOD: POST
 // Endpoint: /register
-// descritption: req.body -> username, email, passwor, password confirmation
+// descritption: add registered user into mongoDB database.
 export const registerUser = async (req, res) => {
   const { body } = req
   console.log(body)
@@ -18,6 +18,9 @@ export const registerUser = async (req, res) => {
   }
 }
 
+// METHOD: POST
+// Endpoint: /register
+// descritption: add registered user into mongoDB database.
 export const loginUser = async (req, res) => {
   const { body } = req
   try {
