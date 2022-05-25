@@ -8,7 +8,7 @@ export const ReviewDisplay = ({ review, handleDeleteBtn })  => {
       <h6>&quot;{review.title}&quot;</h6>
       <p>{review.text}</p>
       {/* <p className='posted-by'>{review.owner.firstName}</p> */}
-      <button onClick={handleDeleteBtn}>Delete review</button>
+      {/* <button onClick={handleDeleteBtn}>Delete review</button> */}
       <hr />
     </div>
   )
