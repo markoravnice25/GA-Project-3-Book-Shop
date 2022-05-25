@@ -21,7 +21,6 @@ userSchema
     get: function (books) {
       if (books)
         return books.map(book => {
-
           return {
             bookTitle: book.title,
             bookImage: book.image,

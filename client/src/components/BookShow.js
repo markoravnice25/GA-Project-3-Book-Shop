@@ -35,7 +35,7 @@ const BookShow = () => {
   })
 
 
-  // TODO ================================= Start of Wishlist functionality =================================
+  // TODO ================================= Start of Wishlist button functionality =================================
 
   // * 1) state
   const [ wishlistItem, setWishlistItem ] = useState('🎁')
@@ -68,7 +68,7 @@ const BookShow = () => {
     }
   }
 
-  // TODO ================================= end of Wishlist functionality =================================
+  // TODO ================================= end of Wishlist button functionality =================================
   
   // to get single book
   useEffect(() => {
