@@ -3,15 +3,29 @@
 
   text-align: center;
   width: 150px;
-
-    .image-wrapper {
+  a{
+    text-decoration: none;
+  }
+    .image-wrapper-similar {
 
       img {
         width: 150px;
         height: 230px;
       }
     }
+<<<<<<< HEAD
   
+=======
+
+    .card-body-similar {
+      height: 120px;
+
+      .card-title-similar {
+        margin-top: 10px;
+        overflow: hidden;
+        height: 32%;
+        width: 100%;
+>>>>>>> development
 
         h4 {
           margin-right: 60px;
@@ -20,10 +34,17 @@
           font-weight: 600;
           color: #0a0a09;
         }
+<<<<<<< HEAD
 
       .author {
         margin-top: 20px;
         height: 33%;
+=======
+      }
+      
+      .authors-you-may {
+        height: 30%;
+>>>>>>> development
         overflow: hidden;
         margin-right: 40px;
 
@@ -32,13 +53,18 @@
           font-size: 0.8em;
           color: #0a0a09;
           font-weight: 400;
+          margin-left: 0px;
         }
       }
 
       .price {
+<<<<<<< HEAD
         margin-left: 30px;
         margin-right: 10px;
         margin-bottom: 10px;
+=======
+        margin-top: 10px;
+>>>>>>> development
         font-size: 1em;
         font-weight: 600;
         color: #0a0a09;

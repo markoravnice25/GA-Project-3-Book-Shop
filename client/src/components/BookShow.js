@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ReviewDisplay } from './ReviewDisplay'
 import { SimilarBookDisplay } from './SimilarBookDisplay'
+
 // slider
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -16,6 +17,7 @@ import Col from 'react-bootstrap/Col'
 
 import Spinner from '../utilities/Spinner'
 import { userIsAuthenticated, userIsOwner, getTokenFromLocalStorage } from '../helpers/auth'
+
 const BookShow = () => {
   const navigate = useNavigate()
   const { id, reviewID, bookId } = useParams()
@@ -33,7 +35,7 @@ const BookShow = () => {
   })
 
 
-  // TODO ================================= Start of Wishlist functionality =================================
+  // TODO ================================= Start of Wishlist button functionality =================================
 
   // * 1) state
   const [ wishlistItem, setWishlistItem ] = useState('🎁')
@@ -66,7 +68,7 @@ const BookShow = () => {
     }
   }
 
-  // TODO ================================= end of Wishlist functionality =================================
+  // TODO ================================= end of Wishlist button functionality =================================
   
   // to get single book
   useEffect(() => {
@@ -136,6 +138,24 @@ const BookShow = () => {
       setErrors(error.response.data)
     }
   }
+
+  const handleDeleteBtn = async (e) => {
+    const reviewId =  e.target.value
+
+    try {
+      await axios.delete(`/api/books/${id}/reviews/${reviewId}`, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+      })
+    } catch (error) {
+      console.log(error)
+      console.log(error.response.data)
+      setErrors(error.response.data)
+    }
+    setReviews(reviews.filter(item => item._id !== e.target.value))
+  }
+
 
 
   return (
@@ -224,7 +244,7 @@ const BookShow = () => {
             <div className='reviews-display-box'>
               {
                 reviews.map((review) => {
-                  return <ReviewDisplay key={review.id} review={review} />
+                  return <ReviewDisplay key={review.id} review={review} handleDeleteBtn={handleDeleteBtn} />
                 })
               }
             </div>

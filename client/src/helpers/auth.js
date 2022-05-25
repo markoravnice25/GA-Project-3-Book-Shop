@@ -10,7 +10,7 @@ export const getPayload = () => {
 
   const payload = token.split('.')[1]
   
-  console.log(JSON.parse(atob(payload)))
+  // console.log(JSON.parse(atob(payload)))
   return JSON.parse(atob(payload))
 }
 
@@ -27,10 +27,10 @@ export const userIsAuthenticated = () => {
   return currentTime < payload.exp
 }
 
-// ? This function will check the user id from the payload matches the review user id
 export const userIsOwner = (reviews) => {
   // get payload and check it has a value
+  // console.log('reviews user owner', reviews.owner._id)
   const payload = getPayload()
   if (!payload) return
-  return reviews.addedBy._id === payload.sub
+  return reviews.owner._id === payload.sub
 }

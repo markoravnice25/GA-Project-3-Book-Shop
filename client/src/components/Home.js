@@ -62,7 +62,7 @@ const Home = () => {
                       <div className='card-title'>
                         <h4>{title}</h4>
                       </div>
-                      <div className='author'>
+                      <div className='authors-home'>
                         <h5>{author}</h5>
                       </div>
                       <h4 className="price">£ {price}</h4>
@@ -94,7 +94,7 @@ const Home = () => {
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>
-                        <div className='author'>
+                        <div className='authors-home'>
                           <h5>{author}</h5>
                         </div>
                         <h4 className="price">£ {price}</h4>
@@ -126,7 +126,7 @@ const Home = () => {
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>
-                        <div className='author'>
+                        <div className='authors-home'>
                           <h5>{author}</h5>
                         </div>
                         <h4 className="price">£ {price}</h4>
@@ -158,7 +158,7 @@ const Home = () => {
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>
-                        <div className='author'>
+                        <div className='authors-home'>
                           <h5>{author}</h5>
                         </div>
                         <h4 className="price">£ {price}</h4>
@@ -190,7 +190,7 @@ const Home = () => {
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>
-                        <div className='author'>
+                        <div className='authors-home'>
                           <h5>{author}</h5>
                         </div>
                         <h4 className="price">£ {price}</h4>
@@ -222,7 +222,7 @@ const Home = () => {
                         <div className='card-title'>
                           <h4>{title}</h4>
                         </div>
-                        <div className='author'>
+                        <div className='authors-home'>
                           <h5>{author}</h5>
                         </div>
                         <h4 className="price">£ {price}</h4>

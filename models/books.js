@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import bookSchema from './schemas/book.js'
 
 
-//TODO =================== reviewSchema moved to /schemas/review.js ==========================
+//TODO =================== reviewSchema moved to /schemas/book.js ==========================
 // const reviewSchema = new mongoose.Schema({
 //   title: { type: String, required: true, maxlength: 30 },
 //   text: { type: String, required: true, maxlength: 350 },

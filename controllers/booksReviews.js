@@ -35,7 +35,7 @@ export const deleteReview = async (req, res) => {
     await reviewToDelete.remove()
 
     await book.save()
-    return res.sendStatus(204).json('Deleted')
+    return res.sendStatus(204)
   } catch (error) {
     console.log(error)
     return res.status(401).json({ message: 'Unauthorised' })

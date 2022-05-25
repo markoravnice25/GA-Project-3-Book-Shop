@@ -9,14 +9,36 @@ import Col from 'react-bootstrap/esm/Col'
 import { Link } from 'react-router-dom'
 
 // Authorization
-import { getTokenFromLocalStorage } from '../helpers/auth'
+import { userIsAuthenticated, getTokenFromLocalStorage } from '../helpers/auth'
 
 
 const WishList = () => {
 
+  // account state - purely for the purpose of accesing {account.firstName} to display on page
+  const [account, setAccount] = useState('')
+  // TODO: wishlist state - array to iterate through and display wishlist items
   const [wishlist, setWishlist] = useState([])
 
-  // get request from API
+  // this useEffect is purely for the purpose of accesing {account.firstName} to display on page
+  useEffect(() => {
+    !userIsAuthenticated()
+    const getAccount = async () => {
+      try {
+        const { data } = await axios.get('/api/account', {
+          headers: {
+            Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+          },
+        })
+        setAccount(data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getAccount()
+  }, [])
+
+
+  // TODO: useEffect used to fetch wishlist data from back end and set state for 'wishlist'
   useEffect(() => {
     const getWishlist = async () => {
       const { data } = await axios.get('/api/account/wishlist/', {
@@ -29,13 +51,14 @@ const WishList = () => {
     getWishlist()
   }, [])
 
-  // control flow to display wishlist or be prompted to login
+  // TODO: control flow to display wishlist or be prompted to login
   if (wishlist && wishlist[0]) {
+    console.log(wishlist)
     return (
       <Container className='container-styling'>
         <Row className='heading-div'>
           <h2 className='heading'>My wish list</h2>
-          <p className='heading-paragraph'>A wishlist by {}</p>
+          <p className='heading-paragraph'>A wishlist by {account.firstName} <br></br> Would you like to <a href="http://localhost:3001/">Add more items?</a></p>
         </Row>
         <hr className='hr-line-first' />
         <div>
@@ -52,10 +75,10 @@ const WishList = () => {
                   <Col sm='9' md='9' lg='10' className='column-two'>
                     <Link className='text-decoration-none' to={`/books/${id}`} key={id}>
                       <div>
-                        <p className='title'>{title}</p>
+                        <p className='title-whish'>{title}</p>
                       </div>
                     </Link>
-                    <div className='col-two-items author'>
+                    <div className='col-two-items author-whishlist'>
                       <p>{author}</p>
                     </div>
                     <div className='col-two-items'>
@@ -81,7 +104,7 @@ const WishList = () => {
       <Container className='container-styling'>
         <Row className='heading-div'>
           <h2 className='heading'>My wish list</h2>
-          <p className='heading-paragraph'>A wishlist by ________</p>
+          <p className='heading-paragraph'>Hi {account.firstName}, you have no items in your wishlist yet. <br></br> Would you like to <a href="http://localhost:3001/">Add items?</a></p>
         </Row>
       </Container>
     )
