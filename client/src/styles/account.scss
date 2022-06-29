@@ -1,0 +1,36 @@
+h1{
+  font-family: 'New Baskerville',Baskerville,serif;
+}
+
+h5{
+  margin-left: 60px;
+  font-family: 'Source Sans Pro', Arial,
+  
+
+}
+
+.box{
+  max-width: 800px;
+
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  // background-color: #e7e6e6;
+ 
+  .card-body{
+   
+    background: #336b75;
+   
+   
+    .btn{
+      background-color: aliceblue;
+      margin-left: 120px;
+
+    }
+   
+    
+  }
+
+
+
+}
