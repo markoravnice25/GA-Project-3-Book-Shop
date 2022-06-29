@@ -42,30 +42,3 @@ export const deleteReview = async (req, res) => {
   }
 }
 
-// export const updateReview = async (req, res) => {
-
-//   const { id, reviewId } = req.params
-//   console.log(req.params)
-//   console.log('update review')
-//   try {
-//     const book = await Book.findById(id)
-
-//     if (!book) throw new Error('Book not found')
-
-//     const reviewToUpdate = book.reviews.id(reviewId)
-//     if (!reviewToUpdate) throw new Error('Review not found')
-
-//     const update = req.body
-
-//     Object.assign(reviewToUpdate, update)
-
-//     console.log('updated --->', reviewToUpdate)
-    
-//     await reviewToUpdate.save()
-//     await book.save()
-//     return res.sendStatus(204)
-//   } catch (error) {
-//     console.log(error)
-//     return res.status(401).json({ message: 'Unauthorised' })
-//   }
-// }
