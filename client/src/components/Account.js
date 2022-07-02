@@ -38,8 +38,6 @@ const Account = () => {
 
   return (
     <section>
-
-
       <h1 className='text-center mt-5'>Account Dashboard</h1>
       <h5>Hi {account.firstName}, welcome to your account dashboard</h5>
       <div className='box'>
@@ -47,8 +45,6 @@ const Account = () => {
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
-
-
                 <a href="/account/profile/" className="btn">👤Your Profile</a>
               </div>
             </div>
@@ -59,31 +55,11 @@ const Account = () => {
                 <a href="/account/wishlist/" className="btn">❤️Wish Lists</a>
               </div>
             </div>
-          </div>
-        
+          </div>        
         </div>
       </div>
-
-
-
-
     </section>
-
   )
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
 
 export default Account

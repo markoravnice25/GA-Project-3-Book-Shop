@@ -78,7 +78,7 @@ const Register = () => {
                 <option>Prof</option>
                 <option>Rev</option>
                 <option>Mx</option>
-               
+
               </Form.Select>
               {errors.title && <p className='text-danger'>{errors.title.message}</p>}
             </Form.Group>
