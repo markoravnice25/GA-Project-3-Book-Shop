@@ -40,48 +40,33 @@ const PageNavbar = () => {
 
   return (
     <Navbar  expand="lg navbar-dark">
-
       <Container>
-
-        <Navbar.Brand as={Link} to='/'>
-          
-          <img src={logo}/>
-         
+        <Navbar.Brand as={Link} to='/'>          
+          <img src={logo}/>         
         </Navbar.Brand>
-
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        
-        <form className='form-inline '>
-          <input type="text" name="searchTerm" placeholder='🔍Search Book or Author here...' onChange={handleChange} />
-          <button type="submit" className="btn btn-outline-dark btn-sm" onClick={handleSubmit}>Search</button>
- 
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />        
+        <form className='form-inline'>
+          <input type="text" name="searchTerm" placeholder='🔍 Search Book or Author here...' onChange={handleChange} />
+          <button type="submit" onClick={handleSubmit}>Search</button>
         </form>
-
         <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
-
-          
           {/* <Nav.Link as={Link} to="/books">Books</Nav.Link> */}
           {userIsAuthenticated() ?
             <>
               <Nav.Link as={Link} to="/account">Account</Nav.Link>
               <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-              <Nav.Link as={Link} to="/account/wishlist">♥️Wish List</Nav.Link>
-              
+              <Nav.Link as={Link} to="/account/wishlist">Wish List</Nav.Link>
             </>
-
             :
             <>
               <Nav.Link as={Link} to="/register">Register</Nav.Link>
               <Nav.Link as={Link} to="/login">Login</Nav.Link>
             </>
           }
-
         </Navbar.Collapse>
       </Container>
     </Navbar> 
   )
-
-   
 }
 
 export default PageNavbar

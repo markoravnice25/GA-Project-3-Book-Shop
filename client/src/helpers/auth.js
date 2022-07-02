@@ -5,7 +5,6 @@ export const getTokenFromLocalStorage = () => {
 
 export const getPayload = () => {
   const token = getTokenFromLocalStorage()
-  
   if (!token) return
 
   const payload = token.split('.')[1]
@@ -22,8 +21,6 @@ export const userIsAuthenticated = () => {
   if (!payload) return false
  
   const currentTime = Math.floor(Date.now() / 1000)
-
-
   return currentTime < payload.exp
 }
 
