@@ -40,24 +40,13 @@ const SearchResult = () => {
 
   return (
     <>
-      
-
       <section className='serchDisplay'>
-        <h4>Here is your search result</h4>
-
+        <h4>Here are your search results:</h4>
         <Container className='mt-5'>
-
-
           <BookList filteredBooks={filteredBooks} />
         </Container>
       </section>
     </>
-
   )
-
-
-
-
-
 }
 export default SearchResult
