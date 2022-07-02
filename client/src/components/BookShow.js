@@ -194,7 +194,7 @@ const BookShow = () => {
                   <textarea type="text" name="text" className="input" rows="4" placeholder='write your review here' value={formData.text} onChange={handleChange}></textarea>
                   {errors.reviewText && <p className='text-danger'>{errors.reviewText}</p>}
                   {/* Submit */}
-                  <button type="submit" className="button small">POST REVIEW</button>
+                  <button type="submit" className="button small">Post Review</button>
                 </form>
                 :
                 (

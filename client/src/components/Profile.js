@@ -112,7 +112,7 @@ const ProfileEdit = () => {
         <Row className='form-label'>
           <Col sm={6}>
             <Form.Group className='mb-3' as={Col} controlId="formGridState">
-              <h2>Your Details</h2>
+              <h2 className='email-password'>Your Details</h2>
               <Form.Label>Title*</Form.Label>
               <Form.Select className='trigger' name='title' value={formData.title} onChange={handleChange} >
                 <option>Please select</option>
@@ -150,7 +150,7 @@ const ProfileEdit = () => {
       </Form>
       <Form className='edit-profile' onSubmit={handleSubmitEmail}>
         {/* Email */}
-        <h2>Email Address</h2>
+        <h2 className='email-password'>Email Address</h2>
         <p>To change your registered email address, please enter your new address below.</p>
         <Row className="mb-3 form-label">
           <Form.Group as={Col} controlId="formGridEmail">
@@ -173,7 +173,7 @@ const ProfileEdit = () => {
       </Form>
       <Form className='edit-profile' onSubmit={handleSubmitPassword }>
         {/* Password */}
-        <h2>Your Password</h2>
+        <h2 className='email-password'>Your Password</h2>
         <p>
           Passwords must be at least 10 characters in length. We recommend that you use a mixture of lower and upper case letters, numbers and special characters. Resetting your password will sign you out of all devices you are currently logged in to.</p>
         <Row className="mb-3 form-label">

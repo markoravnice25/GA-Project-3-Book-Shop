@@ -8,15 +8,6 @@
     img{
       width: 336px;
     }
-
-    button{
-      margin-top: 30px;
-      border: none;
-      background: none;
-      text-decoration: underline;
-      display: flex;
-      align-self: flex-start;
-    }
   }
 }
 
@@ -50,18 +41,18 @@
   }
 
   button{
-    padding: 7px 25px 7px 25px;
-    margin-top: 30px;
-    display: flex;
-    align-self: flex-start;
+    margin: 20px 0 0 0;
+    background: #336b75;
+    color: #fff; 
+    border: 1px solid black;
     border-radius: 3px;
-    background: transparent;
+    box-shadow: 0px 2px 12px rgb(0,0,0,0.4);
+    padding: 7px 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 19px;
+    font-weight: 300;
+    width: 335px;
     }
-
-    button:hover{
-      background: black;
-      color: white;
-  }
 }
 
 .reviews-header{
