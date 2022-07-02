@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/account/wishlist" element={<WishList />} />
         <Route path="*" element={<NotFound />} /> 
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   )
 }

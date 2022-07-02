@@ -145,7 +145,6 @@ const BookShow = () => {
       <Row>
         {book ?
           <>
-
             <Col xs="12">
               <h3>{book.title}</h3>
               <hr />
@@ -154,9 +153,7 @@ const BookShow = () => {
               <img src={book.image} alt={book.name} /> 
               <button className="wishlist-button" onClick={addOrRemove}>{wishlistItem}</button>
             </Col>
-
             <Col md="6">
-
               <h4>Author</h4>
               <p>{book.author}</p>
               <hr />
@@ -181,7 +178,6 @@ const BookShow = () => {
                 }
               })}
             </div>
-
             <Col>
               {userIsAuthenticated() ?
                 <form className='review-form' onSubmit={handleSubmit}>
@@ -196,10 +192,7 @@ const BookShow = () => {
                   <label htmlFor="reviewText">Text</label>
                   {/* <input type="text" name="reviewText" className='input' placeholder='write your review here' value={formData.reviewText} onChange={handleChange} /> */}
                   <textarea type="text" name="text" className="input" rows="4" placeholder='write your review here' value={formData.text} onChange={handleChange}></textarea>
-
-
                   {errors.reviewText && <p className='text-danger'>{errors.reviewText}</p>}
-
                   {/* Submit */}
                   <button type="submit" className="button small">POST REVIEW</button>
                 </form>
@@ -229,23 +222,14 @@ const BookShow = () => {
                 })
               }
             </div>
-
           </>
           :
           <h2 className='text-center'>
             {/* {errors ? 'Something went wrong! Please try again later!' : <Spinner />} */}
           </h2>
         }
-
       </Row>
-
     </Container>
   )
-
-
-
-
-
-
 }
 export default BookShow
