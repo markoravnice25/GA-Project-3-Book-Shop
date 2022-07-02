@@ -1,6 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react'
-import axios from 'axios'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import PageNavBar from './common/PageNavBar.js'
@@ -14,7 +12,6 @@ import NotFound from './common/NotFound.js'
 import Reviews from './components/Reviews.js'
 import Profile from './components/Profile.js'
 import Footer from './components/Footer.js'
-// import SubNav from './common/SubNavBar.js'
 import SearchResult from './components/SearchResults.js'
 
 
@@ -26,9 +23,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <PageNavBar />
-      
-      {/* <SubNavBar /> */}
-
       <Routes>
         <Route path="/books" element={<Home />} />
         <Route path="/books/:id" element={<BookShow />} />
@@ -37,14 +31,10 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/account/reviews" element={<Reviews />} />
         <Route path="/account/profile" element={<Profile />} />
-         
-         
-       
         <Route path="/login" element={<Login />} />     
         <Route path="/account" element={<Account />} />
         <Route path="/account/wishlist" element={<WishList />} />
         <Route path="*" element={<NotFound />} /> 
-
       </Routes>
       <Footer />
     </BrowserRouter>
