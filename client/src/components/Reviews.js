@@ -1,10 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-
 import { getTokenFromLocalStorage } from '../helpers/auth'
 
 const Reviews = () => {
-
   const [ reviews, setReviews ] = useState([])
 
   // Get the user reviews
@@ -26,7 +24,6 @@ const Reviews = () => {
   }, [])
 
   const handleDeleteBtn = async (e) => {
-
     console.log('value --->', e.target.value)
     const id = e.target.value
     console.log('id --->', id)
@@ -36,7 +33,6 @@ const Reviews = () => {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         },
       })
-
     } catch (error) {
       console.log(error)
     }
@@ -72,7 +68,6 @@ const Reviews = () => {
       </div>
     </>
   )
-
 }
 
 export default Reviews
