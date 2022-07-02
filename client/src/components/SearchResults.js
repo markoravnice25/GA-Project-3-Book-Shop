@@ -19,20 +19,11 @@ const SearchResult = () => {
     getData()
   }, [term])
 
-
   useEffect(() => {
-
     if (books.length) {
-
       const regexSearch = new RegExp(term, 'i')
-
-
       const filtered = books.filter(book => {
-
         return regexSearch.test(book.title) || regexSearch.test(book.author)
-
-
-
       })
       setFilteredBooks(filtered)
     }
