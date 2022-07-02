@@ -1,6 +1,29 @@
-.you-may-also{
-  margin-bottom: 30px;
+.bookshow{
+  margin-top: 40px;
+
+  .book-col{
+    display: flex;
+    flex-direction: column;
+
+    img{
+      width: 336px;
+    }
+
+    button{
+      margin-top: 30px;
+      border: none;
+      background: none;
+      text-decoration: underline;
+      display: flex;
+      align-self: flex-start;
+    }
+  }
 }
+
+.you-may-also{
+  padding: 60px 0 30px 0;
+}
+
 .similar-books-wrapper{
   display: flex;
   justify-content: space-between;
@@ -51,15 +74,28 @@
   flex-direction: column-reverse;
 
   .review-card{
+
+    h5, h6{
+      font-weight: 600;
+    }
+
+    h5{
+      font-size: 1.1em;
+      margin-bottom: 20px;
+
+      svg{
+        vertical-align: top;
+        margin-right: 5px;
+      }
+
+    }
+
     h6{
-      font-size: 20px;
+      font-size: 1.2em;
       font-style: italic;
     }
-    .posted-by{
-      font-size: 13px;
-      font-weight: 100;
-    }
   }
+
   button{
     background: none;
     border-radius: 3px;
