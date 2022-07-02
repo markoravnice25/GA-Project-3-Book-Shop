@@ -90,7 +90,7 @@ const WishList = () => {
                   <Col sm='9' md='9' lg='10' className='column-two'>
                     <div key={_id}>
                       {/* <Link className='text-decoration-none' to={`/books/${_id}`} key={_id}> */}
-                      <Link to={`/books/${_id}`}>
+                      <Link to={`/books/${_id}`} style={{ textDecoration: 'none' }}>
                         <div>
                           <p className='title-whish'>{title}</p>
                         </div>
