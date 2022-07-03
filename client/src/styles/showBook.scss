@@ -66,11 +66,21 @@
   font-size: 19px;
   font-weight: 300;
   width: 335px;
-  .sign-in-wishlist {
-    color: #fff;
-    text-decoration: none;
-    pointer-events: none;
-  }
+}
+.sign-in-wishlist {
+  margin: 20px 0 0 0;
+  background: #336b75;
+  color: #fff; 
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 0px 2px 12px rgb(0,0,0,0.4);
+  padding: 7px 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 19px;
+  font-weight: 300;
+  width: 335px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .reviews-header{

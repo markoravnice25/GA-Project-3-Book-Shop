@@ -154,7 +154,7 @@ const BookShow = () => {
               {userIsAuthenticated() ?
                 <button className="wishlist-button" onClick={addOrRemove}>{wishlistItem}</button>
                 :
-                <button className="wishlist-button"><Link className='sign-in-wishlist' to="/login">Sign in to use Wishlist</Link></button>
+                <Link className='sign-in-wishlist' to="/login">Sign in to use Wishlist</Link>
               }
             </Col>
             <Col md="6">
