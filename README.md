@@ -55,7 +55,7 @@ All content was sourced from the [Waterstones](https://www.waterstones.com/) web
 
 ## Planning
 
-Planning the project out was extremely useful, as it allowed us to establish the necessary relationships for the Back-End and the design of the Front-End. I was tasked with logging and drawing up the wireframe for the project. I used the [Excalidraw](https://excalidraw.com/) website to do the design and google docs to keep log of our progress. We deigned the project to meet minimal requirements, and then added on extra features as we had finished earlier than expected.
+Planning the project out was extremely useful, as it allowed us to establish the necessary relationships for the Back-End and the design of the Front-End. I was tasked with logging and drawing up the wireframe for the project. I used the [Excalidraw](https://excalidraw.com/) website to do the design and google docs to keep log of our progress. We designed the project to meet minimal requirements, and then added on extra features as we had finished earlier than expected.
 
 #### Back-End design
 
