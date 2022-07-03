@@ -8,29 +8,6 @@
 
 ### Code Installation
 
-If you wish to clone or download the repository then execute following commands in terminal:
-
-#### Back-End
-
-* pip install pipenv (only needs to be run once ever)
-* cd into project folder
-* pipenv install django (one time command for each project to install Django)
-* code .
-
-from here, execute all commands in the VS code terminal
-* pipenv shell
-* pipenv install
-* in settings.py  check the name of the db and create it using: createdb dbname
-* python manage.py migrate (make initital migrations)
-* python manage.py runserver
-
-#### Front-End
-* open second terminal for Front-end
-* cd client
-* rm -rf .git
-* yarn
-* yarn start
-
 ## Table of Contents:
 
 * Visit deployed App and code installation
@@ -48,132 +25,129 @@ from here, execute all commands in the VS code terminal
 
 ## Project Overview
 
-<img width="1307" alt="Player-Show-page" src="https://user-images.githubusercontent.com/101732786/176521673-4440065b-d8c9-4e17-a11a-ef2ee3c7aa70.png">
+<img width="1275" alt="show-page" src="https://user-images.githubusercontent.com/101732786/177038338-3bf84f55-83d3-446c-b3d4-38756ae5ea06.png">
 
-This is my fourth project at the end of the 13 week General Assembly Software Engineering Immersive program. It is a Full-Stack application with my own API. The idea was to have a database of one of my passions - football players. I was inspired to make the website as I frequently browse the website [transfermarkt.com](https://www.transfermarkt.com/) which I used as a guide for this project. I was really motivated for this project and had a lot of ideas, but of course within the timeframe and having under-estimated how long different components would take, I was able to complete considerably less within the 8 days we had to complete the project.
+This is my 3rd (of 4) projects during the the 13 week General Assembly Software Engineering Immersive program. The app was developed in a team of 3 students and took us 8 days to complete. It is a Full-Stack application with our own API. The idea was to have a database of books and an app which models the [Waterstones](https://www.waterstones.com/) website, which we used as a guide for this project.
 
 The application includes:
 
 1) Home/Index Page
-2) Footballer Show Page
+2) Book Show Page
 3) Account Page
 4) Search Results Page
-5) Edit Footballer page
-6) Register Page
-7) Login Page
+5) Register Page
+6) Login Page
+7) Wishlist Page
 8) Nav Bar
-9) Footer
-10) GET/POST/PUT/DELETE functionality.
+9) Review section
+10) CRUD functionality
 
-All content was sourced from [transfermarkt.com](https://www.transfermarkt.com/)
+All content was sourced from the [Waterstones](https://www.waterstones.com/) website
 
 ## Brief
 
-* Build a full-stack application by making your own backend and your own front-end
-* Use a Python Django API using Django REST Framework to serve your data from a Postgres database
+* Build a full-stack application by making your own Back-End and Front-End
+* Use MongoDB as database for yout API using Node.js for building the Back-End
 * Consume your API with a separate front-end built with React
 * Be a complete product which most likely means multiple relationships and CRUD functionality
 * Implement thoughtful use stories/wireframes that are significant enough to help you know which features are core and which you can cut out
 * Be deployed online
 
-
 ## Planning
 
-Planning the project out was extremely useful, I would almost say that it was the most important part of the project. Having already done three projects prior to this one I realised that it was critical to compartmentalise this project into phases so that I could meet the MVP first before moving onto other phases. I separated the project into 4 phases and ended up only getting the first one done due to the time-frame.
+Planning the project out was extremely useful, as it allowed us to establish the necessary relationships for the Back-End and the design of the Front-End. I was tasked with logging and drawing up the wireframe for the project. I used the [Excalidraw](https://excalidraw.com/) website to do the design and google docs to keep log of our progress. We deigned the project to meet minimal requirements, and then added on extra features as we had finished earlier than expected.
 
-#### Draft wireframe on paper
-The first step in planning was to write up a draft wireframe on a bunch of A4 pages - I found it extremely useful to put my thoughts down on paper first before creating a digital wireframe.
+#### Back-End design
 
-#### Back-end Relationships diagram
-Before completing the front-end wireframe, I designed the relationships model for the back-end using an [ERD](https://app.quickdatabasediagrams.com). As can be seen on the ERD there are 'one to many' and 'many to many' relationships with the 'User' and 'Footballer' models being the central models for the project. The Footballer, Review and Favourite models are accessible only through an authenticated User; whereas the Style and Continent models are related only to the Footballer model.
+The Back-End consisted of a database which held our API; a router (and secure route) through whioch all requests were made; controllers which would access the model before returning the request back to the User.
+<img width="1136" alt="Back_End-wireframe" src="https://user-images.githubusercontent.com/101732786/177039511-35494b11-d3ad-429d-954f-baa6ca0acdc9.png">
 
-<img width="1502" alt="ERD" src="https://user-images.githubusercontent.com/101732786/176517918-c420e34c-7b8e-41ea-a280-3a4af0c2cb3b.png">
+#### Front-End design
+We wanted to keep the Front-End Design to a minimum and add on features if we had time at the end. As can be seen in the wireframe, there are three main pages: home page; show page; wishlist page. We didn't add the Register/Login pages to the wireframe as they were a given.
+<img width="1447" alt="Front-End-Wireframe" src="https://user-images.githubusercontent.com/101732786/177039863-d0cbb0b0-c478-4653-9d66-cebc0e78f5d7.png">
 
-#### Complete wireframe on excalidaraw
-As can be seen in the wireframe picture below, 4 phases were designed for the front end - the 1st phase was a MUST in order to meet the project requirements, with the other 3 phases good additions. The phases were colour-coded on the wireframe:
-1) Phase 1 (Green) pages: Home; Player Show; Register; Login; Account; Add Footballer; Update Footballer; Nav Bar
-2) Phase 2 (Orange) pages: User Reviews
-3) Phase 3 (Blue) pages: User Favourited Players
-4) Phase 4 (Red) pages: Continent page (only players from selected continent displayed)
-
-![wireframe_footballer-database](https://user-images.githubusercontent.com/101732786/176519711-281461fd-6c7d-4426-8617-2c3bfe53cc18.png)
+#### Task delegation
+We each had tasks on specific areas of the project to avoid migration errors. My primary role was authentication and Register/Login/Wishlist pages.
+<img width="953" alt="project-roles" src="https://user-images.githubusercontent.com/101732786/177040412-c519dcc9-a946-4ec1-868d-4e868a8ff8da.png">
 
 #### To-do list
-Finally, to track my progress each day I would create a to-do list with taregets for the day, which I would tick off upon completion.
-
-<img width="599" alt="To-do-list-example" src="https://user-images.githubusercontent.com/101732786/176653197-3027c0c7-d97a-4ce5-9898-540314f71c20.png">
+Finally, to track our progress each day I created a to-do list with targets for the day, which we would tick off upon completion.
+<img width="529" alt="to-do" src="https://user-images.githubusercontent.com/101732786/177040028-c4fd9ff7-57b6-4c77-b75c-7a0fe073508a.png">
 
 ## Approach Taken
 
 Day 1:
 * Create Git repository
-* Design Back-End relationships
+* Design Back-End relationships and wire-frame
 * Design Front-End wireframe
+* Begin coding Back-End
 
 Day 2:
-* Code Back-End
+* Continue coding Back-End
 
 Day 3:
-* Finished Back-End apart from API
+* Finished Back-End and seeded data to our API
+* Connected Back-End to Front-End
+* Delegated tasks for Front-End
 
 Day 4: 
-* Connect to Back-End to Front-End
 * Create Home page, Nav Bar, Footer, Register/Login.
 * Seeded Back-End API with 100 footballers.
 
 Day 5:
-* Style Home page
-* Style Nav Bar
-* Style Footer
-* Style Register/Login pages
-* Create and Style Footballer Show page
-* Refactor Home page carousels using component files.
+* Home page continued
+* Show page continued
+* Finish Register/Login page functionality and design
+* Create Review functionality for logged in users
 
 Day 6:
-* Fix bug - pages weren't displaying
-* Functionality to check that user = owner and display edit/update button on Footballer Show page
-* Create 'Add Player' page
-* Create 'Edit Player' page (same as create player but fields pre-filled)
-* Create 'Account Page' with 'Add Footballer' button to navigate to 'Add Player' page
-* Functionality to navigate away from 'Add Footballer' page if not logged in.
-* Bug not fixed - 'Edit Player' page implementing changes only after refreshing page.
+* Fix bug - some book images not displaying
+* Create 'Account Page' with 'Profile' and 'Wishlist' links
+* Create Wishlist page and style
+
 
 Day 7:
-* Add ‘Delete Footballer’ button on Footballer Show page
-* Bug fixed for changes to 'Edit Player' implemented only upon refreshing page
-* Add 'Account' to Nav Bar
-* Style all pages
+* Finished Functionality for Wishlist page
+* Finished Home page styling
+* Finished Show page styling
+* Continued with Review functionality
+* Continued with Profile page
 
 Day 8:
-* Styling the final product
-* Added Search bar functionality
+* Final styling of final product
+* Added and finished Search bar functionality
+* Finished review functionality
+* Finished Profile page
 
 ## Featured Code:
-The code example is a post request to add a footballer to the database by a verified user. First we deserialize python to pass it into a Query Set; then check validity using .is_valid(); finally save the request with .save() and return the response with status 201. If at any point the request fails and Exception is thrown with status 422.
+The code example acts as a 'toggle between a POST and DELETE request. It uses control flow to check whether the item has or hasn't been added to the user's Wishlist, and then either deletes or adds the item upon the button (on the Front-End) being clicked.
 
-<img width="1019" alt="Example-code-POST-functionality-back-end" src="https://user-images.githubusercontent.com/101732786/176660581-598f7c98-d419-4852-bc66-b3abc0faf0cf.png">
+<img width="762" alt="wishlist-item-back-end-code" src="https://user-images.githubusercontent.com/101732786/177040662-6bb546e2-f70f-46b1-81a1-e91a168cef8a.png">
 
 ## Screenshot walk through of main pages
 
 Home Page:
-<img width="1417" alt="Home-page" src="https://user-images.githubusercontent.com/101732786/176668979-13dcf02d-0d6c-4908-8863-a2a41b22dea3.png">
+<img width="1280" alt="home-page" src="https://user-images.githubusercontent.com/101732786/177040768-46cf9950-7530-4584-9540-285d979cb735.png">
 
 Show Page:
-<img width="1490" alt="Show-page" src="https://user-images.githubusercontent.com/101732786/176669279-72eac225-4afe-4544-87c7-24f6bd076f43.png">
+<img width="659" alt="show-page-full" src="https://user-images.githubusercontent.com/101732786/177040852-28b5cc20-bd96-4eec-a8c2-bab8d4fb2247.png">
 
-Register page:
-<img width="1509" alt="Register" src="https://user-images.githubusercontent.com/101732786/176668913-fac87b18-51b7-4817-8859-a5a20e049b22.png">
+Wishlist Page:
+<img width="1062" alt="wishlist-page" src="https://user-images.githubusercontent.com/101732786/177040911-a84f1089-741b-448f-85b8-7b6284789a95.png">
 
-Edit Footballer page:
-<img width="1507" alt="update-footballer" src="https://user-images.githubusercontent.com/101732786/176669490-79ab9d17-ecc3-4cb7-969b-d466f76a7780.png">
+Register Page:
+<img width="1297" alt="register-page" src="https://user-images.githubusercontent.com/101732786/177040958-9c7c6efb-451e-4408-aae4-fcd204aa3435.png">
 
 ## Technology used:
 
 #### Back-End:
-* Python
-* Django
-* Django REST Framework
+* Node.js
+* MongoDB
+* Mongoose
+* Express
 * JWT
+* Dotenv
+* Bcrypt
 
 #### Front-end:
 * React
@@ -181,6 +155,8 @@ Edit Footballer page:
 * Axios
 * SCSS
 * Bootstrap
+* React-Slick
+* React-Icons
 * React Router Dom
 
 #### Dev tools:
