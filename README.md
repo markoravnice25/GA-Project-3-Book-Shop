@@ -59,7 +59,7 @@ Planning the project out was extremely useful, as it allowed us to establish the
 
 #### Back-End design
 
-The Back-End consisted of a database which held our API; a router (and secure route) through whioch all requests were made; controllers which would access the model before returning the request back to the User.
+The Back-End consisted of a database which held our API; a router (and secure route) through which all requests were made; controllers which would access the model before returning the request back to the User.
 <img width="1136" alt="Back_End-wireframe" src="https://user-images.githubusercontent.com/101732786/177039511-35494b11-d3ad-429d-954f-baa6ca0acdc9.png">
 
 #### Front-End design
