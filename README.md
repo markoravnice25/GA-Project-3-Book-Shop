@@ -8,6 +8,18 @@
 
 ### Code Installation
 
+* yarn
+* yarn add axios
+* yarn add react-select
+* yarn add express
+* yarn add dotenv
+* yarn add jsonwebtoken
+* yarn add bcrypt
+* yarn add mongoose
+* yarn add mongoose-unique-validator@2.0.3
+* yarn add nodemon -D
+* yarn start
+
 ## Table of Contents:
 
 * Visit deployed App and code installation
