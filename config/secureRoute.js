@@ -13,13 +13,8 @@ export const secureRoute = async (req, res, next) => {
     if (!userToVerify) throw new Error('User not found')
     req.verifiedUser = userToVerify
     next()
-    
   } catch (error) {
-
     console.log(error)
     return res.status(401).json({ message: 'Unauthorised' })
-    
   }
-
-
 }
