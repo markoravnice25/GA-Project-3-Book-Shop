@@ -179,27 +179,28 @@ Register Page:
 
 ## Key learnings:
 
-* Using Python and Django for the first time
-* Desigining relationships on Back-End
+* Coding in a team of three people.
+* Delegating tasks so that team members don't interfere with each other's code
+* Solving merge conflicts
+* Desigining reference and embedded relationships on the Back-End
+* Learning to use Node.js and Express.
 
 ## Challenges:
 
-* Attempting to alter models on the Back-End after already having seeded data caused problems which took significant time to fix.
-* Time constraint means I couldn't style the page as I wished, and the styling is not responsive yet.
+* Working in a team meant that our communication was key
+* We probably lacked one person to take charge and act as leader of the project, this would have helped save time.
+* Solving merge conflicts - sometimes we worked on the same code block, this could have been avoided with more effective communication.
 
 ## Bugs
 
 * Styling is not responsive
-* A bug I haven't been able to fix is with the carousel which displays players. The carousel displays the same player twice (the second underneath the original) unless the full row of designated spots is filled (There are 6 spots in my carousel design). As can be seen in the screen shots below - a test user was created (Marcus Rashford as he's a fave player of mine), Once this user has created 6 players the carousel operates correctly; however when there are less than 6 players available, the carousel displays each player twice, which is a terrible look. Still looking for a solution to this one, I look forward to solving it soon!
-
-<img width="1390" alt="bug-6-player-carousel" src="https://user-images.githubusercontent.com/101732786/176945229-8c6eac8c-ca59-4bf4-829b-4f87d6904a24.png">
-
-<img width="1408" alt="bug-5-player-carousel" src="https://user-images.githubusercontent.com/101732786/176945289-dc7ae654-fc28-4d7f-a0b4-e248fc965608.png">
+* The carousel on the Home page displays the same book twice (the second underneath the original) unless the full row of designated spots is filled (There are 4 spots on our design).
+* When deleting a review, all reviews for that book are simultaneously deleted.
 
 
 ## Future improvements
 
-* Reviews page and functionality
-* Favourite Player page and functionality
+* Fix bugs
 * User profile picture upload functionality
+* Better styled Account Page
 * Make page Responsive for Smart Phones/Tablets etc.
