@@ -128,15 +128,19 @@ The code example (/controllers/users.js) acts as a 'toggle between a POST and DE
 ## Screenshot walk through of main pages
 
 Home Page:
+
 <img width="1280" alt="home-page" src="https://user-images.githubusercontent.com/101732786/177040768-46cf9950-7530-4584-9540-285d979cb735.png">
 
 Show Page:
+
 <img width="659" alt="show-page-full" src="https://user-images.githubusercontent.com/101732786/177040852-28b5cc20-bd96-4eec-a8c2-bab8d4fb2247.png">
 
 Wishlist Page:
+
 <img width="1062" alt="wishlist-page" src="https://user-images.githubusercontent.com/101732786/177040911-a84f1089-741b-448f-85b8-7b6284789a95.png">
 
 Register Page:
+
 <img width="1297" alt="register-page" src="https://user-images.githubusercontent.com/101732786/177040958-9c7c6efb-451e-4408-aae4-fcd204aa3435.png">
 
 ## Technology used:
