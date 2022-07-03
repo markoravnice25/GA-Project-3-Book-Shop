@@ -36,7 +36,7 @@ const BookShow = () => {
   // TODO ================================= Start of Wishlist button functionality =================================
 
   // * 1) state
-  const [ wishlistItem, setWishlistItem ] = useState('')
+  const [wishlistItem, setWishlistItem] = useState('')
 
   // * 2) useEffect for status (has item been added to wishList or not?)
   useEffect(() => {
@@ -92,7 +92,7 @@ const BookShow = () => {
       try {
         const { data } = await axios.get('/api/books')
         setSimilarBooks(data)
-        
+
       } catch (error) {
         setErrors(true)
 
@@ -150,8 +150,12 @@ const BookShow = () => {
               <hr />
             </Col>
             <Col className='book-col' md="6">
-              <img src={book.image} alt={book.name} /> 
-              <button className="wishlist-button" onClick={addOrRemove}>{wishlistItem}</button>
+              <img src={book.image} alt={book.name} />
+              {userIsAuthenticated() ?
+                <button className="wishlist-button" onClick={addOrRemove}>{wishlistItem}</button>
+                :
+                <button className="wishlist-button"><Link className='sign-in-wishlist' to="/login">Sign in to use Wishlist</Link></button>
+              }
             </Col>
             <Col md="6">
               <h4>Author</h4>
