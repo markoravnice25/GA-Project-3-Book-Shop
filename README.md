@@ -1,10 +1,24 @@
 ## General Assembly Software Engineering Immersive (March - July 2022)
 
-# Project 3: Book Shop
+# Project 3: [Book Shop](https://book-shop-project-marko.herokuapp.com/)
 
-## Visit the deployed App [here](https://footballer-database.herokuapp.com/)
+## Table of Contents:
 
-<img width="1280" alt="home-page" src="https://user-images.githubusercontent.com/101732786/177038196-0c90327d-a50f-4c5f-9e1e-c2a9ce1d69d5.png">
+* Code installation
+* Project Overview
+* Brief
+* Planning
+* Approach taken
+* Screenshot Walkthrough
+* Technologies Used
+* Featured Code
+* Key Learnings
+* Challenges
+* Bugs
+* Future improvements
+* [Website Link](https://book-shop-project-marko.herokuapp.com/)
+
+<img width="1275" alt="show-page" src="https://user-images.githubusercontent.com/101732786/177038338-3bf84f55-83d3-446c-b3d4-38756ae5ea06.png">
 
 ### Code Installation
 
@@ -20,24 +34,7 @@
 * yarn add nodemon -D
 * yarn start
 
-## Table of Contents:
-
-* Visit deployed App and code installation
-* Project Overview
-* Brief
-* Planning
-* Approach taken
-* Technologies Used
-* Featured Code
-* Key Learnings
-* Challenges
-* Bugs
-* Future improvements
-
-
 ## Project Overview
-
-<img width="1275" alt="show-page" src="https://user-images.githubusercontent.com/101732786/177038338-3bf84f55-83d3-446c-b3d4-38756ae5ea06.png">
 
 This is my 3rd (of 4) projects during the the 13 week General Assembly Software Engineering Immersive program. The app was developed in a team of 3 students and took us 8 days to complete. It is a Full-Stack application with our own API. The idea was to have a database of books and an app which models the [Waterstones](https://www.waterstones.com/) website, which we used as a guide for this project.
 
@@ -132,12 +129,7 @@ Day 8:
 * Finished review functionality
 * Finished Profile page
 
-## Featured Code:
-The code example (/controllers/users.js) acts as a 'toggle between a POST and DELETE request. It uses control flow to check whether the item has or hasn't been added to the user's Wishlist, and then either deletes or adds the item upon the button (on the Front-End) being clicked.
-
-<img width="762" alt="wishlist-item-back-end-code" src="https://user-images.githubusercontent.com/101732786/177040662-6bb546e2-f70f-46b1-81a1-e91a168cef8a.png">
-
-## Screenshot walk through of main pages
+## Screenshot Walkthrough
 
 Home Page:
 
@@ -154,6 +146,11 @@ Wishlist Page:
 Register Page:
 
 <img width="1297" alt="register-page" src="https://user-images.githubusercontent.com/101732786/177040958-9c7c6efb-451e-4408-aae4-fcd204aa3435.png">
+
+## Featured Code:
+The code example (/controllers/users.js) acts as a 'toggle between a POST and DELETE request. It uses control flow to check whether the item has or hasn't been added to the user's Wishlist, and then either deletes or adds the item upon the button (on the Front-End) being clicked.
+
+<img width="762" alt="wishlist-item-back-end-code" src="https://user-images.githubusercontent.com/101732786/177040662-6bb546e2-f70f-46b1-81a1-e91a168cef8a.png">
 
 ## Technology used:
 
