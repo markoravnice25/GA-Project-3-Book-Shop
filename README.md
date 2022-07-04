@@ -4,9 +4,10 @@
 
 <img width="1280" alt="home-page" src="https://user-images.githubusercontent.com/101732786/177038196-0c90327d-a50f-4c5f-9e1e-c2a9ce1d69d5.png">
 
-### Website/Code Installation
+### [Website Link](https://book-shop-project-marko.herokuapp.com/)
 
-* [Website](https://book-shop-project-marko.herokuapp.com/)
+### Code Installation
+
 * yarn
 * yarn add axios
 * yarn add react-select
