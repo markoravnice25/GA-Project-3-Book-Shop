@@ -10,6 +10,7 @@
 * Planning
 * Approach taken
 * Technologies Used
+* Screenshot Walkthrough
 * Featured Code
 * Key Learnings
 * Challenges
@@ -130,12 +131,7 @@ Day 8:
 * Finished review functionality
 * Finished Profile page
 
-## Featured Code:
-The code example (/controllers/users.js) acts as a 'toggle between a POST and DELETE request. It uses control flow to check whether the item has or hasn't been added to the user's Wishlist, and then either deletes or adds the item upon the button (on the Front-End) being clicked.
-
-<img width="762" alt="wishlist-item-back-end-code" src="https://user-images.githubusercontent.com/101732786/177040662-6bb546e2-f70f-46b1-81a1-e91a168cef8a.png">
-
-## Screenshot walk through of main pages
+## Screenshot Walkthrough
 
 Home Page:
 
@@ -152,6 +148,11 @@ Wishlist Page:
 Register Page:
 
 <img width="1297" alt="register-page" src="https://user-images.githubusercontent.com/101732786/177040958-9c7c6efb-451e-4408-aae4-fcd204aa3435.png">
+
+## Featured Code:
+The code example (/controllers/users.js) acts as a 'toggle between a POST and DELETE request. It uses control flow to check whether the item has or hasn't been added to the user's Wishlist, and then either deletes or adds the item upon the button (on the Front-End) being clicked.
+
+<img width="762" alt="wishlist-item-back-end-code" src="https://user-images.githubusercontent.com/101732786/177040662-6bb546e2-f70f-46b1-81a1-e91a168cef8a.png">
 
 ## Technology used:
 
