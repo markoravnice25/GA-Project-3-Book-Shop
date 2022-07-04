@@ -9,8 +9,8 @@
 * Brief
 * Planning
 * Approach taken
-* Technologies Used
 * Screenshot Walkthrough
+* Technologies Used
 * Featured Code
 * Key Learnings
 * Challenges
