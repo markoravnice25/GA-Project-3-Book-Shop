@@ -21,9 +21,6 @@ const startServer = async () => {
   app.use(express.json())
   app.use('/api', router)
 
-  // Router
-  app.use('/api', router)
-
   // ** New lines **
   app.use(express.static(path.join(__dirname, 'client', 'build')))
 
