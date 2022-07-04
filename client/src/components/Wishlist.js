@@ -70,7 +70,7 @@ const WishList = () => {
       <Container className='container-styling'>
         <Row className='heading-div'>
           <h2 className='heading'>My wish list</h2>
-          <p className='heading-paragraph'>A wishlist by {account.firstName} <br></br> Would you like to <a href="http://localhost:3001/">Add more items?</a></p>
+          <p className='heading-paragraph'>A wishlist by {account.firstName} <br></br> Would you like to <a href="/">Add more items?</a></p>
         </Row>
         <hr className='hr-line-first' />
         <div>
@@ -122,7 +122,7 @@ const WishList = () => {
       <Container className='container-styling'>
         <Row className='heading-div'>
           <h2 className='heading'>My wish list</h2>
-          <p className='heading-paragraph'>Hi {account.firstName}, you have no items in your wishlist yet. <br></br> Would you like to <a href="http://localhost:3001/">Add items?</a></p>
+          <p className='heading-paragraph'>Hi {account.firstName}, you have no items in your wishlist yet. <br></br> Would you like to <a href="/">Add items?</a></p>
         </Row>
       </Container>
     )
