@@ -4,7 +4,7 @@
 
 ## Table of Contents:
 
-* Code installation
+* [Code installation](https://github.com/markoravnice25/GA-Project-3-Book-Shop#code-installation)
 * Project Overview
 * Brief
 * Planning
@@ -55,7 +55,7 @@ All content was sourced from the [Waterstones](https://www.waterstones.com/) web
 
 ## Brief
 
-* Build a full-stack application by making your own Back-End and Front-End
+* Build a full-stack MERN (MongoDB, Express.js, React, Node.js) application by making your own Back-End and Front-End
 * Use MongoDB as database for yout API using Node.js for building the Back-End
 * Consume your API with a separate front-end built with React
 * Be a complete product which most likely means multiple relationships and CRUD functionality
@@ -158,7 +158,7 @@ The code example (/controllers/users.js) acts as a 'toggle between a POST and DE
 * Node.js
 * MongoDB
 * Mongoose
-* Express
+* Express.js
 * JWT
 * Dotenv
 * Bcrypt
