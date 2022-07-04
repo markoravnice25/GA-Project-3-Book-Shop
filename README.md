@@ -18,7 +18,7 @@
 * Future improvements
 * [Website Link](https://book-shop-project-marko.herokuapp.com/)
 
-<img width="1280" alt="home-page" src="https://user-images.githubusercontent.com/101732786/177038196-0c90327d-a50f-4c5f-9e1e-c2a9ce1d69d5.png">
+<img width="1275" alt="show-page" src="https://user-images.githubusercontent.com/101732786/177038338-3bf84f55-83d3-446c-b3d4-38756ae5ea06.png">
 
 ### Code Installation
 
@@ -35,8 +35,6 @@
 * yarn start
 
 ## Project Overview
-
-<img width="1275" alt="show-page" src="https://user-images.githubusercontent.com/101732786/177038338-3bf84f55-83d3-446c-b3d4-38756ae5ea06.png">
 
 This is my 3rd (of 4) projects during the the 13 week General Assembly Software Engineering Immersive program. The app was developed in a team of 3 students and took us 8 days to complete. It is a Full-Stack application with our own API. The idea was to have a database of books and an app which models the [Waterstones](https://www.waterstones.com/) website, which we used as a guide for this project.
 
