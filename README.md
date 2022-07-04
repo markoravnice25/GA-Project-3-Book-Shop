@@ -4,7 +4,7 @@
 
 ## Table of Contents:
 
-* [Code installation](https://github.com/markoravnice25/GA-Project-3-Book-Shop#code-installation)
+* Code installation
 * Project Overview
 * Brief
 * Planning
