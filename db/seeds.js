@@ -7,7 +7,7 @@ import booksData from './data/books.js'
 const seedDatabase = async () => {
 
   try {
-    await mongoose.connect(process.env.MONGODB_CONNECTION_STRING)
+    await mongoose.connect(process.env.DB_URI)
     await mongoose.connection.db.dropDatabase()
     const booksAdded = await Book.create(booksData)
     console.log(`Databades seeded with ${booksAdded.length} books`)
