@@ -4,18 +4,18 @@
 
 ## Table of Contents:
 
-* Code installation
-* Project Overview
-* Brief
-* Planning
-* Approach taken
-* Screenshot Walkthrough
-* Technologies Used
-* Featured Code
-* Key Learnings
-* Challenges
-* Bugs
-* Future improvements
+* [Code installation](#code-installation)
+* [Project Overview](#project-overview)
+* [Brief](#brief)
+* [Planning](#planning)
+* [Approach taken](#approach-taken)
+* [Screenshot Walkthrough](#screenshot-walkthrough)
+* [Technology Used](#technology-used)
+* [Featured Code](#featured-code)
+* [Key Learnings](#key-learnings)
+* [Challenges](#challenges)
+* [Bugs](#bugs)
+* [Future improvements](#future-improvements)
 * [Website Link](https://book-shop-project-marko.herokuapp.com/)
 
 <img width="1275" alt="show-page" src="https://user-images.githubusercontent.com/101732786/177038338-3bf84f55-83d3-446c-b3d4-38756ae5ea06.png">
