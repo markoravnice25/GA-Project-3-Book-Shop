@@ -1,13 +1,10 @@
 ## General Assembly Software Engineering Immersive (March - July 2022)
 
-# Project 3: Book Shop
+# Project 3: [Book Shop](https://book-shop-project-marko.herokuapp.com/)
 
-## Visit the deployed App [here](https://book-shop-project-marko.herokuapp.com/)
+### Website/Code Installation
 
-<img width="1280" alt="home-page" src="https://user-images.githubusercontent.com/101732786/177038196-0c90327d-a50f-4c5f-9e1e-c2a9ce1d69d5.png">
-
-### Code Installation
-
+* [Website](https://book-shop-project-marko.herokuapp.com/)
 * yarn
 * yarn add axios
 * yarn add react-select
@@ -19,6 +16,8 @@
 * yarn add mongoose-unique-validator@2.0.3
 * yarn add nodemon -D
 * yarn start
+
+<img width="1280" alt="home-page" src="https://user-images.githubusercontent.com/101732786/177038196-0c90327d-a50f-4c5f-9e1e-c2a9ce1d69d5.png">
 
 ## Table of Contents:
 
