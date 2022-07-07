@@ -76,7 +76,7 @@ We wanted to keep the Front-End Design to a minimum and add on features if we ha
 <img width="1447" alt="Front-End-Wireframe" src="https://user-images.githubusercontent.com/101732786/177039863-d0cbb0b0-c478-4653-9d66-cebc0e78f5d7.png">
 
 #### Task delegation
-We each had tasks on specific areas of the project to avoid migration errors. My primary role was authentication; Register/Login; Wishlist; Styling.
+We each had tasks on specific areas of the project to avoid migration errors. My primary role was authentication; Register/Login; Wishlist and styling.
 
 <img width="953" alt="project-roles" src="https://user-images.githubusercontent.com/101732786/177040412-c519dcc9-a946-4ec1-868d-4e868a8ff8da.png">
 
