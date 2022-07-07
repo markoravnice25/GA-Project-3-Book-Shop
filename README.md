@@ -148,9 +148,19 @@ Register Page:
 <img width="1297" alt="register-page" src="https://user-images.githubusercontent.com/101732786/177040958-9c7c6efb-451e-4408-aae4-fcd204aa3435.png">
 
 ## Featured Code:
-The code example (/controllers/users.js) acts as a 'toggle between a POST and DELETE request. It uses control flow to check whether the item has or hasn't been added to the user's Wishlist, and then either deletes or adds the item upon the button (on the Front-End) being clicked.
+This Back-End example (/controllers/users.js) acts as a 'toggle between a POST and DELETE request. It uses control flow to check whether the item has or hasn't been added to the user's Wishlist, and then either deletes or adds the item upon the button (on the Front-End) being clicked.
 
 <img width="762" alt="wishlist-item-back-end-code" src="https://user-images.githubusercontent.com/101732786/177040662-6bb546e2-f70f-46b1-81a1-e91a168cef8a.png">
+
+This is the Front-End example (components/BookShow.js). In this second image of featured code, I am checking whether the item (book) has been added or not using the some() method. The addOrRemove() function then either adds or removes the item from the wishlist by calling the POST method from the Back-End (First image of featured code).
+
+<img width="885" alt="book-shop-featured-code" src="https://user-images.githubusercontent.com/101732786/177735445-6979e87a-4c60-44a9-bd93-764fac255488.png">
+
+The third image of featured code is in the return statement in BookShow.js. Here I am checking whether the user is logged in or not and the button display and functionality changes to suit.
+
+<img width="636" alt="book-shop-featured-code-2" src="https://user-images.githubusercontent.com/101732786/177736500-27303ea8-5036-4947-9973-9902a4f77b7d.png">
+
+
 
 ## Technology used:
 
