@@ -4,18 +4,18 @@
 
 ## Table of Contents:
 
-* Code installation
-* Project Overview
-* Brief
-* Planning
-* Approach taken
-* Screenshot Walkthrough
-* Technologies Used
-* Featured Code
-* Key Learnings
-* Challenges
-* Bugs
-* Future improvements
+* [Code installation](#code-installation)
+* [Project Overview](#project-overview)
+* [Brief](#brief)
+* [Planning](#planning)
+* [Approach taken](#approach-taken)
+* [Screenshot Walkthrough](#screenshot-walkthrough)
+* [Technology Used](#technology-used)
+* [Featured Code](#featured-code)
+* [Key Learnings](#key-learnings)
+* [Challenges](#challenges)
+* [Bugs](#bugs)
+* [Future improvements](#future-improvements)
 * [Website Link](https://book-shop-project-marko.herokuapp.com/)
 
 <img width="1275" alt="show-page" src="https://user-images.githubusercontent.com/101732786/177038338-3bf84f55-83d3-446c-b3d4-38756ae5ea06.png">
@@ -55,7 +55,7 @@ All content was sourced from the [Waterstones](https://www.waterstones.com/) web
 
 ## Brief
 
-* Build a full-stack application by making your own Back-End and Front-End
+* Build a full-stack MERN (MongoDB, Express.js, React, Node.js) application by making your own Back-End and Front-End
 * Use MongoDB as database for yout API using Node.js for building the Back-End
 * Consume your API with a separate front-end built with React
 * Be a complete product which most likely means multiple relationships and CRUD functionality
@@ -148,9 +148,19 @@ Register Page:
 <img width="1297" alt="register-page" src="https://user-images.githubusercontent.com/101732786/177040958-9c7c6efb-451e-4408-aae4-fcd204aa3435.png">
 
 ## Featured Code:
-The code example (/controllers/users.js) acts as a 'toggle between a POST and DELETE request. It uses control flow to check whether the item has or hasn't been added to the user's Wishlist, and then either deletes or adds the item upon the button (on the Front-End) being clicked.
+This Back-End example (/controllers/users.js) acts as a 'toggle between a POST and DELETE request. It uses control flow to check whether the item has or hasn't been added to the user's Wishlist, and then either deletes or adds the item upon the button (on the Front-End) being clicked.
 
 <img width="762" alt="wishlist-item-back-end-code" src="https://user-images.githubusercontent.com/101732786/177040662-6bb546e2-f70f-46b1-81a1-e91a168cef8a.png">
+
+This is the Front-End example (components/BookShow.js). In this second image of featured code, I am checking whether the item (book) has been added or not using the some() method. The addOrRemove() function then either adds or removes the item from the wishlist by calling the POST method from the Back-End (First image of featured code).
+
+<img width="885" alt="book-shop-featured-code" src="https://user-images.githubusercontent.com/101732786/177735445-6979e87a-4c60-44a9-bd93-764fac255488.png">
+
+The third image of featured code is in the return statement in BookShow.js. Here I am checking whether the user is logged in or not and the button display and functionality changes to suit.
+
+<img width="636" alt="book-shop-featured-code-2" src="https://user-images.githubusercontent.com/101732786/177736500-27303ea8-5036-4947-9973-9902a4f77b7d.png">
+
+
 
 ## Technology used:
 
@@ -158,7 +168,7 @@ The code example (/controllers/users.js) acts as a 'toggle between a POST and DE
 * Node.js
 * MongoDB
 * Mongoose
-* Express
+* Express.js
 * JWT
 * Dotenv
 * Bcrypt
@@ -192,19 +202,26 @@ The code example (/controllers/users.js) acts as a 'toggle between a POST and DE
 * Delegating tasks so that team members don't interfere with each other's code
 * Solving merge conflicts
 * Desigining reference and embedded relationships on the Back-End
-* Learning to use Node.js and Express.
+* Learning to use Node.js and Express
+
+## Wins:
+
+* The general styling of the site is fairly consistent with the Waterstones website which we modelled
+* Having a fully-function Full-Stack MERN app!
+* Manually seeding over 100 books
+* The functionality of the reviews and the wishlist page
 
 ## Challenges:
 
 * Working in a team meant that our communication was key
-* We probably lacked one person to take charge and act as leader of the project, this would have helped save time.
-* Solving merge conflicts - sometimes we worked on the same code block, this could have been avoided with more effective communication.
+* We probably lacked one person to take charge and act as leader of the project, this would have helped save time
+* Solving merge conflicts - sometimes we worked on the same code block, this could have been avoided with more effective communication
 
 ## Bugs
 
 * Styling is not responsive
-* The carousel on the Home page displays the same book twice (the second underneath the original) unless the full row of designated spots is filled (There are 4 spots on our design).
-* When deleting a review, all reviews for that book are simultaneously deleted.
+* The carousel on the Home page displays the same book twice (the second underneath the original) unless the full row of designated spots is filled (There are 4 spots on our design)
+* When deleting a review, all reviews for that book are simultaneously deleted
 
 
 ## Future improvements
@@ -212,4 +229,4 @@ The code example (/controllers/users.js) acts as a 'toggle between a POST and DE
 * Fix bugs
 * User profile picture upload functionality
 * Better styled Account Page
-* Make page Responsive for Smart Phones/Tablets etc.
+* Make page Responsive for Smart Phones/Tablets etc
