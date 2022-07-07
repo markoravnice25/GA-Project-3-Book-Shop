@@ -202,19 +202,26 @@ The third image of featured code is in the return statement in BookShow.js. Here
 * Delegating tasks so that team members don't interfere with each other's code
 * Solving merge conflicts
 * Desigining reference and embedded relationships on the Back-End
-* Learning to use Node.js and Express.
+* Learning to use Node.js and Express
+
+## Wins:
+
+* The general styling of the site is fairly consistent with the Waterstones website which we modelled
+* Having a fully-function Full-Stack MERN app!
+* Manually seeding over 100 books
+* The functionality of the reviews and the wishlist page
 
 ## Challenges:
 
 * Working in a team meant that our communication was key
-* We probably lacked one person to take charge and act as leader of the project, this would have helped save time.
-* Solving merge conflicts - sometimes we worked on the same code block, this could have been avoided with more effective communication.
+* We probably lacked one person to take charge and act as leader of the project, this would have helped save time
+* Solving merge conflicts - sometimes we worked on the same code block, this could have been avoided with more effective communication
 
 ## Bugs
 
 * Styling is not responsive
-* The carousel on the Home page displays the same book twice (the second underneath the original) unless the full row of designated spots is filled (There are 4 spots on our design).
-* When deleting a review, all reviews for that book are simultaneously deleted.
+* The carousel on the Home page displays the same book twice (the second underneath the original) unless the full row of designated spots is filled (There are 4 spots on our design)
+* When deleting a review, all reviews for that book are simultaneously deleted
 
 
 ## Future improvements
@@ -222,4 +229,4 @@ The third image of featured code is in the return statement in BookShow.js. Here
 * Fix bugs
 * User profile picture upload functionality
 * Better styled Account Page
-* Make page Responsive for Smart Phones/Tablets etc.
+* Make page Responsive for Smart Phones/Tablets etc
